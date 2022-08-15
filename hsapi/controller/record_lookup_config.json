@@ -1,0 +1,184 @@
+[
+{
+    "service": "template",
+    "rty_ID": "",
+    "label": "Template lookup",
+    "description": "Simple tamplate lookup - not for proper use",
+    "dialog": "lookup_Template",
+    "fields":{
+        "title": "",
+        "description": "",
+        "author": "",
+        "publisher": "",
+        "date": "",
+        "type": "",
+        "language": ""
+    }
+},
+{
+    "service": "tlcmap",
+    "rty_ID": "3-1009",
+    "label": "AGHP lookup",
+    "description": "Search for Australian Gazetteer of historic places",
+    "dialog": "lookupTLC",
+    "fields":{
+        "properties.placename": "2-1",
+        "geometry": "2-28",
+        "properties.anps id": "2-581",
+        "properties.state": "2-234",
+        "properties.LGA": "2-2",
+        "properties.description": "2-3"
+    }
+},
+{
+    "service": "geoName",
+    "rty_ID": "",
+    "label": "GeoNames",
+    "description": "Returns a list of locations for the placename query.",
+    "dialog": "lookupGN",
+    "fields": {
+        "name":"",
+        "lng":"",    
+        "lat":"",    
+        "countryCode":"",    
+        "adminCode1":"",    
+        "adminName1":"",
+        "fclName":"",
+        "fcodeName":"",
+        "geonameId":"",
+        "population":""
+    }
+},
+{
+    "service": "postalCodeSearch",
+    "rty_ID": "",
+    "label": "GeoNames - Postal Codes",
+    "description": "Returns a list of postal codes and places for the placename/postalcode query.",
+    "dialog": "lookupGN_postalCode",
+    "fields": {
+        "postalcode":"",
+        "lng":"",    
+        "lat":"",    
+        "countryCode":"",    
+        "adminCode1":"",    
+        "adminName1":"",    
+        "adminCode2":"",    
+        "adminName2":"",    
+        "adminCode3":"",    
+        "adminName3":"",    
+        "placeName":""
+    }
+},
+{
+    "service": "MPCE",
+    "rty_ID": "1268-53",
+    "label": "MPCE Super Book (Work) predictive keywording",
+    "dialog": "lookupMPCE",
+    "description": "A project keyword classification toolkit for the Super Book (Work) Table.",
+    "fields": {
+        "workID":"",
+        "projectKywds":"",
+        "parisianClassify":"",
+        "basisClassify":"",
+        "classifyNotes":""
+    }
+},
+{
+    "service": "ESTC",
+    "rty_ID": "94",
+    "label": "LRC18C lookup",
+    "description": "Imports records from the ESTC_Helsinki_Bibliographic_Metadata database, this lookup is for the Libraries_Readers_Culture_18C_Atlantic database only, use the ESTC Editions lookup for general use",
+    "dialog": "lookupLRC18C",
+    "fields": {
+      "properties.edition": "1028"
+    }
+},
+{
+    "service": "ESTC_editions",
+    "rty_ID": "",
+    "label": "ESTC Editions lookup",
+    "description": "Lookup ESTC Book(Editions) records",
+    "dialog": "lookupESTC_editions",
+    "fields": {
+      "orginialID": "",
+      "title": "",
+      "estcID": "",
+      "yearFirstVolume": "",
+      "yearLastVolume": "",
+      "summary": "",
+      "extendedTitle": "",
+      "numOfVolumes": "",
+      "numOfParts": "",
+      "imprintDetails": "",
+      "place": "",
+      "author": "",
+      "work": "",
+      "bookFormat": ""
+    }
+},
+{
+    "service": "ESTC_works",
+    "rty_ID": "",
+    "label": "ESTC Works lookup",
+    "description": "Lookup ESTC Work records",
+    "dialog": "lookupESTC_works",
+    "fields": {
+      "title": "",
+      "extendedTitle": "",
+      "projectId": "",
+      "helsinkiTitle": "",
+      "helsinkiId": "",
+      "helsinkiIdAssignation": "",
+      "helsinkiRawData": ""
+    }
+},
+{
+    "service": "bnfLibrary",
+    "rty_ID": "",
+    "label": "BnF Library - bibliographic records",
+    "dialog": "lookupBnFLibrary_bib",
+    "description": "A proof of concept for searching via the BnF Library API (under development) for Bibliographic Records",
+    "fields": {
+        "title": "",
+        "publisher": "",
+        "date": "",
+        "author": "",
+        "biburl": "",
+        "description": "",
+        "ext_description": "",
+        "language": "",
+        "type": "",
+        "isbn": ""
+    }
+},
+{
+    "service": "bnfLibraryAut",
+    "rty_ID": "",
+    "label": "BnF Library - authoritative records",
+    "dialog": "lookupBnFLibrary_aut",
+    "description": "A proof of concept for searching via the BnF Library API for Authoritative Records (under development)",
+    "fields": {
+        "name": "",
+        "auturl": ""
+    }
+},
+{
+    "service": "nomisma",
+    "rty_ID": "",
+    "label": "Nomisma Lookup",
+    "dialog": "lookupNomisma",
+    "description": "A proof of concept for searching via the Nomisma Library API (under development)",
+    "fields": {
+        "label": "",
+        "properties.gazetteer_label": "",
+        "geometry": "",
+        "properties.toponym": "",
+        "properties.gazetteer_uri": "",
+        "properties.type": "",
+        "properties.count": "",
+        "when.timespans.start": "",
+        "when.timespans.end": "",
+        "properties.closing_date": ""
+    }
+}
+]

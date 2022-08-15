@@ -1,0 +1,157 @@
+<!--
+/**
+* Quick addition of fields to a record type
+*
+* @package     Heurist academic knowledge management system
+* @link        http://HeuristNetwork.org
+* @copyright   (C) 2005-2020 University of Sydney
+* @author      Brandon McKay   <blmckay13@gmail.com>
+* @license     http://www.gnu.org/licenses/gpl-3.0.txt GNU License 3.0
+* @version     6.0
+*/
+
+/*
+* Licensed under the GNU License, Version 3.0 (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at http://www.gnu.org/licenses/gpl-3.0.txt
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied
+* See the License for the specific language governing permissions and limitations under the License.
+*/
+-->
+
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Rapid Field Additions</title>
+
+        <!-- Style Sheets -->
+        <link rel="stylesheet" type="text/css" href="../../../../external/jquery-ui-iconfont-master/jquery-ui.icon-font.css" />
+        <link rel="stylesheet" type="text/css" href="../../../../external/jquery-ui-themes-1.12.1/themes/base/jquery-ui.css" />
+
+        <link rel="stylesheet" type="text/css" href="../../../../h4styles.css">
+        <link rel="stylesheet" type="text/css" href="../../../../h6styles.css">
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="../../../../hclient/core/detectHeurist.js"></script>
+        <script type="text/javascript" src="../../../../external/jquery-ui-1.12.1/jquery-1.12.4.js"></script>
+        <script type="text/javascript" src="../../../../external/jquery-ui-1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="../../../../hclient/core/utils_dbs.js"></script>
+
+        <script type="text/javascript" src="selectMultiFields.js"></script>
+
+        <script type="text/javascript">
+            var multiSelectObj;
+            $(document).ready(function() {
+                multiSelectObj = new hMultiSelect();
+
+                multiSelectObj.init(); // initialise popup's JS
+
+                multiSelectObj.setupElements();
+
+                multiSelectObj.setupStyling();
+            });
+        </script> 
+
+        <style type="text/css">
+            .tabs{
+                padding: 0;
+                border: none;
+
+                background-color: #C9BFD4;
+            }
+            .tabs-list{
+                background-color: #C9BFD4;
+            }
+            .tabs-text{
+                font-size:1.2em;
+            }
+            .tabs-desc{
+                font-size: 1.2em;
+                padding-top: 5px;
+            }
+            .tabs-panel{}
+            .field-group{
+                display: grid;
+                grid-template-columns: 100%;
+                overflow: auto;
+            }
+            .field-container{
+                margin:5px 0;
+                display: grid;
+                grid-template-columns: 30px 200px 130px 635px;
+            }
+            .field-container input[type='checkbox']{
+                margin-top: 0;
+                margin-left: 10px;
+            }
+            .field-item{
+                font-size: 1.2em;
+            }
+            .no-overflow-item{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+				
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            .sub-text{
+                color: grey;
+
+                font-style: italic;
+
+                margin: 5px 0;
+            }
+
+            .field_search_container{
+                position: absolute;
+
+                top: 6px;
+                right: 5px;
+
+                font-size: 1.2em;
+            }
+
+            #field_result{
+                background: #F4F2F4;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+
+                z-index:999999999;
+                overflow-y:auto;
+
+                height:auto;
+                max-height:400px;
+
+                padding:4px;
+                margin: 2px 0px;
+
+                cursor:pointer;
+            }
+
+            .multi-base-fields #action-btns{
+                position: fixed;
+                width: 100%;
+
+                left: 0;
+                bottom: 0;
+            }
+        </style>
+    </head>
+
+    <body class="multi-base-fields" style="background:#DAD0E4;font-size:12px;width:99%;">
+        <div style="margin-bottom: 10px;">
+            <span style="font-size:1.2em;margin-right:10px;">Select base fields for insertion into the form - you can select from multiple tabs</span>
+            <div class="field_search_container">Search for Field: <input type="text" id="field_search" style="width: 300px;"></div>
+        </div>
+        <div class="tabs">
+            <ul class="tabs-list">
+            </ul>
+        </div>
+        <div id="action-btns">
+            <span id="btnClose"></span>
+            <span id="btnAddSelected"></span>
+        </div>
+    </body>
+</html>

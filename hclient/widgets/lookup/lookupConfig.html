@@ -1,0 +1,117 @@
+<style type="text/css">
+    .lookup_data span.truncate{
+        display: inline-block;
+
+        padding-left: 15px; 
+        max-width: 300px;
+
+        vertical-align: middle;
+        cursor: default;
+    }
+</style>
+
+<div class="ent_wrapper">
+
+    <div class="ui-heurist-header"></div>
+
+    <div class="ent_content" style="font-size: 0.9em;">
+
+        <div class="ent_content_full" style="top:10px;padding-left:20px;">
+            Services configured here enable the lookup of external resources such as a gazeteer, a thesaurus or a library catalogue from within a data entry from and insert of<br>
+            one or more fields derived from the external resource into the data. They can also be used to provide specialised processing such as predictive setting of keywords<br>
+            based on frequency of usage and matching with external resources.<br><br>
+
+            Existing services can be configured here, while new services can be programmed using the template and guidelines provided in the source code<br>
+            (please contribute them to the gitHub repository if likely to be of general use).<br>
+        </div>
+
+        <div class="ent_content_full" style="top:100px;width:300px;border-right:1px solid gray;">
+            <div style="width:280px;padding:10px 10px 0;font-weight:bold;">
+                Lookup services assigned
+            </div><br/>
+
+            <div style="padding: 10px 10px 0px;">select to edit</div>
+            <ul id="sel_service" style="list-style-type: none;width:280px;padding:0 5px;">
+                List of lookup services
+            </ul>
+
+            <div>
+                <button id="btnAddService" title="Add new service">Assign service</button>
+            </div>
+        </div>
+
+        <div class="ent_content_full" style="top:100px;left:301px;padding:10px;">
+
+            <h4 id="service_name" style="padding-left:20px;"><span class="ui-icon ui-icon-arrowthick-1-w">Select a service to edit or click the assign button</h4>
+            
+            <div id="service_config" style="display:none">
+            
+                <fieldset id="div_fieldset">
+                    
+                    <div style="padding: 0.2em; width: 100%;" class="input" id="service_type">
+                        <div class="header" style="padding: 0 16px 0 16px;">
+                            <label for="sel_servicetype">Service to assign:</label>
+                        </div>
+                        <select id="sel_servicetype" class="text ui-widget-content ui-corner-all" style="width:300px;max-width:40em"></select>
+                    </div>
+
+                </fieldset>
+
+                <div id="service_description" style="font-style:italic;padding-left:20px;" class="service_details">
+                </div>
+
+                <fieldset id="div_fieldset" class="service_details">
+
+                    <div style="padding: 0.2em; width: 100%;" class="input">
+                        <div class="header" style="padding: 0 16px 0 16px;">
+                            <label for="sel_record_type">Record type:</label>
+                        </div>
+                        <select id="sel_rectype" class="text ui-widget-content ui-corner-all" style="width:300px;max-width:40em"></select>
+                    </div>
+                    
+                    <div style="padding: 0.2em; width: 100%;" class="input">
+                        <div class="header" style="padding: 0 16px 0 16px;">
+                            <label>Label on lookup button:</label>
+                        </div>
+                        <input id="inpt_label" class="text ui-widget-content ui-corner-all" style="width:300px;max-width:40em"/>
+                    </div>
+                </fieldset>
+                
+                <div style="padding-left:20px;display: inline-block;" class="service_details" id="service_mapping">
+                    <h4 style="display: inline-block;margin-bottom: 1em;">Map the result fields to Heurist record fields</h4>
+
+                    <div id="example_records" style="text-align: right;width: 215px;float: right;margin: 1.33em 0 1em;">
+
+                        Search example records: 
+                        <span class="ui-icon ui-icon-arrowthick-1-w" style="cursor: pointer;" />
+                        <span id="current_idx">1</span> 
+                        <span class="ui-icon ui-icon-arrowthick-1-e" style="cursor: pointer;" />
+
+                    </div>
+
+                    <table id="tbl_matches" style="font-size:1em;" data-idx="0">
+                    
+                    </table>
+                </div>
+                
+                <div style="text-align: center;padding: 20px;">
+                    <button id="btnApplyCfg" class="ui-button-action" title="Use this configuration">Apply</button>
+                    <button id="btnDiscard">Cancel</button>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="ui-dialog-buttonpane popup_buttons_div" style="padding: 13px;">
+        <div class="ui-dialog-buttonset">
+
+            <button id="btnSave" class="ui-button-action">Save</button>
+            <button id="btnClose">Close</button>
+
+        </div>
+    </div>
+
+</div>

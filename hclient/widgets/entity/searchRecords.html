@@ -1,0 +1,64 @@
+<div style="display:none" id="row_parententity_helper3">
+    <div class="div-table-cell"></div>
+    <div class="div-table-cell heurist-helper1" style="padding: 4px 0 0 9px;">
+        You are creating <span style="font-weight:bold"></span> record. Please select (or create) its parent record
+    </div>
+</div>
+<div style="display:block;line-height: 2em;padding: 10px 5px;" class="not-addonly">
+
+    <div class="heurist-helper1" style="display:inline-block;font-weight:bold;">Sort:</div>
+    
+    <input id="rb_alphabet" type="radio" name="filters" checked/><label for="rb_alphabet">&nbsp;&nbsp;alphabetical</label>&nbsp;&nbsp;       
+    <input id="rb_modified" type="radio" name="filters"/><label for="rb_modified">&nbsp;&nbsp;recently modified</label>&nbsp;&nbsp;
+        
+    <div class="heurist-helper1" style="display:inline-block;font-weight:bold;">Show:</div>
+        
+        <input id="cb_initial" type="checkbox" class="i-filter"/><label for="cb_initial" class="i-filter">initial filter</label>
+        <span id="cb_initial_filter" class="i-filter prompt"></span>
+
+        <input id="cb_selected" type="checkbox" name="filters"/><label for="cb_selected">recently selected</label>&nbsp;&nbsp;
+        <input id="cb_getcounts" checked type="checkbox" class="i-counts"/><label for="cb_getcounts" class="i-counts">get usage counts</label>
+
+    </div>
+</div>
+<!-- tab container -->
+<div style="display:block;height:auto;border:none;" id="row_tabulator"  class="not-addonly">
+
+</div>
+
+<div style="display: block; padding:5px 0px" id="addrec_helper">
+
+    <div class="div-table-cell" style="padding-right:0.5em;text-align:right">
+        <div id="lbl_add_record" class="heurist-helper1" style="padding-top:10px;font-weight:bold;padding-bottom: 12px;">
+                Select in list or add new
+        </div>
+    </div>
+    <div class="div-table-cell" style="padding-right:0.5em;text-align:right">
+        <button id="btn_add_record" style="z-index:2;height:2em;"></button>
+        <button id="btn_select_rt" style="z-index:2;height:2em;font-size:12px"></button> <!-- select for unconstrained -->
+    </div>
+    <div class="div-table-cell not-addonly" style="padding-right:0.5em;text-align:right">
+        <label>Find</label>
+    </div>
+    <div class="div-table-cell not-addonly">
+        <input id="input_search" class="text ui-widget-content ui-corner-all" 
+                style="max-width: 10em; min-width: 10em; width: 10em; margin-right:0.2em"/>
+        <div id="btn_search_start"></div>        
+        <label for="sel_rectypes">in</label>
+        <select id="sel_rectypes" class="text ui-widget-content ui-corner-all" 
+                style="max-width:150px;min-width:150px"></select>
+    </div>
+</div>
+
+<div style="display: none;line-height: 2em" id="row_parententity_helper" class="not-addonly">
+    <div class="div-table-cell"></div>
+    <div class="div-table-cell heurist-helper1">Note: child records are not shown in this search</div>
+</div>
+<div style="display: none;height:3em;" id="row_parententity_helper2" class="not-addonly">
+    <div class="div-table-cell"></div>
+    <div class="div-table-cell" style="padding:20px 40px">
+        <p style="padding:10px 0"><span class="ui-icon ui-icon-arrowthick-1-n" style="width:23px;"></span>&nbsp;&nbsp;We recommend adding a new child record</p>
+        <p><div id="btn_search_start2"></div>&nbsp;Click search icon to display existing records</p>
+        <p style="padding:15px 0"><span style="color:red">Warning</span> selecting an existing record makes it a child record</p>
+    </div>
+</div>
