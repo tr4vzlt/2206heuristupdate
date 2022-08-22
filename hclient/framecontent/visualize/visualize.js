@@ -360,6 +360,7 @@ var zoomBehaviour;
 var force;
 
 
+//Gets data from active database
 function getDataFromServer(){
 
     var url = window.hWin.HAPI4.baseURL+"hsapi/controller/rectype_relations.php" + window.location.search;
@@ -376,7 +377,8 @@ function getDataFromServer(){
     
 }
 
-function filterData(json_data) {
+// Function to handle the filtering of data from a .json file, shouldnt need to change, but if parsing changes are needed we can
+function filterData(json_data) { 
     
         if(!json_data) json_data = settings.data; 
         var names = [];
@@ -420,7 +422,7 @@ function visualizeData() {
     //define shadow filter
     _addDropShadowFilter();
     
-    // SVG data  
+    // SVG data  - SVG - Scalable Vector Graphics - draws shapes like lines, circles, etc.
     this.data = settings.getData.call(this, settings.data);
     determineMaxCount(data);
 
@@ -477,7 +479,7 @@ function visualizeData() {
 */
 function addContainer() {
 
-    // Zoom settings, these affect adding/removing nodes as well
+    // Zoom settings, these affect adding/removing nodes as well - presuming the zoom function zooms in on the canvas and not the actual object, causing the text to become harder to read and nodes becoming distorted (especially with icons rather than circles)
     var scale = getSetting(setting_scale, 1);
     var translateX = getSetting(setting_translatex, 200);
     var translateY = getSetting(setting_translatey, 200);
@@ -598,7 +600,7 @@ function zoomToFit(){
     onZoom(transform);
 }
 
-//handle the zoom buttons
+//handle the zoom buttons - Zoom in and out buttons
 function zoomBtn(zoom_in){
     var zoom = this.zoomBehaviour; 
     
