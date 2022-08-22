@@ -137,12 +137,14 @@ function onPageInit(success){
         * 
         * @returns {Object}
         */
+
+        //Parses data from database for putting into the visualisation
         function __parseData(records_ids, relations) {
             
             var data = {}; 
             var nodes = {};                         
             var links = [];
-
+ 
             if(records_ids !== undefined && relations !== undefined) {
                 // Construct nodes for each record
                 var i;
@@ -251,7 +253,7 @@ function onPageInit(success){
                 
                 $(window).resize(onVisualizeResize);
                 onVisualizeResize();
-
+                //Calls visualise javascript file    - For resizing the window (But we can use for new window code to scale the visualisation to the bigger window size)
                 $("#visualize").visualize({
                     data: data,
                     getData: function(data) { return getData(data); },
@@ -278,7 +280,7 @@ function onPageInit(success){
 
                 changeViewMode('icons');
         }
-            
+            //resizes the visualisation for the updates size, can be used for new window coding
         function onVisualizeResize(){
                 var width = $(window).width();
                 var supw = (width<744)?3.8:0; //1120
