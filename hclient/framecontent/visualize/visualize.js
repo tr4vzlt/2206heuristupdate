@@ -503,7 +503,7 @@ function addContainer() {
                        .attr("transform", s);
 
     //var scaleExtentVals = [0.9, 2];
-    var scaleExtentVals = [0.1, 10]; ////[0.75, 7.5]
+    var scaleExtentVals = [0.1, 20]; ////[0.75, 7.5]
 
     if(!settings.isDatabaseStructure){
         scaleExtentVals = [0.5, 3];
