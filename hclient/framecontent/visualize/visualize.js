@@ -1476,7 +1476,8 @@ function addIcons() {
 
 //LABELS FOR NODES
 
-if (scaleExtentVals < 15){
+while(scaleExtentVals < 15){
+
     function addLabels(name, color) {
         var maxLength = getSetting(setting_textlength);
         var labels = d3.selectAll(".node")
