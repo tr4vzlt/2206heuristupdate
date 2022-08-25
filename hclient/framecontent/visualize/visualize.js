@@ -791,7 +791,7 @@ function addMarkerDefinitions() {
            .attr("y", -1)
            .style("fill", "black")
            .style("font-size", "6.1px")
-           .text("Self");
+           .text("Self"); 
 
     return markers;
 }
@@ -1473,21 +1473,26 @@ function addIcons() {
 * The text is based on the "name" attribute
 * Task is performed when the nodes are added
 */
-function addLabels(name, color) {
-    var maxLength = getSetting(setting_textlength);
-    var labels = d3.selectAll(".node")
-                  .append("text")
-                  .attr("x", iconSize)
-                  .attr("y", iconSize/4)
-                  .attr("class", name + " bold")
-                  .attr("fill", color)
-                  .style("font-size", settings.fontsize, "important")
-                  .text(function(d) {
-                      return truncateText(d.name, maxLength);
-                  });
-    return labels;
-}
 
+//LABELS FOR NODES
+
+if (scaleExtentVals <= 15)
+{
+    function addLabels(name, color) {
+        var maxLength = getSetting(setting_textlength);
+        var labels = d3.selectAll(".node")
+                    .append("text")
+                    .attr("x", iconSize)
+                    .attr("y", iconSize/4)
+                    .attr("class", name + " bold")
+                    .attr("fill", color)
+                    .style("font-size", settings.fontsize, "important")
+                    .text(function(d) {
+                        return truncateText(d.name, maxLength);
+                    });
+        return labels;
+    }
+}
 //
 //
 //
