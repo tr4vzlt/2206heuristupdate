@@ -492,7 +492,7 @@ function addContainer() {
         translateY = 0;
     }
     s = "translate("+translateX+", "+translateY+")";    
-    if(!(isNaN(scale) || scale==null || Math.abs(scale)==Infinity || scale < 0.5) ){
+    if(!(isNaN(scale) || scale==null || Math.abs(scale)==Infinity || scale < 1) ){
         s = s + "scale("+scale+")";
     }
 
@@ -505,8 +505,7 @@ function addContainer() {
     var scaleExtentVals = [0.9, 2]; ////[0.75, 7.5]
 
     if(!settings.isDatabaseStructure){
-        //scaleExtentVals = [0.5, 3];
-        scaleExtentVals = [0.1, 30];
+        scaleExtentVals = [0.5, 3];
     }
 
     // Zoom behaviour                   
