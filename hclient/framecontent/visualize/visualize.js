@@ -361,26 +361,23 @@ var force;
 
 
 //Gets data from active database
+function getDataFromServer(){
 
-alert("Hello, test");
+    alert("Hello, test");
 
-
-//function getDataFromServer(){
-
-    
-  //  var url = window.hWin.HAPI4.baseURL+"hsapi/controller/rectype_relations.php" + window.location.search;
-  //  d3.json(url, function(error, json_data) {
+    var url = window.hWin.HAPI4.baseURL+"hsapi/controller/rectype_relations.php" + window.location.search;
+    d3.json(url, function(error, json_data) {
         // Error check
-    //    if(error) {
-     //       window.hWin.HEURIST4.msg.showMsgErr("Error loading JSON data: " + error.message);
-     //   }
+        if(error) {
+            window.hWin.HEURIST4.msg.showMsgErr("Error loading JSON data: " + error.message);
+        }
         
-    //    settings.data = json_data; //all data
-    //    filterData(json_data);
+        settings.data = json_data; //all data
+        filterData(json_data);
         
- //  });
+    });
     
-//}
+}
 
 // Function to handle the filtering of data from a .json file, shouldnt need to change, but if parsing changes are needed we can
 function filterData(json_data) { 
