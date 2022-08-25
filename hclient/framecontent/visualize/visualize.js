@@ -571,35 +571,36 @@ function onZoom( transform ){
 // Fit current extent 
 //
 
-//function zoomToFit(){
+function zoomToFit(){
 
-    //var fullWidth = $("#divSvg").width();
-    //var fullHeight = $("#divSvg").height();
+    var fullWidth = $("#divSvg").width();
+    var fullHeight = $("#divSvg").height();
     
-    //const box = d3.select("#container").node().getBBox();
+    const box = d3.select("#container").node().getBBox();
     
-   // var width  = box.width,
-   //     height = box.height;
+    var width  = box.width,
+        height = box.height;
         
-    //var midX = box.x + width / 2,
-    //    midY = box.y + height / 2;
+    var midX = box.x + width / 2,
+        midY = box.y + height / 2;
         
-   // if (width == 0 || height == 0) return; // nothing to fit
-    //var scale = 0.85 / Math.max(width / fullWidth, height / fullHeight);
-   //var translate = [
-    //    fullWidth  / 2 - scale * midX,
-  //      fullHeight / 2 - scale * midY
-  //  ];    
+    if (width == 0 || height == 0) return; // nothing to fit
+    var scale = 0.85 / Math.max(width / fullWidth, height / fullHeight);
+    var translate = [
+        fullWidth  / 2 - scale * midX,
+        fullHeight / 2 - scale * midY
+    ];    
     
+    print("Hello");
 
-   // var zoom = this.zoomBehaviour; 
+    var zoom = this.zoomBehaviour; 
 
     //reset
- //   zoom.scale(scale)
- //       .translate(translate);    
-//    var transform = "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")";   
- //   onZoom(transform);
-//}
+    zoom.scale(scale)
+        .translate(translate);    
+    var transform = "translate(" + zoom.translate() + ")scale(" + zoom.scale() + ")";   
+    onZoom(transform);
+}
 
 //handle the zoom buttons - Zoom in and out buttons
 function zoomBtn(zoom_in){
