@@ -566,7 +566,7 @@ function onZoom( transform ){
 
     updateOverlays();
 
-    print("Hello");
+    console("Hello"); 
 }
 
 //
