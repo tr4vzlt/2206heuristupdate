@@ -274,6 +274,9 @@ function onPageInit(success){
                     showEntitySettings: false,
                     showFormula: false,
                     gravity: 'touch' // activate gravity, for a moment, to scatter graph
+
+                    print("Hello"); 
+
                 });
 
                 setTimeout(function(){ setGravity('off'); }, 3000); // turn off gravity
