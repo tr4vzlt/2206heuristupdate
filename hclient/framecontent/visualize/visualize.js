@@ -1476,23 +1476,38 @@ function addIcons() {
 
 //LABELS FOR NODES
 
-while(scaleExtentVals < 15){
 
-    function addLabels(name, color) {
-        var maxLength = getSetting(setting_textlength);
-        var labels = d3.selectAll(".node")
-                    .append("text")
-                    .attr("x", iconSize)
-                    .attr("y", iconSize/4)
-                    .attr("class", name + " bold")
-                    .attr("fill", color)
-                    .style("font-size", settings.fontsize, "important")
-                    .text(function(d) {
-                        return truncateText(d.name, maxLength);
+//var lastScrollTop = 0;
+
+/*element.addEventListener("scroll", function(){ 
+   var st = window.pageYOffset || document.documentElement.scrollTop; 
+   if (st > lastScrollTop){
+      // downscroll code (zoom out)
+   } else {
+      // upscroll code (zoom in)
+   }
+   lastScrollTop = st <= 0 ? 0 : st;
+}, false);
+
+*/
+function addLabels(name, color) {
+    var maxLength = getSetting(setting_textlength);
+    var labels = d3.selectAll(".node")
+                .append("text")
+                .attr("x", iconSize)
+                .attr("y", iconSize/4)
+                .attr("class", name + " bold")
+                .attr("fill", color)
+                .style("font-size", settings.fontsize, "important")
+                .text(function(d) {
+                    return truncateText(d.name, maxLength);
                     });
-        return labels;
-    }
+    return labels;
 }
+    
+
+
+
 //
 //
 //
