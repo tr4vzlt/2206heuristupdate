@@ -363,8 +363,6 @@ var force;
 //Gets data from active database
 function getDataFromServer(){
 
-    alert("Hello, test");
-
     var url = window.hWin.HAPI4.baseURL+"hsapi/controller/rectype_relations.php" + window.location.search;
     d3.json(url, function(error, json_data) {
         // Error check
