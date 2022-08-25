@@ -117,12 +117,10 @@ function onPageInit(success){
                 }
             );
         }
-
         alert("Hello World");
 
         function alert($msg) {
         echo "<script type='text/javascript'>alert('$msg');</script>";
-
 }
    
         </script>
@@ -280,7 +278,6 @@ function onPageInit(success){
                     showEntitySettings: false,
                     showFormula: false,
                     gravity: 'touch' // activate gravity, for a moment, to scatter graph
-
                 });
 
                 setTimeout(function(){ setGravity('off'); }, 3000); // turn off gravity
