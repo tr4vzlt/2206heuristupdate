@@ -565,6 +565,8 @@ function onZoom( transform ){
     if(isNaN(scale) || !isFinite(scale) || scale==0) scale = 1;
 
     updateOverlays();
+
+    print("Hello");
 }
 
 //
@@ -591,7 +593,7 @@ function zoomToFit(){
         fullHeight / 2 - scale * midY
     ];    
     
-    print("Hello");
+
 
     var zoom = this.zoomBehaviour; 
 
