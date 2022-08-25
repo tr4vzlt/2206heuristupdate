@@ -275,7 +275,7 @@ function onPageInit(success){
                     showFormula: false,
                     gravity: 'touch' // activate gravity, for a moment, to scatter graph
 
-                    print("Hello"); 
+                    print "Hello"; 
 
                 });
 
