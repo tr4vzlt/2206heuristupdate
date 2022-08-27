@@ -196,7 +196,7 @@ function handleSettingsInUI() {
     $( "#setNodesMode" ).controlgroup();    
 
     
-    $("#entityColor")
+    /*$("#entityColor")
         //.addClass('ui-icon ui-icon-bullet')
         //.css({'font-size':'3.5em','color':getSetting(setting_entitycolor)})
         .val(getSetting(setting_entitycolor))
@@ -211,6 +211,8 @@ function handleSettingsInUI() {
                 visualizeData();
             }
         });
+        */
+       
     //------------ LINKS ----------
 
     //$("input[name='linksMode'][value='" +getSetting(setting_linetype)+ "']").attr("checked", true);

@@ -1428,14 +1428,7 @@ function addBackgroundCircles() {
                         return getEntityRadius(d.count);
                     })
                     .attr("class", "background")
-                    .attr("fill", entitycolor)
-                    .style("stroke", "#ff0000")
-                    .style("stroke-opacity", function(d) {
-                        if(d.selected == true) {
-                            return 1;
-                        }
-                        return .25;
-                    });
+                    .attr("fill", entitycolor);
     return circles;
 }
 
