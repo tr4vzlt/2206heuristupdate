@@ -1428,7 +1428,14 @@ function addBackgroundCircles() {
                         return getEntityRadius(d.count);
                     })
                     .attr("class", "background")
-                    .attr("fill", entitycolor);
+                    .attr("fill", entitycolor)
+                    .style("stroke", "#ff0000")
+                    .style("stroke-opacity", function(d) {
+                        if(d.selected == true) {
+                            return 1;
+                        }
+                        return .25;
+                    });
     return circles;
 }
 
@@ -1442,7 +1449,7 @@ function addForegroundCircles() {
                     .append("circle")
                     .attr("r", circleSize)
                     .attr("class", 'foreground')
-                    .style("stroke", "#f00")
+                    .style("stroke", "#ff0000")
                     .style("stroke-opacity", function(d) {
                         if(d.selected == true) {
                             return 1;
