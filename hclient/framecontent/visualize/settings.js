@@ -382,6 +382,15 @@ function handleSettingsInUI() {
     }
     
     tBar.show();
+
+    if(!settings.isDatabaseStructure){
+        if (d3.selectAll(".node").size() < 50){
+            var isLabelVisible = (getSetting(setting_labels, 'off')=='off');
+        }
+
+    }
+
+
  /*   OLD JJ CODE
     // LINE SETTINGS
     if(settings.showLineSettings) {
