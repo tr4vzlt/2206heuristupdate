@@ -1498,7 +1498,7 @@ var obj = d3.hierarchy(visualizeData);
 
 var nodecounter = obj.count();
 
-console.log("The Number of Nodes = "+ count.value);
+alert("The Number of Nodes = "+ count.value);
 
 if (count.value > 50){
     function addLabels(name, color) {
