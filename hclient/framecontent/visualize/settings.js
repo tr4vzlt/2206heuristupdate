@@ -319,7 +319,7 @@ function handleSettingsInUI() {
 
         if(currentMode=='icons'){
             var isLabelVisible = (newval=='on');
-            //d3.selectAll(".nodelabel").style('display', isLabelVisible?'block':'none');
+            d3.selectAll(".nodelabel").style('display', isLabelVisible?'block':'none');
             if(isLabelVisible) {
                 visualizeData();
             }else{
@@ -495,6 +495,8 @@ function _syncUI(){
     var is_show_empty = (getSetting(setting_line_empty_link, 1)==1);
     $('#toolbar').find('#linksEmpty').prop('checked', is_show_empty);
 }
+
+//D3 Settings 
 
 function changeViewMode(mode){
     

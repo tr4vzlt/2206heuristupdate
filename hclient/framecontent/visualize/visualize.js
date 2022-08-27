@@ -479,6 +479,9 @@ function visualizeData() {
 * Adds a <g> container to the SVG, which all other elements will get added to.
 * The previous translateX, translateY and scale is re-used.
 */
+
+//CANVAS
+
 function addContainer() {
 
     // Zoom settings, these affect adding/removing nodes as well - presuming the zoom function zooms in on the canvas and not the actual object, causing the text to become harder to read and nodes becoming distorted (especially with icons rather than circles)
@@ -1439,7 +1442,7 @@ function addForegroundCircles() {
                     .append("circle")
                     .attr("r", circleSize)
                     .attr("class", 'foreground')
-                    .style("stroke", "#ddd")
+                    .style("stroke", "#f00")
                     .style("stroke-opacity", function(d) {
                         if(d.selected == true) {
                             return 1;
