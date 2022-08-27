@@ -516,7 +516,6 @@ function addContainer() {
     return container;
 }
 
-
 /**
 * Called after a zoom-event takes place.
 */
