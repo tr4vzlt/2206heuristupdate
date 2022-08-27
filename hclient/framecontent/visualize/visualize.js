@@ -475,8 +475,6 @@ function visualizeData() {
 * Adds a <g> container to the SVG, which all other elements will get added to.
 * The previous translateX, translateY and scale is re-used.
 */
-
-/*
 function addContainer() {
 
     // Zoom settings, these affect adding/removing nodes as well
@@ -517,8 +515,6 @@ function addContainer() {
                     
     return container;
 }
-*/
-
 
 
 /**
