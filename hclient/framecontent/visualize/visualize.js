@@ -445,6 +445,8 @@ function visualizeData() {
     addNodes();
     //addTitles();
     
+    
+
     if(settings.isDatabaseStructure){
         
         var cnt_vis = data.nodes?data.nodes.length:0;
@@ -468,6 +470,10 @@ function visualizeData() {
                  showEmbedDialog();
             }
         );
+    }
+
+    if (!settings.isDatabaseStructure){
+        addorremovelabels();
     }
 
     tick(); // update display
@@ -1513,39 +1519,40 @@ function addIcons() {
 
 }*/
 
-if (d3.selectAll (".node").size < 50){
-    
-    function removeLabels(name, color){
-        var deletelabels = d3.selectAll(".node")
-        .append("text")
-        .attr("x", NaN)
-        .attr("y", NaN)
-        .attr("class", name + " bold")
-        .attr("fill", color)
-        .style("font-size", settings.fontsize, "important")
-        .text(function(d) {
-              return truncateText(d.name, maxLength);
+function addorremovelabels(){
+    if (d3.selectAll (".node").size < 50){
+        var maxLength2 = getSetting(setting_textlength);
+        function removeLabels(){
+            var deletelabels = d3.selectAll(".node")
+            .append("text")
+            .attr("x", NaN)
+            .attr("y", NaN)
+            .text(function(d) {
+                  return truncateText(d.name, maxLength2);
+                            });
+          return deletelabels;
+        }   
+        
+    }else(
+        
+        function addLabels(name, color) {
+        var maxLength1 = getSetting(setting_textlength);
+        var labels = d3.selectAll(".node")
+                    .append("text")
+                    .attr("x", iconSize)
+                    .attr("y", iconSize/4)
+                    .attr("class", name + " bold")
+                    .attr("fill", color)
+                    .style("font-size", settings.fontsize, "important")
+                    .text(function(d) {
+                        return truncateText(d.name, maxLength1);
                         });
-      return deletelabels;
-    }   
+        return labels;
     
-}else(
-    
-    function addLabels(name, color) {
-    var maxLength = getSetting(setting_textlength);
-    var labels = d3.selectAll(".node")
-                .append("text")
-                .attr("x", iconSize)
-                .attr("y", iconSize/4)
-                .attr("class", name + " bold")
-                .attr("fill", color)
-                .style("font-size", settings.fontsize, "important")
-                .text(function(d) {
-                    return truncateText(d.name, maxLength);
-                    });
-    return labels;
+    })
+}
 
-})
+
 
 //
 //
