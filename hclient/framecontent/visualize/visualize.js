@@ -662,6 +662,8 @@ function addForce() {
     var height = parseInt(svg.style("height"));
     var attraction = getSetting(setting_attraction);
     
+   
+
     var force = d3.layout.force()
                   .nodes(d3.values(data.nodes))
                   .links(data.links)
@@ -675,6 +677,8 @@ function addForce() {
                   .start();
                   
     return force;
+
+    
 }  
 
 /*************************************************** MARKERS ******************************************/
@@ -1463,6 +1467,7 @@ function addForegroundCircles() {
 * The image is based on the "image" attribute
 */
 function addIcons() {
+    addorremovelabels();
     var icons = d3.selectAll(".node")
                   .append("svg:image")
                   .attr("class", "icon")
