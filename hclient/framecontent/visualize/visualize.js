@@ -1497,7 +1497,7 @@ function addIcons() {
 
 
 
-function addLabels(name, color) {
+/*function addLabels(name, color) {
     var maxLength = getSetting(setting_textlength);
     var labels = d3.selectAll(".node")
                 .append("text")
@@ -1511,25 +1511,41 @@ function addLabels(name, color) {
                     });
     return labels;
 
-}
+}*/
 
-while (labels.selectAll (".node").size <= 50){
+if (d3.selectAll (".node").size < 50){
     
     function removeLabels(name, color){
         var deletelabels = d3.selectAll(".node")
-          .append("text")
-         .attr("x", NaN)
-         .attr("y", NaN)
-         .attr("class", name + " bold")
-         .attr("fill", color)
-         .style("font-size", settings.fontsize, "important")
-         .text(function(d) {
+        .append("text")
+        .attr("x", NaN)
+        .attr("y", NaN)
+        .attr("class", name + " bold")
+        .attr("fill", color)
+        .style("font-size", settings.fontsize, "important")
+        .text(function(d) {
               return truncateText(d.name, maxLength);
                         });
       return deletelabels;
     }   
     
-}
+}else(
+    
+    function addLabels(name, color) {
+    var maxLength = getSetting(setting_textlength);
+    var labels = d3.selectAll(".node")
+                .append("text")
+                .attr("x", iconSize)
+                .attr("y", iconSize/4)
+                .attr("class", name + " bold")
+                .attr("fill", color)
+                .style("font-size", settings.fontsize, "important")
+                .text(function(d) {
+                    return truncateText(d.name, maxLength);
+                    });
+    return labels;
+
+})
 
 //
 //
