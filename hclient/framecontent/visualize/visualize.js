@@ -472,9 +472,6 @@ function visualizeData() {
         );
     }
 
-    if (!settings.isDatabaseStructure){
-        addorremovelabels();
-    }
 
     tick(); // update display
     
@@ -1467,7 +1464,6 @@ function addForegroundCircles() {
 * The image is based on the "image" attribute
 */
 function addIcons() {
-    addorremovelabels();
     var icons = d3.selectAll(".node")
                   .append("svg:image")
                   .attr("class", "icon")
@@ -1491,20 +1487,6 @@ function addIcons() {
 //LABELS FOR NODES
 
 
-//var lastScrollTop = 0;
-
-/*element.addEventListener("scroll", function(){ 
-   var st = window.pageYOffset || document.documentElement.scrollTop; 
-   if (st > lastScrollTop){
-      // downscroll code (zoom out)
-   } else {
-      // upscroll code (zoom in)
-   }
-   lastScrollTop = st <= 0 ? 0 : st;
-}, false);
-
-*/
-
 
 
 
@@ -1524,39 +1506,28 @@ function addIcons() {
 
 }*/
 
-function addorremovelabels(){
-    if (d3.selectAll (".node").size < 50){
-        var maxLength2 = getSetting(setting_textlength);
-        function removeLabels(){
-            var deletelabels = d3.selectAll(".node")
-            .append("text")
-            .attr("x", NaN)
-            .attr("y", NaN)
-            .text(function(d) {
-                  return truncateText(d.name, maxLength2);
-                            });
-          return deletelabels;
-        }   
-        
-    }else(
-        
-        function addLabels(name, color) {
-        var maxLength1 = getSetting(setting_textlength);
-        var labels = d3.selectAll(".node")
-                    .append("text")
-                    .attr("x", iconSize)
-                    .attr("y", iconSize/4)
-                    .attr("class", name + " bold")
-                    .attr("fill", color)
-                    .style("font-size", settings.fontsize, "important")
-                    .text(function(d) {
-                        return truncateText(d.name, maxLength1);
-                        });
-        return labels;
-    
-    })
+
+
+function addLabels(name, color) {
+    var maxLength = getSetting(setting_textlength);
+    var labels = d3.selectAll(".node")
+                .append("text")
+                .attr("x", iconSize)
+                .attr("y", iconSize/4)
+                .attr("class", name + " bold")
+                .attr("fill", color)
+                .style("font-size", settings.fontsize, "important")
+                .text(function(d) {
+                    return truncateText(d.name, maxLength);
+                    });
+    return labels;
 }
 
+if(!settings.isDatabaseStructure){
+    if(labels.size() <= 50){
+        showLabels = false;
+    }
+}
 
 
 //
