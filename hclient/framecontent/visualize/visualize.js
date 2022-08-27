@@ -1494,9 +1494,13 @@ function addIcons() {
 
 */
 
-var nodecount = node.count()
+var obj = d3.hierarchy(visualizeData);
 
-if (nodecount >= 50){
+var nodecounter = obj.count();
+
+console.log("The Number of Nodes = "+ count.value);
+
+if (count.value > 50){
     function addLabels(name, color) {
         var maxLength = getSetting(setting_textlength);
         var labels = d3.selectAll(".node")
