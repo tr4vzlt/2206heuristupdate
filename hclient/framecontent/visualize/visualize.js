@@ -1493,7 +1493,27 @@ function addIcons() {
 }, false);
 
 */
-function addLabels(name, color) {
+
+var nodecount = node.count()
+
+if (nodecount >= 50){
+    function addLabels(name, color) {
+        var maxLength = getSetting(setting_textlength);
+        var labels = d3.selectAll(".node")
+                    .append("text")
+                    .attr("x", iconSize)
+                    .attr("y", iconSize/4)
+                    .attr("class", name + " bold")
+                    .attr("fill", color)
+                    .style("font-size", settings.fontsize, "important")
+                    .text(function(d) {
+                        return truncateText(d.name, maxLength);
+                        });
+        return labels;
+    }
+}
+
+/*function addLabels(name, color) {
     var maxLength = getSetting(setting_textlength);
     var labels = d3.selectAll(".node")
                 .append("text")
@@ -1506,7 +1526,7 @@ function addLabels(name, color) {
                     return truncateText(d.name, maxLength);
                     });
     return labels;
-}
+}*/
     
 
 
