@@ -1523,12 +1523,6 @@ function addLabels(name, color) {
     return labels;
 }
 
-if(!settings.isDatabaseStructure){
-    if(labels.size() <= 50){
-        showLabels = false;
-    }
-}
-
 
 //
 //
