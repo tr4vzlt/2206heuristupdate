@@ -515,7 +515,7 @@ function addContainer() {
 
     if(!settings.isDatabaseStructure){
         //scaleExtentVals = [0.5, 3];
-        scaleExtentVals = [0.1, 9];
+        scaleExtentVals = [1, 10];
     }
 
     // Zoom behaviour                   
@@ -1486,7 +1486,7 @@ function addIcons() {
 
 //LABELS FOR NODES
 
-/*function addLabels(name, color) {
+function addLabels(name, color) {
     var maxLength = getSetting(setting_textlength);
     var labels = d3.selectAll(".node")
                 .append("text")
@@ -1500,25 +1500,7 @@ function addIcons() {
                     });
     return labels;
 
-}*/
-
-
-
-/*function addLabels(name, color) {
-    var maxLength = getSetting(setting_textlength);
-    var labels = d3.selectAll(".node")
-                .append("text")
-                .attr("x", iconSize)
-                .attr("y", iconSize/4)
-                .attr("class", name + " bold")
-                .attr("fill", color)
-                .style("font-size", settings.fontsize, "important")
-                .text(function(d) {
-                    return truncateText(d.name, maxLength);
-                    });
-    return labels;
-}*/
-
+}
 
 //
 //
