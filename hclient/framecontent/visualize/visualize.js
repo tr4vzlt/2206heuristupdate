@@ -1489,7 +1489,7 @@ function addIcons() {
 
 function addLabels(name, color) {
     var maxLength = getSetting(setting_textlength);
-    var labels = d3.selectAll(".node")
+    var labels = d3.selectAll("node")
                 .append("text")
                 .attr("x", iconSize)
                 .attr("y", iconSize/4)
@@ -1501,7 +1501,7 @@ function addLabels(name, color) {
                     });
 
                     //NEW CODE 1504-1508
-                while (d3.selectAll(".node").size() < 50){
+                while (d3.selectAll("node").size() < 50){
                     var updatelabels = d3.selectAll(".node")
                                         .append("text") 
                                         .style("opacity", 100 )
