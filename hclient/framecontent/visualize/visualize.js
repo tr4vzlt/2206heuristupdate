@@ -515,6 +515,7 @@ function addContainer() {
 
     if(!settings.isDatabaseStructure){
         //scaleExtentVals = [0.5, 3];
+        //adjusted values to allow further zoom in and out for the visualisation
         scaleExtentVals = [0.2, 15];
     }
 
@@ -1498,7 +1499,16 @@ function addLabels(name, color) {
                 .text(function(d) {
                     return truncateText(d.name, maxLength);
                     });
+
+                    //NEW CODE 1504-1508
+                while (d3.selectAll(".node").size() < 50){
+                    var updatelabels = d3.selectAll(".node")
+                                        .append("text") 
+                                        .style("opacity", 100 )
+                                return updatelabels;
+                }
     return labels;
+    
 
 }
 
