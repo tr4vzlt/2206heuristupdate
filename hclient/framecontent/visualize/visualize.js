@@ -1486,10 +1486,6 @@ function addIcons() {
 
 //LABELS FOR NODES
 
-
-
-
-
 /*function addLabels(name, color) {
     var maxLength = getSetting(setting_textlength);
     var labels = d3.selectAll(".node")
@@ -1508,7 +1504,7 @@ function addIcons() {
 
 
 
-function addLabels(name, color) {
+/*function addLabels(name, color) {
     var maxLength = getSetting(setting_textlength);
     var labels = d3.selectAll(".node")
                 .append("text")
@@ -1521,7 +1517,7 @@ function addLabels(name, color) {
                     return truncateText(d.name, maxLength);
                     });
     return labels;
-}
+}*/
 
 
 //
