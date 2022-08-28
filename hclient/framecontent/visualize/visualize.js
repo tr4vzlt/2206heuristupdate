@@ -517,6 +517,7 @@ function addContainer() {
         //scaleExtentVals = [0.5, 3];
         //adjusted values to allow further zoom in and out for the visualisation
         scaleExtentVals = [0.2, 15];
+        addLabels;
     }
 
     // Zoom behaviour                   
@@ -1489,7 +1490,7 @@ function addIcons() {
 
 function addLabels(name, color) {
     var maxLength = getSetting(setting_textlength);
-    var labels = d3.selectAll("node")
+    var labels = d3.selectAll(".node")
                 .append("text")
                 .attr("x", iconSize)
                 .attr("y", iconSize/4)
