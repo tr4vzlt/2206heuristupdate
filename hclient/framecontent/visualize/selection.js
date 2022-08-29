@@ -127,7 +127,7 @@ function onRecordNodeClick(event, data, node) {
 }
 
 function dblclick(){
-    onRecordNodeClick();
+    alert("Hello Again...");
  }
 
  

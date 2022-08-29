@@ -68,6 +68,7 @@
 
 alert("Hello");
 
+
 var settings;   // Plugin settings object
 var svg;        // The SVG where the visualisation will be executed on
 (function ( $ ) {
@@ -445,7 +446,7 @@ function visualizeData() {
     addNodes();
     //addTitles();
     
-    
+    addDoubleClick();
 
     if(settings.isDatabaseStructure){
         
@@ -1448,7 +1449,6 @@ function addBackgroundCircles() {
 function addForegroundCircles() {
     //var circleSize = getSetting(setting_circlesize);
     var circles = d3.selectAll(".node")
-                    .on('dblclick', dblclick)
                     .append("circle")
                     .attr("r", circleSize)
                     .attr("class", 'foreground')
@@ -1461,6 +1461,8 @@ function addForegroundCircles() {
                     });
     return circles;
 }
+
+
 
 /**
 * Adds icon <img> elements to all nodes
@@ -1513,6 +1515,14 @@ function addLabels(name, color) {
     
 
 }
+
+
+function addDoubleClick(){
+    var adddoubleclick2 = d3.selectAll(".node")
+            .on("dblclick", dblclick);
+    return adddoubleclick2;
+}
+
 
 //
 //
