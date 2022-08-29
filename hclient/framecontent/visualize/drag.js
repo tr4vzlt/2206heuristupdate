@@ -25,8 +25,6 @@
 * Appends nodes to the visualisation
 */
 
-const onDoubleClickNode = function(d) {alert("YESSSSS"); }
-
 function addNodes() {
 
     var nodes = d3.select("#container")
@@ -34,7 +32,6 @@ function addNodes() {
                 .data(data.nodes)
                 .enter()
                 .append("g")
-                .on("click",function(d){ alert("node was single clicked"); })
                 .on("dblclick",function(d){ alert("node was double clicked"); });
     
     // Append nodes
