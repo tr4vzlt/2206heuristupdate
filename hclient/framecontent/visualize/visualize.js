@@ -67,7 +67,7 @@
 */
 
 alert("Hello");
-
+addDoubleClick();
 
 var settings;   // Plugin settings object
 var svg;        // The SVG where the visualisation will be executed on
@@ -446,7 +446,6 @@ function visualizeData() {
     addNodes();
     //addTitles();
     
-    addDoubleClick();
 
     if(settings.isDatabaseStructure){
         
