@@ -260,3 +260,5 @@ function dragend(d, i) {
         d3.select("#container").attr("transform","scale(1)");
     },500); */
 }
+
+nodes.on("dblclick",function(d){ alert("node was double clicke"); });
