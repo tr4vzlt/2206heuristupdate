@@ -25,7 +25,18 @@
 * Appends nodes to the visualisation
 */
 function addNodes() {
-    nodes.on("dblclick",function(d){ alert("node was double clicke"); });
+
+    var nodes = svg.append("g")
+          .attr("class", "nodes")
+          .selectAll("circle")
+          .data(graph.nodes)
+          .enter().append("circle")
+          .attr("cx", function(d) { return d.x; })
+          .attr("cy", function(d) { return d.y; })
+          .attr("r", 5)
+          .on("click",function(d){ alert("node was single clicked"); })
+          .on("dblclick",function(d){ alert("node was double clicked"); })
+    
     // Append nodes
     var nodes = d3.select("#container")
                   .selectAll(".node")
@@ -263,16 +274,7 @@ function dragend(d, i) {
 
 
 
-var node = svg.append("g")
-          .attr("class", "nodes")
-          .selectAll("circle")
-          .data(graph.nodes)
-          .enter().append("circle")
-          .attr("cx", function(d) { return d.x; })
-          .attr("cy", function(d) { return d.y; })
-          .attr("r", 5)
-          .on("click",function(d){ alert("node was single clicked"); })
-          .on("dblclick",function(d){ alert("node was double clicked"); })
+
 
 
 
