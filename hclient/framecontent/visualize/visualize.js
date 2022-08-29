@@ -1428,6 +1428,7 @@ function updateSteppedLines(lines, type){
 /**
 * Adds <title> elements to all nodes 
 */
+
 function addTitles() {
     var titles = d3.selectAll(".node")
                    .append("title")
@@ -1521,10 +1522,6 @@ function addLabels(name, color) {
     
 
 }
-
-
-
-
 
 //
 //
