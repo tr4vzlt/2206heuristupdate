@@ -107,8 +107,7 @@ function onRecordNodeClick(event, data, node) {
         
         // Update circles and show overlay
         updateCircles(node, selectionColor, selectionColor);
-        //was shown on mouse click event.offsetX, event.offsetY, now in center of node
-        //was createOverlay(event.offsetX, event.offsetY, "record", "id"+recID, getRecordOverlayData(data));  
+         //was createOverlay(event.offsetX, event.offsetY, "record", "id"+recID, getRecordOverlayData(data));  
         
         var nodePos = $(node).offset();
         
@@ -123,7 +122,14 @@ function onRecordNodeClick(event, data, node) {
     if(settings.triggerSelection){
        settings.triggerSelection.call(this, settings.selectedNodeIds); 
     }  
+
+    
 }
+
+function onNodeDoubleClick(){
+    node.on("dblclick",function(d){ createOverlay(Math.round(nodePos.left-dx+r), Math.round(nodePos.top-dy+r), "record", "id"+recID, getRecordOverlayData(data)); });
+}
+
 
 /**
 * Changes the circle color of the nodes in the selectedNodeIds array
