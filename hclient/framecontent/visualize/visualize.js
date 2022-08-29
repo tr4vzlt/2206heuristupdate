@@ -158,7 +158,15 @@ var svg;        // The SVG where the visualisation will be executed on
         var amount = Object.keys(settings.data.nodes).length;
         var MAXITEMS = window.hWin.HAPI4.get_prefs('search_detail_limit');
         
-        visualizeData();    
+        visualizeData(); 
+
+        function dblclickNode(){
+            var dblclicknodes = d3.selectAll(".node")  
+                        .on("dblclick", onRecordNodeClick);
+                return dblclicknodes;
+        }
+        
+        dblclickNode();         
 
         var ele_warn = $('#net_limit_warning');
         if(amount >= MAXITEMS) {
