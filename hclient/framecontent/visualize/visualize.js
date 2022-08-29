@@ -503,7 +503,8 @@ function addContainer() {
     var scaleExtentVals = [0.9, 2]; ////[0.75, 7.5]
 
     if(!settings.isDatabaseStructure){
-        scaleExtentVals = [0.5, 3];
+        //scaleExtentVals = [0.5, 3];
+        scaleExtentVals = [0.2, 15];
     }
 
     // Zoom behaviour                   
