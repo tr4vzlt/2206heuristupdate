@@ -1467,6 +1467,7 @@ function addLabels(name, color) {
     var maxLength = getSetting(setting_textlength);
     var labels = d3.selectAll(".node")
                   .append("text")
+                  //.on("dblclick", onRecordNodeClick) - experimenting with double click function for opening edit record menu
                   .attr("x", iconSize)
                   .attr("y", iconSize/4)
                   .attr("class", name + " bold")
