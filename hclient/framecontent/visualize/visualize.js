@@ -1474,13 +1474,7 @@ function addLabels(name, color) {
                   .text(function(d) {
                       return truncateText(d.name, maxLength);
                   });
-    return labels;
-}
-
-function removeNames() {
-    var labels = d3.selectAll(".node").append(NULL);
-
-    return labels;
+    return NULL;
 }
 
 //
