@@ -472,8 +472,6 @@ function visualizeData() {
         );
     }
 
-    addDoubleClick();
-
     tick(); // update display
     
 } //end visualizeData
