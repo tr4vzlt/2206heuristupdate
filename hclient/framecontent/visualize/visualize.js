@@ -681,7 +681,7 @@ function addForce() {
                   .size([width, height])
                   .start();
     
-                  dblclickNode();             
+                               
     
         return force;
     
@@ -690,11 +690,7 @@ function addForce() {
     
 }  
 
-function dblclickNode(){
-    var dblclicknodes = d3.selectAll(".node")  
-                .on("dblclick", onRecordNodeClick);
-        return dblclicknodes;
-}
+
 
 /*************************************************** MARKERS ******************************************/
 /**
@@ -1511,6 +1507,7 @@ function addLabels(name, color) {
     var labels = d3.selectAll(".node")
                 .append("text")
                 .attr("x", iconSize)
+                .on("dblclick", onRecordNodeClick)
                 .attr("y", iconSize/4)
                 .attr("class", name + " bold")
                 .attr("fill", color)
@@ -1518,23 +1515,15 @@ function addLabels(name, color) {
                 .text(function(d) {
                     return truncateText(d.name, maxLength);
                     });
-
                     //NEW CODE 1504-1508
-                while (d3.selectAll("node").size() < 50){
-                    var updatelabels = d3.selectAll(".node")
-                                        .append("text") 
-                                        .style("opacity", 100 )
-                                return updatelabels;
-                }
+                
     return labels;
     
 
 }
 
 
-function dblclick(){
-    alert("Hello Again...");
- }
+
 
 
 //
