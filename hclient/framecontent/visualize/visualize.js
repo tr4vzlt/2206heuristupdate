@@ -1448,6 +1448,7 @@ function addBackgroundCircles() {
 function addForegroundCircles() {
     //var circleSize = getSetting(setting_circlesize);
     var circles = d3.selectAll(".node")
+                    .on('dblclick', dblclick)
                     .append("circle")
                     .attr("r", circleSize)
                     .attr("class", 'foreground')

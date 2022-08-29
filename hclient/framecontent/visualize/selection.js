@@ -126,9 +126,11 @@ function onRecordNodeClick(event, data, node) {
     
 }
 
-function onNodeDoubleClick(){
-    node.on("dblclick",function(d){ createOverlay(Math.round(nodePos.left-dx+r), Math.round(nodePos.top-dy+r), "record", "id"+recID, getRecordOverlayData(data)); });
-}
+function dblclick(data){
+    createOverlay(Math.round(nodePos.left-dx+r), Math.round(nodePos.top-dy+r), "record", "id"+recID, getRecordOverlayData(data));;
+ }
+
+ 
 
 
 /**
