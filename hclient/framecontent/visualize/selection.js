@@ -126,6 +126,12 @@ function onRecordNodeClick(event, data, node) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+function onNodeDoubleClick(){
+    node.on("dblclick",function(d){ createOverlay(Math.round(nodePos.left-dx+r), Math.round(nodePos.top-dy+r), "record", "id"+recID, getRecordOverlayData(data)); });
+}
+>>>>>>> parent of 3eff052 (test)
 
 
 
