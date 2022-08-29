@@ -160,13 +160,7 @@ var svg;        // The SVG where the visualisation will be executed on
         
         visualizeData(); 
 
-        function dblclickNode(){
-            var dblclicknodes = d3.selectAll(".node")  
-                        .on("dblclick", onRecordNodeClick);
-                return dblclicknodes;
-        }
-        
-        dblclickNode();         
+                 
 
         var ele_warn = $('#net_limit_warning');
         if(amount >= MAXITEMS) {
@@ -197,6 +191,8 @@ var svg;        // The SVG where the visualisation will be executed on
     };
 }( jQuery ));
     
+
+
 
 /*******************************START OF VISUALISATION HELPER FUNCTIONS*******************************/
 var maxCountForNodes, maxCountForLinks; 
@@ -484,6 +480,9 @@ function visualizeData() {
     
 } //end visualizeData
 
+
+
+
 /****************************************** CONTAINER **************************************/
 /**
 * Adds a <g> container to the SVG, which all other elements will get added to.
@@ -668,7 +667,7 @@ function addForce() {
     var height = parseInt(svg.style("height"));
     var attraction = getSetting(setting_attraction);
     
-   
+    
 
     var force = d3.layout.force()
                   .nodes(d3.values(data.nodes))
@@ -681,11 +680,21 @@ function addForce() {
                   .on("tick", tick)
                   .size([width, height])
                   .start();
-                  
-    return force;
+    
+                  dblclickNode();             
+    
+        return force;
+    
 
     
+    
 }  
+
+function dblclickNode(){
+    var dblclicknodes = d3.selectAll(".node")  
+                .on("dblclick", onRecordNodeClick);
+        return dblclicknodes;
+}
 
 /*************************************************** MARKERS ******************************************/
 /**
