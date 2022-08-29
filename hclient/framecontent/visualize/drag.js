@@ -24,6 +24,9 @@
 /**
 * Appends nodes to the visualisation
 */
+
+const onDoubleClickNode = function(d) {alert("YESSSSS"); }
+
 function addNodes() {
 
     var nodes = d3.select("#container")
