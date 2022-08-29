@@ -1516,11 +1516,9 @@ function addLabels(name, color) {
 }
 
 
-function addDoubleClick(){
-    var adddoubleclick2 = d3.selectAll(".node")
-            .on("dblclick", dblclick);
-    return adddoubleclick2;
-}
+function dblclick(){
+    alert("Hello Again...");
+ }
 
 
 //

@@ -126,11 +126,7 @@ function onRecordNodeClick(event, data, node) {
     
 }
 
-function dblclick(){
-    alert("Hello Again...");
- }
 
- 
 
 
 /**
