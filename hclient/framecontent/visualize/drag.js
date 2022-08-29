@@ -262,3 +262,7 @@ function dragend(d, i) {
 }
 
 nodes.on("dblclick",function(d){ alert("node was double clicke"); });
+
+var node = svg.selectAll(".node") .data(graph.nodes) .enter().append("a") 
+              .attr("class", "node") .attr("target", "_blank")
+              .attr("xlink:href", function(d){return "google.com";;})
