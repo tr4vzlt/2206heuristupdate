@@ -671,7 +671,6 @@ function addForce() {
                      return linkDist;//linkDist;
                   })  // Using the linelength setting 
                   .on("tick", tick)
-                  .on("dblclick", dblclick)
                   .size([width, height])
                   .start();
                   
