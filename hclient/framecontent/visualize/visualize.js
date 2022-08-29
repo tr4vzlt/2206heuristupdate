@@ -1399,7 +1399,7 @@ function addTitles() {
                    .text(function(d) {
                         return d.name;
                    });
-    return titles;
+    return null;
 }
 
 /**
@@ -1474,7 +1474,7 @@ function addLabels(name, color) {
                   .text(function(d) {
                       return truncateText(d.name, maxLength);
                   });
-    return NULL;
+    return labels;
 }
 
 //
