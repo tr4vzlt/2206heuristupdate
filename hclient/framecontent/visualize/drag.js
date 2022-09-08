@@ -27,7 +27,7 @@
 
 function addNodes() {
 
-    var nodes = nodes.select("#container")
+    var nodes = d3.select("#container")
                 .selectAll(".node")
                 .data(data.nodes)
                 .enter()
