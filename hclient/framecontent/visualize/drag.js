@@ -263,17 +263,6 @@ function dragend(d, i) {
 
 nodes.on("dblclick",function(d){ alert("node was double clicke"); });
 
-var node = svg.append("g")
-          .attr("class", "nodes")
-          .selectAll("circle")
-          .data(graph.nodes)
-          .enter().append("circle")
-          .attr("cx", function(d) { return d.x; })
-          .attr("cy", function(d) { return d.y; })
-          .attr("r", 5)
-          .on("click",function(d){ alert("node was single clicked"); })
-          .on("dblclick",function(d){ alert("node was double clicked"); })
-
-
-
-              
+var node = svg.selectAll(".node") .data(graph.nodes) .enter().append("a") 
+              .attr("class", "node") .attr("target", "_blank")
+              .attr("xlink:href", function(d){return "google.com";;})
