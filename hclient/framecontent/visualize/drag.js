@@ -34,9 +34,6 @@ function addNodes() {
                 .append("g")
                 .on("dblclick",function(d){ alert("node was double clicked"); });
     
-    var nodes = svg.selectAll(".node") .data(graph.nodes) .enter().append("g") 
-              .attr("class", "node") .attr("target", "_blank")
-              .attr("xlink:href", function(d){return "google.com";;})            
     // Append nodes
     var nodes = d3.select("#container")
                   .selectAll(".node")
