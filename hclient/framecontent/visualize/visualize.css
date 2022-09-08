@@ -227,23 +227,21 @@ text.shadow {
 .toolbar-section{
     padding:0 4px;
     margin-bottom: 5px;
-    background-color: orange !important;
+    color: pink;
 }
 .toolbar-section > label{
     font-size:0.8em;
-    background-color: orange !important;
 }
 #toolbar{
     line-height: 10px;    
     display:table-cell;
     height:auto;
     /*border: solid 1px gray;*/
-    background-color: orange !important;
+    color: pink;
 }
 #toolbar > div{
     /*display:table-row;*/
     float:left;
-    background-color: orange !important;
 }
 
 .ui-icon-cursor{
