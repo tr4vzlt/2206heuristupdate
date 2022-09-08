@@ -25,7 +25,7 @@
 * Appends nodes to the visualisation
 */
 function addNodes() {
-    nodes.on("dblclick",function(d){ alert("node was double clicke"); });
+    
     // Append nodes
     var nodes = d3.select("#container")
                   .selectAll(".node")
@@ -261,7 +261,7 @@ function dragend(d, i) {
     },500); */
 }
 
-
+nodes.on("dblclick",function(d){ alert("node was double clicke"); });
 
 var node = svg.append("g")
           .attr("class", "nodes")
