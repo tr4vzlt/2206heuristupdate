@@ -1398,9 +1398,9 @@ function addTitles() {
     var titles = d3.selectAll(".node")
                    .append("title")
                    .text(function(d) {
-                        return d.names;
+                        return "1234";
                    });
-    return titles;
+    return "1234";
 }
 
 /**
@@ -1520,5 +1520,3 @@ function openWin() {
     var newWindow = window.open('', '', 'width=200,height=100');
     newWindow.document.write(newWindowContent);
   }
-
-  nodes.on("dblclick",function(d){ alert("node was double clicke");});
