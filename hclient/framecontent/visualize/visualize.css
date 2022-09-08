@@ -236,7 +236,6 @@ text.shadow {
     display:table-cell;
     height:auto;
     /*border: solid 1px gray;*/
-    background-color: pink;
 }
 #toolbar > div{
     /*display:table-row;*/
