@@ -1398,9 +1398,9 @@ function addTitles() {
     var titles = d3.selectAll(".node")
                    .append("title")
                    .text(function(d) {
-                        return "1234";
+                        return d.name;
                    });
-    return "1234";
+    return null;
 }
 
 /**
