@@ -227,19 +227,23 @@ text.shadow {
 .toolbar-section{
     padding:0 4px;
     margin-bottom: 5px;
+    background-color: pink;
 }
 .toolbar-section > label{
     font-size:0.8em;
+    background-color: pink;
 }
 #toolbar{
     line-height: 10px;    
     display:table-cell;
     height:auto;
+    background-color: pink;
     /*border: solid 1px gray;*/
 }
 #toolbar > div{
     /*display:table-row;*/
     float:left;
+    background-color: pink;
 }
 
 .ui-icon-cursor{
