@@ -74,7 +74,7 @@ var svg;        // The SVG where the visualisation will be executed on
     // jQuery extension
     $.fn.visualize = function( options ) {
         
-        echo("Hello");
+       alert("Hello");
 
         // Select and clear SVG.
         svg = d3.select("#d3svg");
