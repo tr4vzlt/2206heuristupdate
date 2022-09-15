@@ -74,6 +74,8 @@ var svg;        // The SVG where the visualisation will be executed on
     // jQuery extension
     $.fn.visualize = function( options ) {
         
+        echo("Hello");
+
         // Select and clear SVG.
         svg = d3.select("#d3svg");
         svg.selectAll("*").remove();
@@ -157,7 +159,6 @@ var svg;        // The SVG where the visualisation will be executed on
         var amount = Object.keys(settings.data.nodes).length;
         var MAXITEMS = window.hWin.HAPI4.get_prefs('search_detail_limit');
         
-        alert("Hello");
 
         visualizeData();    
 
