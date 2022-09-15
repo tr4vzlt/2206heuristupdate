@@ -159,7 +159,6 @@ var svg;        // The SVG where the visualisation will be executed on
         var amount = Object.keys(settings.data.nodes).length;
         var MAXITEMS = window.hWin.HAPI4.get_prefs('search_detail_limit');
         
-
         visualizeData();    
 
         var ele_warn = $('#net_limit_warning');
@@ -306,7 +305,6 @@ function getLineLength(record) {
 //console.log("Default line length function");
     return getSetting(setting_linelength,200);
 }
-
 /** Calculates the line width that should be used */
 function getLineWidth(count) {
 
@@ -508,8 +506,7 @@ function addContainer() {
     var scaleExtentVals = [0.9, 2]; ////[0.75, 7.5]
 
     if(!settings.isDatabaseStructure){
-        //scaleExtentVals = [0.5, 3];
-        scaleExtentVals = [0.2, 15];
+        scaleExtentVals = [0.5, 3];
     }
 
     // Zoom behaviour                   
@@ -1403,7 +1400,7 @@ function addTitles() {
     var titles = d3.selectAll(".node")
                    .append("title")
                    .text(function(d) {
-                        return d.name;
+                        return d.names;
                    });
     return titles;
 }
@@ -1472,7 +1469,6 @@ function addLabels(name, color) {
     var maxLength = getSetting(setting_textlength);
     var labels = d3.selectAll(".node")
                   .append("text")
-                  //.on("dblclick", onRecordNodeClick) - experimenting with double click function for opening edit record menu
                   .attr("x", iconSize)
                   .attr("y", iconSize/4)
                   .attr("class", name + " bold")
@@ -1522,6 +1518,8 @@ function showEmbedDialog(){
 
 function openWin() {
     var newWindowContent = document.getElementById("divSvg").innerHTML;
-    var newWindow = window.open('', '', 'width=200,height=100');
+    var newWindow = window.open('', '', 'width=500,height=100%');
     newWindow.document.write(newWindowContent);
   }
+
+  
