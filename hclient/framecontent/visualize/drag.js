@@ -32,7 +32,7 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g")
-                  .on("dblclick",function(d){ onRecordNodeClick; });
+                  .on("dblclick",function(d){dblclick});
 
                   
     // Dragging
