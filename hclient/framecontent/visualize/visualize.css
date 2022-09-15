@@ -227,7 +227,7 @@ text.shadow {
 .toolbar-section{
     padding:0 4px;
     margin-bottom: 5px;
-    /*background-color: pink;*/
+    background-color: pink;
 }
 .toolbar-section > label{
     font-size:0.8em;
@@ -243,7 +243,7 @@ text.shadow {
 #toolbar > div{
     /*display:table-row;*/
     float:left;
-    background-color: pink;
+    /*background-color: pink;*/
 }
 
 .ui-icon-cursor{
