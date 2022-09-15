@@ -31,7 +31,9 @@ function addNodes() {
                   .selectAll(".node")
                   .data(data.nodes)
                   .enter()
-                  .append("g");
+                  .append("g")
+                  .on("dblclick",function(d){ alert("node was double clicked"); });
+
                   
     // Dragging
     var drag = d3.behavior.drag()
