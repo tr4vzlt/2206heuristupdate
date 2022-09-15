@@ -66,6 +66,8 @@
 * - scale: 1
 */
 
+alert("Hello");
+
 var settings;   // Plugin settings object
 var svg;        // The SVG where the visualisation will be executed on
 (function ( $ ) {
