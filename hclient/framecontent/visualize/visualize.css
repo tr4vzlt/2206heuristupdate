@@ -234,6 +234,7 @@ text.shadow {
     background-color: pink;
 }
 #toolbar{
+    background-color: pink;
     line-height: 10px;    
     display:table-cell;
     height:auto;
