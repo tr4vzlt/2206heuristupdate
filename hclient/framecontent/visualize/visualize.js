@@ -1518,7 +1518,7 @@ function showEmbedDialog(){
 
 function openWin() {
     var newWindowContent = document.getElementById("entireNetwork").innerHTML;
-    var newWindow = window.open('', '', 'width=500,height=500');
+    var newWindow = window.open('', '', 'width=100%,height=100%');
     newWindow.document.write(newWindowContent);
   }
 
