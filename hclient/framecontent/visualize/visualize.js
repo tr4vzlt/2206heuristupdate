@@ -1518,7 +1518,7 @@ function showEmbedDialog(){
 
 function openWin() {
     var newWindowContent = document.getElementById("divSvg").innerHTML;
-    var newWindow = window.open('', '', 'width=500,height=100%');
+    var newWindow = window.open('', '', 'width=500,height=500');
     newWindow.document.write(newWindowContent);
   }
 
