@@ -24,8 +24,18 @@
 /**
 * Appends nodes to the visualisation
 */
+
 function addNodes() {
+
+    var nodes = nodes.select("#container")
+                .selectAll(".node")
+                .data(data.nodes)
+                .enter()
+                .append("g")
+                .on("mouseover", function(d) { alert("node was hovered"); });
+                
     
+               
     // Append nodes
     var nodes = d3.select("#container")
                   .selectAll(".node")
@@ -260,3 +270,11 @@ function dragend(d, i) {
         d3.select("#container").attr("transform","scale(1)");
     },500); */
 }
+
+
+
+
+
+
+
+              
