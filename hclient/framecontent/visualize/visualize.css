@@ -227,7 +227,7 @@ text.shadow {
 .toolbar-section{
     padding:0 4px;
     margin-bottom: 5px;
-    background-color: pink;
+    background-color: pink !important;
 }
 .toolbar-section > label{
     font-size:0.8em;
