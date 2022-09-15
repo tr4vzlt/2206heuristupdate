@@ -1517,7 +1517,7 @@ function showEmbedDialog(){
 }
 
 function openWin() {
-    var newWindowContent = document.getElementById("divSvg").innerHTML;
+    var newWindowContent = document.getElementById("entireNetwork").innerHTML;
     var newWindow = window.open('', '', 'width=500,height=500');
     newWindow.document.write(newWindowContent);
   }
