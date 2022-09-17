@@ -32,7 +32,7 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g")
-                  .on("dblclick",function(d){ alert("node was double clicked"); });
+                  .on("dblclick",function(d){ alert("The Edit Record Window will open in a new tab"); });
 
                   
     // Dragging
