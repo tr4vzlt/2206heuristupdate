@@ -25,10 +25,12 @@
 * Appends nodes to the visualisation
 */
 
-var rec_ID = '';
-rec_ID = selector.substr(2);
+
+import {rec_ID} from './overlay.js';
+var rec_ID2 = rec_ID;
 
 function addNodes() {
+    
     
     // Append nodes
     var nodes = d3.select("#container")
@@ -37,7 +39,7 @@ function addNodes() {
                   .enter()
                   .append("g")
                   .on("dblclick",function(d){
-                          window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+rec_ID, '_blank');
+                          window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+rec_ID2, '_blank');
                         });
                   
 
