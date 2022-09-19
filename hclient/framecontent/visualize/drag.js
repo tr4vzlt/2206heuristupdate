@@ -33,16 +33,17 @@ function addNodes() {
                   .enter()
                   .append("g")
                   .on("dblclick",function(d){
-                
+
                     if(settings.isDatabaseStructure){
                         if(window.hWin.HAPI4.is_admin())
                           _editRecStructure(rty_ID);    
                     }else{
                           window.open(window.hWin.HAPI4.baseURL
-                              +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+rec_ID, '_new');
+                              +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+rec_ID, '_blank');
                     }  
                 });
                   
+
     // Dragging
     var drag = d3.behavior.drag()
                  .on("dragstart", dragstart)
