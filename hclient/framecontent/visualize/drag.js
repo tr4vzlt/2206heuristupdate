@@ -34,10 +34,9 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g")
-                  .on("dblclick",function(d){
+                  .on("dblclick",(event) => console.log('dblclick evt', event));
                     //Added Double Click to Edit Function - TD 19/9/2022
-                          window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank');
-                        });
+                          //window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank');
                   
 
     // Dragging
