@@ -1645,7 +1645,12 @@ function restartPage(){
 
 
 function openWin() {
-    var newWindowContent = window.hWin.HAPI4.baseURL+'hclient/framecontent/visualize/springDiagram.php'
+
+    var query2 = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
+    query2 = query2 + ((query2=='?')?'':'&') + 'db='+window.hWin.HAPI4.database;
+
+
+    var newWindowContent = window.open("file://localhost/HEURIST/heurist/hclient/framecontent/visualize/springdiagram.php"+ query2); 
     var newWindow = window.open('', '', 'width=1920,height=1080');
     newWindow.document.write(newWindowContent);
   }
