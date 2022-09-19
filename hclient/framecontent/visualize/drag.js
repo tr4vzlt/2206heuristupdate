@@ -25,25 +25,10 @@
 * Appends nodes to the visualisation
 */
 
-var rty_ID = '', rec_ID = '';
-
-if(type=='record'){
-    if(settings.isDatabaseStructure){
-        rty_ID = selector.substr(2);
-        var desc = $Db.rty(rty_ID, 'rty_Description');
-        if(desc!=null){
-            rollover = rollover + ' ' + desc;
-        }else{
-            console.log('rectype not found '+rty_ID);
-        }
-    }else{
-        rec_ID = selector.substr(2);
-    }
-        
-}
 
 function addNodes() {
     
+
     
     // Append nodes
     var nodes = d3.select("#container")
@@ -52,7 +37,7 @@ function addNodes() {
                   .enter()
                   .append("g")
                   .on("dblclick",function(d){
-                          window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+rty_ID, '_blank');
+                          window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank');
                         });
                   
 
