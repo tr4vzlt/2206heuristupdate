@@ -32,7 +32,7 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g")
-                  .on("dblclick",function(d){ event.preventDefault();
+                  .on("dblclick",function(d){
                 
                     if(settings.isDatabaseStructure){
                         if(window.hWin.HAPI4.is_admin())
