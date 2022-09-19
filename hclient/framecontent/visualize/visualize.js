@@ -1640,7 +1640,7 @@ function showEmbedDialog(){
 }
 
 function restartPage(){
-    
+    viz();
 }
 
 
