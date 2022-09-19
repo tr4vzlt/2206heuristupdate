@@ -32,7 +32,8 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g")
-                  .on("dblclick",function(d){ alert("The Edit Record Window will open in a new tab"); });
+                  .on("dblclick",function(d){ window.open(window.hWin.HAPI4.baseURL
+                    +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+rec_ID, '_new'); });
 
                   
     // Dragging
