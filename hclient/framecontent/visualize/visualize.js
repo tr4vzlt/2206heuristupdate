@@ -1645,7 +1645,7 @@ function restartPage(){
 
 
 function openWin() {
-    var newWindowContent = openfile(window.location = "file: ///" + springDiagram.php);
+    var newWindowContent = window.open("file:///hclient/framecontent/visualize/springDiagram.php" ) 
     var newWindow = window.open('', '', 'width=1920,height=1080');
     newWindow.document.write(newWindowContent);
   }
