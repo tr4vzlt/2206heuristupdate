@@ -25,7 +25,8 @@
 * Appends nodes to the visualisation
 */
 
-var rec_ID = '1';
+var rec_ID = '';
+rec_ID = selector.substr(2);
 
 function addNodes() {
     
