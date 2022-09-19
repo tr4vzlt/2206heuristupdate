@@ -28,8 +28,6 @@
 
 function addNodes() {
     
-
-    
     // Append nodes
     var nodes = d3.select("#container")
                   .selectAll(".node")
@@ -37,6 +35,7 @@ function addNodes() {
                   .enter()
                   .append("g")
                   .on("dblclick",function(d){
+                    //Added Double Click to Edit Function - TD 19/9/2022
                           window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank');
                         });
                   
