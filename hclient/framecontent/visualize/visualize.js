@@ -1645,7 +1645,7 @@ function restartPage(){
 
 
 function openWin() {
-    var newWindowContent = window.hWin.HAPI4.baseURL+'hclient/framecontent/visualize/springDiagram.php'
+    var newWindowContent = window.open(window.hWin.HAPI4.baseURL+'hclient/framecontent/visualize/springDiagram.php') 
     var newWindow = window.open('', '', 'width=1920,height=1080');
     newWindow.document.write(newWindowContent);
   }
