@@ -25,7 +25,7 @@
 * Appends nodes to the visualisation
 */
 
-var rec_ID = '';
+var rty_ID = '', rec_ID = '';
 
 if(type=='record'){
     if(settings.isDatabaseStructure){
