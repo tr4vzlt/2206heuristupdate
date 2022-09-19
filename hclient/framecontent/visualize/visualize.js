@@ -1645,7 +1645,7 @@ function restartPage(){
 
 
 function openWin() {
-    var newWindowContent = document.getElementById("divSvg").innerHTML;
-    var newWindow = window.open('', '', 'width=200,height=100');
+    var newWindowContent = document.getElementById("entirenetwork").innerHTML;
+    var newWindow = window.open('', '', 'width=1920,height=1080');
     newWindow.document.write(newWindowContent);
   }
