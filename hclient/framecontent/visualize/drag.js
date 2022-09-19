@@ -32,18 +32,7 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g")
-                  .on("dblclick", function(d) {
-
-                    event.preventDefault();
-                    
-                    if(settings.isDatabaseStructure){
-                        if(window.hWin.HAPI4.is_admin())
-                          _editRecStructure(rty_ID);    
-                    }else{
-                          window.open(window.hWin.HAPI4.baseURL
-                              +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+rec_ID, '_new');
-                    }  
-                });  
+                  .on("dblclick",function(d){ alert("The Edit Record Window will open in a new tab"); });
 
                   
     // Dragging
