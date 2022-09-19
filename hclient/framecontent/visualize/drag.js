@@ -25,7 +25,7 @@
 * Appends nodes to the visualisation
 */
 
-var rty_ID = '', rec_ID = '';
+var rec_ID = '1';
 
 function addNodes() {
     
