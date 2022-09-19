@@ -25,9 +25,22 @@
 * Appends nodes to the visualisation
 */
 
+var rec_ID = '';
 
-import {rec_ID} from './overlay.js';
-var rec_ID2 = rec_ID;
+if(type=='record'){
+    if(settings.isDatabaseStructure){
+        rty_ID = selector.substr(2);
+        var desc = $Db.rty(rty_ID, 'rty_Description');
+        if(desc!=null){
+            rollover = rollover + ' ' + desc;
+        }else{
+            console.log('rectype not found '+rty_ID);
+        }
+    }else{
+        rec_ID = selector.substr(2);
+    }
+        
+}
 
 function addNodes() {
     
@@ -39,7 +52,7 @@ function addNodes() {
                   .enter()
                   .append("g")
                   .on("dblclick",function(d){
-                          window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+rec_ID2, '_blank');
+                          window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+rec_ID, '_blank');
                         });
                   
 
