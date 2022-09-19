@@ -1515,6 +1515,11 @@ function showEmbedDialog(){
 */    
 }
 
+function restartPage(){
+    $.fn.visualize();
+}
+
+
 function openWin() {
     var newWindowContent = document.getElementById("divSvg").innerHTML;
     var newWindow = window.open('', '', 'width=200,height=100');
