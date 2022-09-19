@@ -52,7 +52,7 @@ function addNodes() {
                   .enter()
                   .append("g")
                   .on("dblclick",function(d){
-                          window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+rec_ID, '_blank');
+                          window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+rty_ID, '_blank');
                         });
                   
 
