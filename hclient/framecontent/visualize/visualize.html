@@ -23,6 +23,9 @@
 -->
 
 <!-- Network diagram HTML -->
+
+<div id="entirenetwork">
+
 <div class="ent_header" style="height:4em;border:none;display:table-row;top:5px;">
 
    <div id="toolbar" style="display:none;">
@@ -142,7 +145,6 @@
 
         <div id="newOne" class="toolbar-section advanced" style="display:none;border-left: solid 1px gray; padding-left: 10px; min-width:140px;">
             <button type="button" id="windowPopOut" onclick="openWin()">Pop Out Window</button>
-            <a href="springDiagram.php?db=gerar_SecondDatabase" target="_blank">Another Window</a>
         </div>
 
 
@@ -153,7 +155,7 @@
 
 <div id="divSvg" class="ent_content_full" style="top:4.5em;">
     <!-- SVG -->
-    <svg id="d3svg" class="fullscreen">
+    <svg id="d3svg" class="fullscreen" style="width: 100%; height: 100%;">
         <text x="25" y="25" fill="black">Building graph ...</text>
     </svg>  
 
@@ -171,4 +173,6 @@
         <textarea id="code-textbox" onclick="select(); if (window.clipboardData) clipboardData.setData('Text', value);" style="border: 1px dotted gray; padding: 3px; margin: 2; font-family: times; width: 100%; height: 60px;" readonly=""></textarea>
         <label style="font-size:0.9em">Web-safe code:</label>
         <textarea id="code-textbox2" onclick="select(); if (window.clipboardData) clipboardData.setData('Text', value);" style="     border: 1px dotted gray; padding: 3px; margin: 2; font-family: times; width: 100%; height: 40px;" readonly=""></textarea>
+</div>
+
 </div>
