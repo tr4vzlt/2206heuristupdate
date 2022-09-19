@@ -32,7 +32,7 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g")
-                  .on("mouseup", function(d) {
+                  .on("dblclick", function(d) {
 
                     event.preventDefault();
                     
