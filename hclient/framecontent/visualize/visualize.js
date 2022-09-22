@@ -1521,15 +1521,9 @@ function showEmbedDialog(){
 */    
 }
 
-function refreshGraph(){
-    
-    var remove = d3.selectAll(".node")
-    .append("svg");
-    
-    remove.selectAll('*').remove();
-
+var refreshButton = document.getElementById("resetbutton1");
+refreshButton.onclick = function(){
     location.reload();
-    
     viz();
     visualizeData();
 }
