@@ -73,6 +73,7 @@ var svg;        // The SVG where the visualisation will be executed on
 viz();
 
 function viz(){
+    
     (function ( $ ) {
         // jQuery extension
         $.fn.visualize = function( options ) {
@@ -191,125 +192,6 @@ function viz(){
         };
     }( jQuery ));
 }
-/*(function ( $ ) {
-    // jQuery extension
-    $.fn.visualize = function( options ) {
-        
-        // Select and clear SVG.
-        svg = d3.select("#d3svg");
-        svg.selectAll("*").remove();
-        svg.append("text").text("Building graph ...").attr("x", "25").attr("y", "25");   
-        
-        
-        // Default plugin settings
-        settings = $.extend({
-            // Custom functions
-            getData: $.noop(), // Needs to be overriden with custom function
-            getLineLength: function() { return getSetting(setting_linelength,200); },
-            
-            selectedNodeIds: [],
-            onRefreshData: function(){},
-            triggerSelection: function(selection){}, 
-            
-            isDatabaseStructure: false,
-            
-            showCounts: true,
-            
-            // UI setting controls
-            showLineSettings: true,
-            showLineType: true,
-            showLineLength: true,
-            showLineWidth: true,
-            showLineColor: true,
-            showMarkerColor: true, 
-            
-            showEntitySettings: true, 
-            showEntityRadius: true,
-            showEntityColor: true,
-            
-            showTextSettings: true,
-            showLabels: true,
-            showFontSize: true,
-            showTextLength: true,
-            showTextColor: true,
-            
-            showTransformSettings: true,
-            showFormula: true,
-            showFishEye: true,
-            
-            showGravitySettings: true,
-            showGravity: true,
-            showAttraction: true,
-            
-            
-            // UI default settings
-            advanced: false,
-            linetype: "straight",
-            line_show_empty: true,
-            linelength: 100,
-            linewidth: 3,
-            linecolor: "#22a",
-            markercolor: "#000",
-            
-            entityradius: 30,
-            entitycolor: "#b5b5b5",
-            
-            labels: true,
-            fontsize: "8px",
-            textlength: 25,
-            textcolor: "#000",
-            
-            formula: "linear",
-            fisheye: false,
-            
-            gravity: "off",
-            attraction: -3000,
-            
-            translatex: 200,
-            translatey: 200,
-            scale: 1
-        }, options );
- 
-        // Handle settings (settings.js)
-        checkStoredSettings();  //restore default settings
-        handleSettingsInUI();
-
-        // Check visualisation limit
-        var amount = Object.keys(settings.data.nodes).length;
-        var MAXITEMS = window.hWin.HAPI4.get_prefs('search_detail_limit');
-        
-        visualizeData();    
-
-        var ele_warn = $('#net_limit_warning');
-        if(amount >= MAXITEMS) {
-            ele_warn.html('These results are limited to '+MAXITEMS+' records<br>(limit set in your profile Preferences)<br>Please filter to a smaller set of results').show();//.delay(2000).fadeOut(10000);
-        }else{
-            ele_warn.hide();
-        }
-
-        $('#btnZoomIn').button({icons:{primary:'ui-icon-plus'},text:false}).click(
-            function(){
-                 zoomBtn(true);
-            }
-        );
-
-        $('#btnZoomOut').button({icons:{primary:'ui-icon-minus'},text:false}).click(
-            function(){
-                 zoomBtn(false);
-            }
-        );
-
-        $('#btnFitToExtent').button({icons:{primary:'ui-icon-fullscreen'},text:false}).click(
-            function(){
-                 zoomToFit();
-            }
-        );
- 
-        return this;
-    };
-}( jQuery ));
-*/
-    
 
 /*******************************START OF VISUALISATION HELPER FUNCTIONS*******************************/
 var maxCountForNodes, maxCountForLinks; 
@@ -1639,8 +1521,15 @@ function showEmbedDialog(){
 */    
 }
 
-function restartPage(){
+function refreshGraph(){
+    
+    var remove = d3.selectAll(".node")
+    .append("svg");
+    
+    remove.selectAll('*').remove();
+
     viz();
+    visualizeData();
 }
 
 
@@ -1653,4 +1542,4 @@ function openWin() {
     var newWindowContent = window.open("file://localhost/HEURIST/heurist/hclient/framecontent/visualize/springDiagram.php"+ query2); 
     var newWindow = window.open('', '', 'width=1920,height=1080');
     newWindow.document.write(newWindowContent);
-  }
+}
