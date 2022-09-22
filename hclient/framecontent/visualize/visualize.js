@@ -1528,6 +1528,8 @@ function refreshGraph(){
     
     remove.selectAll('*').remove();
 
+    location.reload();
+    
     viz();
     visualizeData();
 }
