@@ -1523,9 +1523,11 @@ function showEmbedDialog(){
 
 var refreshButton = document.getElementById("resetbutton1");
 refreshButton.onclick = function(){
-    location.reload();
-    viz();
-    visualizeData();
+    var refresh = svg.selectAll(".node")
+                .data(data);
+
+    refresh.exit().remove();
+    refresh.enter().append(".node");
 }
 
 
