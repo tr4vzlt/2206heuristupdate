@@ -1521,12 +1521,13 @@ function showEmbedDialog(){
 */    
 }
 
+
+//New graph refresh button - Created by Travis Doyle 24/9/2022
 function refreshButton(){
     var hrefnew  = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew=='?')?'':'&') + 'db='+window.hWin.HAPI4.database;
 
     location.href = hrefnew;
-
 
 }
 
