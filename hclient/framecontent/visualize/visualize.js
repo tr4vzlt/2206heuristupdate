@@ -1522,6 +1522,7 @@ function showEmbedDialog(){
 }
 
 function refreshButton(){
+    location.reload(true);
     window.hWin.HEURIST4.current_query_request.q 
     location.href = window.hWin.HEURIST4.current_query_request.q
 
