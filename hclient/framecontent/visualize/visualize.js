@@ -1522,7 +1522,7 @@ function showEmbedDialog(){
 }
 
 function refreshButton(){
-    location.reloasd();
+    location.reload();
     location.href = '&qp=' + window.hWin.HEURIST4.current_query_request.q;
 
 
