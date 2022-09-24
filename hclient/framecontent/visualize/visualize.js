@@ -1522,8 +1522,10 @@ function showEmbedDialog(){
 }
 
 function refreshButton(){
-    location.reload();
-    location.href = '&qp=' + window.hWin.HEURIST4.current_query_request.q;
+    var hrefnew  = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
+    hrefnew = hrefnew + ((hrefnew=='?')?'':'&') + 'db='+window.hWin.HAPI4.database;
+
+    location.href = hrefnew;
 
 
 }
