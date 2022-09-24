@@ -1521,13 +1521,9 @@ function showEmbedDialog(){
 */    
 }
 
-var refreshButton = document.getElementById("resetbutton1");
-refreshButton.onclick = function(){
-    var refresh = svg.selectAll(".node")
-                .data(data);
-
-    refresh.exit().remove();
-    refresh.enter().append(".node");
+function refreshButton(){
+    location.reload();
+    window.hWin.HEURIST4.current_query_request.q
 }
 
 
