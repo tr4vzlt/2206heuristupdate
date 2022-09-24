@@ -1522,7 +1522,9 @@ function showEmbedDialog(){
 }
 
 function refreshButton(){
-    location.href = '&qp=' + window.hWin.HEURIST4.current_query_request.q
+    location.reloasd();
+    location.href = '&qp=' + window.hWin.HEURIST4.current_query_request.q;
+
 
 }
 
