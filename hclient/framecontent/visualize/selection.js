@@ -23,7 +23,7 @@
 
 /*************************************** NODE SELECTION ******************************/
 var foregroundColor = '#fff';
-var selectionColor = "ff0000"//"#bee4f8";
+var selectionColor = "#bee4f8";
 
 /**
 * Adds a selectionBox to the svg
