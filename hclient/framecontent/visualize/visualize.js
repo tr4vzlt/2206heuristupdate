@@ -1479,6 +1479,41 @@ function addLabels(name, color) {
     return labels;
 }
 
+/**
+ * New function - Ish
+ * Function will get the name and gender from node
+ * send to infobox
+ * 
+ */
+//function showInfo(d){
+    //click on a node
+    d3.selectAll(".node")
+        .on("click", 
+        function(){
+            d3.select(this).text("Added text")
+        });
+    //var infoBox = d3.select("div").attr("id", "infoBox");
+    //infoBox.selectAll("h2").remove();
+
+//}
+/**
+ * function charBox(d) {
+      // Clear old charBox
+      char.selectAll("h2").remove();
+      char.selectAll("p").remove();
+      // Make character's name the heading of the box
+      char.append("h2").text(d.name);
+      // Add other info
+      char.append("p").html("<strong>Gender: </strong>" + gender(d.gender));
+      char.append("p").html("<strong>Wordcount: </strong>" + d.wCount);
+      char.append("p").html("<strong>Degree: </strong>" + d.deg);
+      char.append("p").html("<strong>Strength: </strong>" + d.str);
+      char.append("p").html("<strong>Betweenness: </strong>" + d.betw);
+      char.append("p").html("<strong>Most Distinctive Words: </strong>" + d.top10words.replace(/ /g, ", "));
+    }
+
+ */
+
 //
 //
 //
