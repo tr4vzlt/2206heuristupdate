@@ -25,6 +25,7 @@
 <!-- Network diagram HTML -->
 <head>
     <script src="visualize.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 
 <div class="ent_header" style="height:4em;border:none;display:table-row;top:5px;">
@@ -165,6 +166,15 @@
     <h2>Detail 1</h2>
     <p>Detail 2</p>
 </div>
+
+<script>
+    //var box = d3.select("div").attr("class", "infobox"); 
+    d3.select("div").attr("class", "infoBox")
+        .on("mouseover", function(){
+            d3.select(this)
+                .style("background-color", "red");
+        });
+</script>
 
 
 <div id="embed-dialog" style="display:none">
