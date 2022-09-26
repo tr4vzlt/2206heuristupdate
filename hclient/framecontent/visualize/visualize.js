@@ -1490,7 +1490,7 @@ function addLabels(name, color) {
 //function showInfo(d){
     //click on a node
     d3.select("div").attr("class", "infoBox")
-        .on("click", function(){
+        .on("mouseover", function(){
             d3.select(this)
                 .style("background-color", "red")
         });
