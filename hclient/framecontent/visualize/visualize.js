@@ -1549,7 +1549,6 @@ function refreshButton() {
 
 
 function openWin() {
-    fullscreen = true;
     // TODO: Get button
     let full_btn = document.getElementById("windowPopOut");
     let cls_button = document.getElementById("closegraphbutton");
@@ -1561,13 +1560,14 @@ function openWin() {
 
     window.open(url2);
 
+    fullscreen = true;
 
     if (fullscreen){
         full_btn.style.visibility = 'hidden';
         cls_button.style.visibility = 'visible';
     }
 
-
+    
 }
 
 function clsWin(){
