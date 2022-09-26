@@ -31,7 +31,10 @@ function addNodes() {
                   .selectAll(".node")
                   .data(data.nodes)
                   .enter()
-                  .append("g");
+                  .append("g")
+                  .on("click", function(){
+                      alert("Clicked node line 30");
+                  });
                   
     // Dragging
     var drag = d3.behavior.drag()
