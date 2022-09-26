@@ -1511,12 +1511,9 @@ function addLabels(name, color) {
       // Make character's name the heading of the box
       char.append("h2").text(d.name);
       // Add other info
-      char.append("p").html("<strong>Gender: </strong>" + gender(d.gender));
-      char.append("p").html("<strong>Wordcount: </strong>" + d.wCount);
-      char.append("p").html("<strong>Degree: </strong>" + d.deg);
-      char.append("p").html("<strong>Strength: </strong>" + d.str);
-      char.append("p").html("<strong>Betweenness: </strong>" + d.betw);
-      char.append("p").html("<strong>Most Distinctive Words: </strong>" + d.top10words.replace(/ /g, ", "));
+      char.append("p").html("<strong>Given Name: </strong>" + d.gender//change to given name);
+      char.append("p").html("<strong>Wordcount: </strong>" + d.wCount//change to family name);
+      char.append("p").html("<strong>Degree: </strong>" + d.deg//change to gender);
     }
 
  */
