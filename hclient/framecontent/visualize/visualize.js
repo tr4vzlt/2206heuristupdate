@@ -1538,7 +1538,6 @@ function openWin() {
     query2 = query2 + ((query2=='?')?'':'&') + 'db='+window.hWin.HAPI4.database;
 
 
-    var newWindowContent = window.open("file://HEURIST/heurist/hclient/framecontent/visualize/springDiagram.php"+ query2); 
-    var newWindow = window.open('', '', 'width=1920,height=1080');
-    newWindow.document.write(newWindowContent);
+    location.openWin = query2;
+    
 }
