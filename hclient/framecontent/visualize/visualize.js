@@ -1535,10 +1535,11 @@ function refreshButton(){
 function openWin() {
     var hrefnew  = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew=='?')?'':'&') + 'db='+window.hWin.HAPI4.database;
+    var url2 = window.hWin.HAPI4.baseURL+'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
 
     location.href = hrefnew;
 
-    window.open(location.href);
+    window.open(url2);
 
     
 }
