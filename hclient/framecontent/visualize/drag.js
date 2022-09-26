@@ -151,7 +151,7 @@ function addNodes() {
          .on("click", function(d) {
              
                //alert("Clicked");
-            closeRectypeSelector();
+            closeRectypeSelector();//Brandon mentioned this line
             // Check if it's not a click after dragging
             if(!d3.event.defaultPrevented) {
                   // Remove all overlays and create a record overlay for selected node
