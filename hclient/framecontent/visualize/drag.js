@@ -32,9 +32,8 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g")
-                  .on("click", function(d){
-                      alert("Clicked node line 30");
-                  });
+                  //travis code
+                  .on("dblclick",(d) => window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank'));
                   
     // Dragging
     var drag = d3.behavior.drag()
