@@ -1555,8 +1555,8 @@ function openWin() {
     fullscreen = true;
     // TODO: Get button
     //let full_btn = document.getElementById("newOne");
-   // let cls_button = document.getElementById("newOne2");
-    
+    //let cls_button = document.getElementById("newOne2");
+
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
 
@@ -1568,9 +1568,11 @@ function openWin() {
         full_btn.style.visibility = 'hidden';
         cls_button.style.visibility = 'visible';
     }
+
+
 }
 
 function clsWin(){
     fullscreen = false;
-    window.close();
+    url2.close();
 }
