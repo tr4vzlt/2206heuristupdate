@@ -71,13 +71,6 @@ var svg;        // The SVG where the visualisation will be executed on
 
 var fullscreen = false;
 
-let full_btn = document.getElementById("windowPopOut");
-let cls_button = document.getElementById("closegraphbutton");
-
-if (!fullscreen){
-    full_btn.style.visibility = 'visible';
-    cls_button.style.visibility = 'hidden';
-}
 
 viz();
 
@@ -202,6 +195,10 @@ function viz() {
         };
     }(jQuery));
 
+    if (!fullscreen){
+        full_btn.style.visibility = 'visible';
+        cls_button.style.visibility = 'hidden';
+    }
     
 }
 
@@ -1563,6 +1560,7 @@ function openWin() {
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
 
     window.open(url2);
+
 
     if (fullscreen){
         full_btn.style.visibility = 'hidden';
