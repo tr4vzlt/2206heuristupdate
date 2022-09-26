@@ -139,8 +139,7 @@ function addNodes() {
           })    
          .on("click", function(d) {
              
-                d3.select("div").attr("class", "infoBox")
-                    .style("background-color", "red");
+               alert("Clicked");
             closeRectypeSelector();
             // Check if it's not a click after dragging
             if(!d3.event.defaultPrevented) {
