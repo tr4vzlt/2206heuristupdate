@@ -32,7 +32,7 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g")
-                  .on("click", function(){
+                  .on("click", function(d){
                       alert("Clicked node line 30");
                   });
                   
