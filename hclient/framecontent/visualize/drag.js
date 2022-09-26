@@ -76,7 +76,11 @@ function addNodes() {
             })
             .attr("class", "background icon-background")
             .style({'fill-opacity': '0.5', 'display': icon_display})
-            .attr("fill", entitycolor);        
+            .attr("fill", entitycolor)
+            .on("click", function(){
+                alert("Clicked outer");//new
+
+            });        
         
         //add internal circle
         node.append("circle")
@@ -88,6 +92,9 @@ function addNodes() {
                     return 1;
                 }
                 return .25;
+            })
+            .on("click", function(){
+                alert("Clicked");//new
             });
 
         //add icon
@@ -119,7 +126,7 @@ function addNodes() {
                 }
             })
             .on("click", function(){
-                alert("Clicked");
+                alert("Clicked");//new
 
             })
             .style('display', icon_display);
