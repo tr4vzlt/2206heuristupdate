@@ -1485,15 +1485,24 @@ function addLabels(name, color) {
  * send to infobox
  * 
  */
+
+ <HTML>
+    <div id="infoBox" class="infoBox" style="position: fixed; right: 0px; bottom:0px; width: 100px; height: 100px; background-color: white; padding: 5px;">
+        <h2>Detail 1</h2>
+        <p>Detail 2</p>
+    </div>
+ </HTML>
 //function showInfo(d){
     //click on a node
     d3.selectAll(".node")
-        .on("click", 
-        function(){
-            infoBox.append("p").html("<strong>Gender: </strong>");
-        });
-    var infoBox = d3.select("div").attr("id", "infoBox");
+        .on("click", func);
+    //var infoBox = d3.select("div").attr("class", "infoBox");
     //infoBox.selectAll("h2").remove();
+
+    function func(){
+        var infoBox = d3.select("div").attr("class", "infoBox");
+        infoBox.selectAll("h2").remove();
+    }
 
 //}
 /**
