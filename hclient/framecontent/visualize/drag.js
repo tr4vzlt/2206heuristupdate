@@ -118,6 +118,10 @@ function addNodes() {
                 },200);
                 }
             })
+            .on("click", function(){
+                alert("Clicked");
+
+            })
             .style('display', icon_display);
                            
         var gravity = getSetting(setting_gravity);
@@ -139,7 +143,7 @@ function addNodes() {
           })    
          .on("click", function(d) {
              
-               alert("Clicked");
+               //alert("Clicked");
             closeRectypeSelector();
             // Check if it's not a click after dragging
             if(!d3.event.defaultPrevented) {
