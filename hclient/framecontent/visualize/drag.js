@@ -32,9 +32,7 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g");
-                  //travis code
-                  //.on("dblclick",(d) => window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank'));
-                  
+            
     // Dragging
     var drag = d3.behavior.drag()
                  .on("dragstart", dragstart)
@@ -78,11 +76,7 @@ function addNodes() {
             })
             .attr("class", "background icon-background")
             .style({'fill-opacity': '0.5', 'display': icon_display})
-            .attr("fill", entitycolor)
-            .on("click", function(){
-                alert("Clicked outer");//new
-
-            });        
+            .attr("fill", entitycolor);        
         
         //add internal circle
         node.append("circle")
@@ -94,9 +88,6 @@ function addNodes() {
                     return 1;
                 }
                 return .25;
-            })
-            .on("click", function(){
-                alert("Clicked inner");//new
             });
 
         //add icon
@@ -127,10 +118,6 @@ function addNodes() {
                 },200);
                 }
             })
-            .on("click", function(){
-                alert("Clicked");//new
-
-            })
             .style('display', icon_display);
                            
         var gravity = getSetting(setting_gravity);
@@ -152,7 +139,7 @@ function addNodes() {
           })    
          .on("click", function(d) {
              
-               //alert("Clicked");
+               alert("Clicked node");
             closeRectypeSelector();//Brandon mentioned this line
             // Check if it's not a click after dragging
             if(!d3.event.defaultPrevented) {
