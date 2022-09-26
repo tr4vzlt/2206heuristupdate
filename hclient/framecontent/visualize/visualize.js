@@ -69,7 +69,15 @@
 var settings;   // Plugin settings object
 var svg;        // The SVG where the visualisation will be executed on
 
+var fullscreen = false;
 
+let full_btn = document.getElementById("windowPopOut");
+let cls_button = document.getElementById("closegraphbutton");
+
+if (!fullscreen){
+    full_btn.style.visibility = 'visible';
+    cls_button.style.visibility = 'hidden';
+}
 
 viz();
 
@@ -194,15 +202,7 @@ function viz() {
         };
     }(jQuery));
 
-    var fullscreen = false;
-
-    var full_btn = document.getElementById("windowPopOut");
-    var cls_button = document.getElementById("closegraphbutton");
-
-    if (fullscreen = false){
-        full_btn.style.visibility = 'visible';
-        cls_button.style.visibility = 'hidden';
-    }
+    
 }
 
 /*******************************START OF VISUALISATION HELPER FUNCTIONS*******************************/
@@ -1540,7 +1540,7 @@ function refreshButton() {
     // TODO: Get URL Param
     // NOTE: Refer to document on discord/zoom
 
-    if (fullscreen = true)
+    if (fullscreen)
         location.reload();
     else {
         var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
@@ -1554,8 +1554,8 @@ function refreshButton() {
 function openWin() {
     fullscreen = true;
     // TODO: Get button
-    //let full_btn = document.getElementById("newOne");
-    //let cls_button = document.getElementById("newOne2");
+    let full_btn = document.getElementById("windowPopOut");
+    let cls_button = document.getElementById("closegraphbutton");
 
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
@@ -1564,7 +1564,7 @@ function openWin() {
 
     window.open(url2);
 
-    if (fullscreen = true){
+    if (fullscreen){
         full_btn.style.visibility = 'hidden';
         cls_button.style.visibility = 'visible';
     }
