@@ -68,14 +68,11 @@
 
 var settings;   // Plugin settings object
 var svg;        // The SVG where the visualisation will be executed on
-var fullscreen = false;
-let full_btn = document.getElementById("windowPopOut");
-let cls_button = document.getElementById("closegraphbutton");
+
+
 
 viz();
 
-full_btn.style.visibility = 'visible';
-cls_button.style.visibility = 'hidden';
 
 function viz() {
 
@@ -196,6 +193,16 @@ function viz() {
             return this;
         };
     }(jQuery));
+
+    var fullscreen = false;
+
+    var full_btn = document.getElementById("windowPopOut");
+    var cls_button = document.getElementById("closegraphbutton");
+
+    if (fullscreen = false){
+        full_btn.style.visibility = 'visible';
+        cls_button.style.visibility = 'hidden';
+    }
 }
 
 /*******************************START OF VISUALISATION HELPER FUNCTIONS*******************************/
@@ -1547,23 +1554,20 @@ function refreshButton() {
 function openWin() {
     fullscreen = true;
     // TODO: Get button
-    let full_btn = document.getElementById("windowPopOut");
-    let cls_button = document.getElementById("closegraphbutton");
+    //let full_btn = document.getElementById("newOne");
+   // let cls_button = document.getElementById("newOne2");
     
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
 
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
 
+    window.open(url2);
+
     if (fullscreen = true){
         full_btn.style.visibility = 'hidden';
         cls_button.style.visibility = 'visible';
     }
-
-
-    window.open(url2);
-
-
 }
 
 function clsWin(){
