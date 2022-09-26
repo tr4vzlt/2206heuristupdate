@@ -1534,11 +1534,13 @@ function refreshButton(){
 
 function openWin() {
 
+    window.open(location.href);
+
     var query2 = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     query2 = query2 + ((query2=='?')?'':'&') + 'db='+window.hWin.HAPI4.database;
 
     location.href = query2;
 
-    window.open(location.href);
+    
     
 }
