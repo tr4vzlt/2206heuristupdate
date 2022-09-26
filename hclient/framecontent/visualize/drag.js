@@ -139,14 +139,16 @@ function addNodes() {
           })    
          .on("click", function(d) {
              
-              closeRectypeSelector();
-              // Check if it's not a click after dragging
-              if(!d3.event.defaultPrevented) {
+                d3.select("div").attr("class", "infoBox")
+                    .style("background-color", "red");
+            closeRectypeSelector();
+            // Check if it's not a click after dragging
+            if(!d3.event.defaultPrevented) {
                   // Remove all overlays and create a record overlay for selected node
                   //tempXXX
                   //removeOverlays();
                   //onRecordNodeClick(d3.event, d, ".node.id"+d.id);
-              }
+            }
          })
          .call(drag);
 
