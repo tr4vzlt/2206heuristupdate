@@ -1541,6 +1541,6 @@ function openWin() {
 
     location.href = query2;
 
-    
+    refreshButton();
     
 }
