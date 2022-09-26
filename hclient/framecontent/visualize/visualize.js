@@ -1489,15 +1489,18 @@ function addLabels(name, color) {
 
 //function showInfo(d){
     //click on a node
-    d3.selectAll(".node")
-        .on("click", func);
+    d3.select("div").attr("class", "infoBox")
+        .on("click", function(){
+            d3.select(this)
+                .style("background-color", "red")
+        });
     //var infoBox = d3.select("div").attr("class", "infoBox");
     //infoBox.selectAll("h2").remove();
 
-    function func(){
+    /** function func(){
         var infoBox = d3.select("#div").attr("class", "infoBox");
         infoBox.selectAll("h2").remove();
-    }
+    }*/
 
 //}
 /**
