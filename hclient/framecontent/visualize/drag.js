@@ -31,9 +31,9 @@ function addNodes() {
                   .selectAll(".node")
                   .data(data.nodes)
                   .enter()
-                  .append("g")
+                  .append("g");
                   //travis code
-                  .on("dblclick",(d) => window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank'));
+                  //.on("dblclick",(d) => window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank'));
                   
     // Dragging
     var drag = d3.behavior.drag()
@@ -96,7 +96,7 @@ function addNodes() {
                 return .25;
             })
             .on("click", function(){
-                alert("Clicked");//new
+                alert("Clicked inner");//new
             });
 
         //add icon
