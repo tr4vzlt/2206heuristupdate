@@ -1529,12 +1529,12 @@ function showEmbedDialog() {
 
 //New graph refresh button - Created by Travis Doyle 24/9/2022
 function refreshButton() {
-    let fullscreen = false
+    //let fullscreen = false
     // TODO: Get URL Param
     // NOTE: Refer to document on discord/zoom
 
     if (fullscreen = true)
-        location.reload()
+        location.reload();
     else {
         var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
         newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
@@ -1547,16 +1547,19 @@ function refreshButton() {
 function openWin() {
     fullscreen = true;
     // TODO: Get button
-    
-    if (fullscreen = true){
-        full_btn.style.visibility = 'hidden';
-        cls_button.style.visibility = 'visible';
-    }
+    let full_btn = document.getElementById("windowPopOut");
+    let cls_button = document.getElementById("closegraphbutton");
     
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
 
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
+
+    if (fullscreen = true){
+        full_btn.style.visibility = 'hidden';
+        cls_button.style.visibility = 'visible';
+    }
+
 
     window.open(url2);
 
