@@ -1490,9 +1490,9 @@ function addLabels(name, color) {
     d3.selectAll(".node")
         .on("click", 
         function(){
-            d3.select(this).text("Added text")
+            infoBox.append("p").html("<strong>Gender: </strong>");
         });
-    //var infoBox = d3.select("div").attr("id", "infoBox");
+    var infoBox = d3.select("div").attr("id", "infoBox");
     //infoBox.selectAll("h2").remove();
 
 //}
