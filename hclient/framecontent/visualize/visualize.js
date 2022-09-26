@@ -1555,7 +1555,7 @@ function openWin() {
 
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
 
-    if (fullscreen){
+    if (fullscreen = true){
         full_btn.style.visibility = 'hidden';
         cls_button.style.visibility = 'visible';
     }
