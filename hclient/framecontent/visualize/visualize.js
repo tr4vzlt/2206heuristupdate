@@ -1533,7 +1533,7 @@ function refreshButton() {
     // TODO: Get URL Param
     // NOTE: Refer to document on discord/zoom
 
-    if (fullscreen)
+    if (fullscreen = true)
         location.reload()
     else {
         var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
@@ -1547,19 +1547,16 @@ function refreshButton() {
 function openWin() {
     fullscreen = true;
     // TODO: Get button
-    let full_btn = document.getElementById("windowPopOut");
-    let cls_button = document.getElementById("closegraphbutton");
+    
+    if (fullscreen = true){
+        full_btn.style.visibility = 'hidden';
+        cls_button.style.visibility = 'visible';
+    }
     
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
 
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
-
-    if (fullscreen = true){
-        full_btn.style.visibility = 'hidden';
-        cls_button.style.visibility = 'visible';
-    }
-
 
     window.open(url2);
 
@@ -1567,5 +1564,6 @@ function openWin() {
 }
 
 function clsWin(){
+    fullscreen = false;
     window.close();
 }
