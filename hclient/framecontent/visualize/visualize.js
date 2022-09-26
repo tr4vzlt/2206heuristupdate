@@ -69,10 +69,17 @@
 var settings;   // Plugin settings object
 var svg;        // The SVG where the visualisation will be executed on
 
-var fullscreen = false;
+
 
 
 viz();
+
+fullscreen = false;
+
+if (!fullscreen){
+    document.getElementById("windowPopOut").style.visibility = 'visible';
+    document.getElementById("closegraphbutton").style.visibility = 'hidden';
+}
 
 
 function viz() {
@@ -195,10 +202,7 @@ function viz() {
         };
     }(jQuery));
 
-    if (!fullscreen){
-        full_btn.style.visibility = 'visible';
-        cls_button.style.visibility = 'hidden';
-    }
+    
     
 }
 
@@ -1572,5 +1576,5 @@ function openWin() {
 
 function clsWin(){
     fullscreen = false;
-    url2.close();
+    location.href.close();
 }
