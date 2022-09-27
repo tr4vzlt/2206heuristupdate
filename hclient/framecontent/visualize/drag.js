@@ -156,15 +156,13 @@ function addNodes() {
 }
 
 function showNodeInformation(d){
-    console.log("show Node func");
-    //clear info box
-    var infoBox = d3.select("#infoBox");
-    console.log("id" + infoBox.id);
-    infoBox.selectAll("h2").remove();
-    infoBox.selectAll("p").remove();
+    console.log("show Node func");//test to see if function accessed
+    var infoBox = d3.select("#infoBox");//select infobox
+    infoBox.selectAll("h2").remove();//remove header
+    infoBox.selectAll("p").remove();//remove paragraph
     //get data from node
     //
-    infoBox.append("h2").text(d.GivenName);
+    infoBox.append("h2").text(d.detail);
     //append it to the info box
 }
 
