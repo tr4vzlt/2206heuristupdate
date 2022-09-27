@@ -246,6 +246,7 @@ text.shadow {
     line-height: 0px;    
     display:table-cell;
     height:auto;
+    bottom: 0;
 }
 #toolbar2 > div {
     bottom: 0; 
