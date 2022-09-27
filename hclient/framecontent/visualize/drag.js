@@ -159,7 +159,7 @@ function showNodeInformation(){
     console.log("show Node func");
     //clear info box
     var infoBox = document.getElementById("infoBox");
-    console.log("id" + infoBox);
+    console.log("id" + infoBox.id);
     infoBox.selectAll("h2").remove();
     infoBox.selectAll("p").remove();
     //get data from node
