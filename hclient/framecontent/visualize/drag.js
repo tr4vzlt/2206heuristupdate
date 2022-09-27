@@ -138,8 +138,7 @@ function addNodes() {
               return false;
           })    
          .on("click", function(d) {
-             
-               //alert("Clicked node");
+             showNodeInformation();
             closeRectypeSelector();
             // Check if it's not a click after dragging
             if(!d3.event.defaultPrevented) {
@@ -153,6 +152,16 @@ function addNodes() {
 
      });            
      return nodes;
+}
+
+function showNodeInformation(){
+    //clear info box
+    let infoBox = document.getElementById('infoBox');
+    infoBox.selectAll("h2").remove();
+    infoBox.selectAll("p").remove();
+    //get data from node
+    infoBox.append("h2").text("Name");
+    //append it to the info box
 }
 
 /**
