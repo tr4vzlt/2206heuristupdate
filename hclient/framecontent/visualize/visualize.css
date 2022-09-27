@@ -242,11 +242,7 @@ text.shadow {
     /*display:table-row;*/
     float:left;
 }
-#toolbar2{
-    bottom: 0;
-    background-color: #00ff00;
-    position: fixed;
-}
+
 #toolbar2 > div {
     bottom: 0; 
     padding: 10;
