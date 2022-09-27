@@ -250,7 +250,7 @@ text.shadow {
 #toolbar2 > div {
     bottom: 0; 
     padding: 10;
-
+   background-color: #00ff00;
 }
 
 
