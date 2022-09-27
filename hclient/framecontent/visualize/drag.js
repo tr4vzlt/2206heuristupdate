@@ -139,7 +139,7 @@ function addNodes() {
               return false;
           })    
          .on("click", function(d) {
-             showNodeInformation();
+             showNodeInformation(d);
             closeRectypeSelector();
             // Check if it's not a click after dragging
             if(!d3.event.defaultPrevented) {
@@ -163,6 +163,7 @@ function showNodeInformation(){
     infoBox.selectAll("h2").remove();
     infoBox.selectAll("p").remove();
     //get data from node
+    //
     infoBox.append("h2").text(d.id);
     //append it to the info box
 }
