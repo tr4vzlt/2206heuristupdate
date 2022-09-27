@@ -155,7 +155,7 @@ function addNodes() {
      return nodes;
 }
 
-function showNodeInformation(){
+function showNodeInformation(d){
     console.log("show Node func");
     //clear info box
     var infoBox = d3.select("#infoBox");
