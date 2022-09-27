@@ -245,10 +245,11 @@ text.shadow {
 #toolbar2{
     line-height: 0px;    
     display:table-cell;
-    height:auto;
+    height: 70px;
     bottom: 0;
 }
 #toolbar2 > div {
+    height: 70px;
     bottom: 0; 
     padding: 10;
    background-color: #00ff00;
