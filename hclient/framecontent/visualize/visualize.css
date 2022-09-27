@@ -241,6 +241,11 @@ text.shadow {
     /*display:table-row;*/
     float:left;
 }
+#toolbar2 > div {
+    bottom: 0; 
+
+}
+
 
 .ui-icon-cursor{
     background-image: url(cursor.png) !important; 
