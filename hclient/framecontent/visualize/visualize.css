@@ -243,9 +243,9 @@ text.shadow {
     float:left;
 }
 #toolbar2{
-    line-height: 10px;    
-    display:table-cell;
-    height:auto;
+    bottom: 0;
+    background-color: #00ff00;
+    position: fixed;
 }
 #toolbar2 > div {
     bottom: 0; 
