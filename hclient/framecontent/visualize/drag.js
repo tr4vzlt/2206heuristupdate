@@ -158,7 +158,7 @@ function addNodes() {
 function showNodeInformation(){
     console.log("show Node func");
     //clear info box
-    var infoBox = document.getElementById("infoBox");
+    var infoBox = d3.selectAll("div").attr("id", "infoBox");
     console.log("id" + infoBox.id);
     infoBox.selectAll("h2").remove();
     infoBox.selectAll("p").remove();
