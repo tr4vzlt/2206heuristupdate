@@ -162,7 +162,15 @@ function showNodeInformation(d){
     infoBox.selectAll("p").remove();//remove paragraph
     //get data from node
     //
-    infoBox.append("h2").text(d.detail);
+    infoBox.append("h2").text("Person Details");
+    if(d.id == 1){
+        infoBox.append("p").text("Given Name: Ishmamul");
+        infoBox.append("p").text("Family Name: Haque");
+    }
+    else{
+        infoBox.append("p").text("Given Name: Sirajul");
+        infoBox.append("p").text("Family Name: Haque");
+    }
     //append it to the info box
 }
 
