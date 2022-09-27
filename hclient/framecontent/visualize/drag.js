@@ -164,7 +164,7 @@ function showNodeInformation(d){
     infoBox.selectAll("p").remove();
     //get data from node
     //
-    infoBox.append("h2").text(d.id);
+    infoBox.append("h2").text(d.GivenName);
     //append it to the info box
 }
 
