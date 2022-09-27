@@ -158,7 +158,8 @@ function addNodes() {
 function showNodeInformation(){
     console.log("show Node func");
     //clear info box
-    let infoBox = document.getElementById("infoBox");
+    var infoBox = document.getElementById("infoBox");
+    console.log("id" + infoBox);
     infoBox.selectAll("h2").remove();
     infoBox.selectAll("p").remove();
     //get data from node
