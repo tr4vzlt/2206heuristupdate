@@ -237,9 +237,15 @@ text.shadow {
     height:auto;
     /*border: solid 1px gray;*/
 }
+
 #toolbar > div{
     /*display:table-row;*/
     float:left;
+}
+#toolbar2{
+    line-height: 10px;    
+    display:table-cell;
+    height:auto;
 }
 #toolbar2 > div {
     bottom: 0; 
