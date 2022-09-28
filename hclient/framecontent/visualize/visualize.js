@@ -505,6 +505,8 @@ function addContainer() {
 
     if (!settings.isDatabaseStructure) {
         //scaleExtentVals = [0.5, 3];
+
+        //Travis Doyle 28/9 - Adjusted scale extent values to increase zoom out/in
         scaleExtentVals = [0.2, 15];
     }
 
@@ -1517,49 +1519,36 @@ function showEmbedDialog() {
 }
 
 
+
+
+
 //New graph refresh button - Created by Travis Doyle 24/9/2022
 function refreshButton() {
-    
-    // TODO: Get URL Param
-    // NOTE: Refer to document on discord/zoom
-
     var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
-
     location.href = newhref;
-
-
 }
+
+//refresh graph while in fullscreen mode - Travis Doyle 28/9
 
 function refreshButtonFullscreen() {
     location.reload();
 
 }
 
-
+//open graph in fullscreen - Travis Doyle 28/9
 function openWin() {
-    // TODO: Get button
-    
-
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
-
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
-
-
     window.open(url2);
 
-
-
 }
-
+//close fullscreen graph - Travis Doyle 28/9
 function closeWin() {
-
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
-
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
-
     window.close(url2);
 
 
