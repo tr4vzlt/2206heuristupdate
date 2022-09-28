@@ -1557,6 +1557,3 @@ function openWin() {
         
     }
 }
-
-var width = document.querySelectorAll('g#container').getBoundingClientRect().width;
-alert(width);
