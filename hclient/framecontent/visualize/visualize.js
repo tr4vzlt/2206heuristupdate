@@ -69,7 +69,16 @@
 var settings;   // Plugin settings object
 var svg;        // The SVG where the visualisation will be executed on
 
-
+if ( window.location !== window.parent.location ) {
+    // The page is in an iframe
+    document.getElementById("windowPopOut").style.visibility = 'visible';
+    document.getElementById("closegraphbutton").style.visibility = 'hidden';
+  } else {
+    // The page is not in an iframe
+    document.getElementById("windowPopOut").style.visibility = 'hidden';
+    document.getElementById("closegraphbutton").style.visibility = 'visible';
+  }
+  
 (function ($) {
     // jQuery extension
     $.fn.visualize = function (options) {
@@ -158,16 +167,6 @@ var svg;        // The SVG where the visualisation will be executed on
         var MAXITEMS = window.hWin.HAPI4.get_prefs('search_detail_limit');
 
         visualizeData();
-
-        if ( window.location !== window.parent.location ) {
-            // The page is in an iframe
-            document.getElementById("windowPopOut").style.visibility = 'visible';
-            document.getElementById("closegraphbutton").style.visibility = 'hidden';
-          } else {
-            // The page is not in an iframe
-            document.getElementById("windowPopOut").style.visibility = 'hidden';
-            document.getElementById("closegraphbutton").style.visibility = 'visible';
-          }
 
         var ele_warn = $('#net_limit_warning');
         if (amount >= MAXITEMS) {
