@@ -71,11 +71,14 @@ var svg;        // The SVG where the visualisation will be executed on
 var fullscreen = false;
 
 
+<<<<<<< HEAD
 while (fullscreen) {
     full_btn.style.visibility = 'hidden';
     cls_button.style.visibility = 'visible';
 }
 
+=======
+>>>>>>> parent of edc0f01 (Revert "Update visualize.js")
 (function ($) {
     // jQuery extension
     $.fn.visualize = function (options) {
@@ -1555,6 +1558,7 @@ function openWin() {
 
     
 
+<<<<<<< HEAD
     while (fullscreen) {
         full_btn.style.visibility = 'hidden';
         cls_button.style.visibility = 'visible';
@@ -1564,15 +1568,14 @@ function openWin() {
 
     tick();
 
+=======
+>>>>>>> parent of edc0f01 (Revert "Update visualize.js")
 }
 
 function closeWin(){
     fullscreen = false();
 
-    var hrefnew2 = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
-    hrefnew2 = hrefnew2 + ((hrefnew2 == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
-
-    var url3 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew2;
+    var url3 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
 
     window.close(url3);
 
