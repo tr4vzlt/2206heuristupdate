@@ -1540,7 +1540,6 @@ function refreshButton() {
 
 
 function openWin() {
-    fullscreen = true;
     // TODO: Get button
     let full_btn = document.getElementById("windowPopOut");
     let cls_button = document.getElementById("closegraphbutton");
@@ -1550,12 +1549,14 @@ function openWin() {
 
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
 
+
+    window.open(url2);
+    fullscreen = true;
+
     if (fullscreen){
         
     }
 
-
-    window.open(url2);
 
 
 }
