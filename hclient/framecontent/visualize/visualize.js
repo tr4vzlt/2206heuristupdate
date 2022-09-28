@@ -1562,6 +1562,8 @@ function openWin() {
 
     window.open(url2);
 
+    tick();
+
 }
 
 function closeWin(){
@@ -1573,5 +1575,8 @@ function closeWin(){
     var url3 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew2;
 
     window.close(url3);
+
+
+    location.href = hrefnew2;
 
 }
