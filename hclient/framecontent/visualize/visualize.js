@@ -1558,6 +1558,10 @@ function openWin() {
     }
 }
 
+//Write a 'onresize function' inside container to then then trigger this function
+//below, one this function gets triggered use it to insert a css scale into the node labels
+//depending on the size of the container for example, container scale 2 = text scale 3
+//Main problem is at the moment i cant get this event to trigger from a resized container
 function scaleFunction() {
     alert("Hello! I am an alert box!!");
 }
