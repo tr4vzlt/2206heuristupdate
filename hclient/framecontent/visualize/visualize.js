@@ -1538,7 +1538,6 @@ function refreshButton() {
 
 function openWin() {
     // TODO: Get button
-
     fullscreen = true;
 
     let full_btn = document.getElementById("windowPopOut");
@@ -1560,23 +1559,19 @@ function openWin() {
 
     tick();
 
-    
-
-    
-
-   
-
 }
 
 function closeWin(){
-    fullscreen = false;
 
-    var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
-    hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
+    var hrefnew2 = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
+    hrefnew2 = hrefnew2 + ((hrefnew2 == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
 
-    var url3 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
+    var url3 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew2;
 
     window.close(url3);
 
-    refreshButton();
+    fullscreen = false;
+
+    location.href = hrefnew2;
+
 }
