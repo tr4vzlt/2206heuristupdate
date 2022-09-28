@@ -68,7 +68,6 @@
 
 var settings;   // Plugin settings object
 var svg;        // The SVG where the visualisation will be executed on
-var fullscreen = false;
 
 
 (function ($) {
@@ -159,6 +158,16 @@ var fullscreen = false;
         var MAXITEMS = window.hWin.HAPI4.get_prefs('search_detail_limit');
 
         visualizeData();
+
+        if ( window.location !== window.parent.location ) {
+            // The page is in an iframe
+            document.getElementById("windowPopOut").style.visibility = 'visible';
+            document.getElementById("closegraphbutton").style.visibility = 'hidden';
+          } else {
+            // The page is not in an iframe
+            document.getElementById("windowPopOut").style.visibility = 'hidden';
+            document.getElementById("closegraphbutton").style.visibility = 'visible';
+          }
 
         var ele_warn = $('#net_limit_warning');
         if (amount >= MAXITEMS) {
@@ -1541,10 +1550,7 @@ function refreshButtonFullscreen() {
 
 function openWin() {
     // TODO: Get button
-    fullscreen = true;
-
-    let full_btn = document.getElementById("windowPopOut");
-    let cls_button = document.getElementById("closegraphbutton");
+    
 
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
@@ -1559,7 +1565,6 @@ function openWin() {
 }
 
 function closeWin() {
-    fullscreen = false;
 
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
