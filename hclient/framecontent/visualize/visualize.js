@@ -71,6 +71,11 @@ var svg;        // The SVG where the visualisation will be executed on
 var fullscreen = false;
 
 
+if (fullscreen == true) {
+    full_btn.style.visibility = 'hidden';
+    cls_button.style.visibility = 'visible';
+}
+
 (function ($) {
     // jQuery extension
     $.fn.visualize = function (options) {
@@ -1550,12 +1555,22 @@ function openWin() {
 
     window.open(url2);
 
+    if (fullscreen == true) {
+        full_btn.style.visibility = 'hidden';
+        cls_button.style.visibility = 'visible';
+    }
+
+    
+
 }
 
 function closeWin(){
     fullscreen = false();
 
-    var url3 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
+    var hrefnew2 = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
+    hrefnew2 = hrefnew2 + ((hrefnew2 == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
+
+    var url3 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew2;
 
     window.close(url3);
 
