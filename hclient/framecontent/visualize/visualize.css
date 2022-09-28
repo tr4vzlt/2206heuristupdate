@@ -279,9 +279,7 @@ text.shadow {
 }
 
 .nodelabel.namelabel {
-    font-size: clamp(1rem, -0.875rem + 8.333333vw, 3.5rem) !important;
+    /*font-size: clamp(1rem, -0.875rem + 8.333333vw, 3.5rem) !important;*/
+    font-size:3px !important;
 }
 
-.red{
-    color:red;
-  }

@@ -1561,6 +1561,8 @@ function openWin() {
 
 }
 
+//TEXT RESIZE FUNTION
+/*
 const [viewportWidth,fontSizeRem,fontSizePx] = document.querySelectorAll("nodelabel.namelabel");
 
 function calculate(){
@@ -1584,3 +1586,5 @@ window.addEventListener("resize", () => {
 });
 
 calculate();
+
+*/
