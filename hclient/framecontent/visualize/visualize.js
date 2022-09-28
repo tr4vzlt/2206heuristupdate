@@ -71,6 +71,11 @@ var svg;        // The SVG where the visualisation will be executed on
 var fullscreen = false;
 
 
+while (fullscreen) {
+    full_btn.style.visibility = 'hidden';
+    cls_button.style.visibility = 'visible';
+}
+
 (function ($) {
     // jQuery extension
     $.fn.visualize = function (options) {
@@ -1550,7 +1555,7 @@ function openWin() {
 
     
 
-    if (fullscreen) {
+    while (fullscreen) {
         full_btn.style.visibility = 'hidden';
         cls_button.style.visibility = 'visible';
     }
@@ -1562,6 +1567,7 @@ function openWin() {
 }
 
 function closeWin(){
+    fullscreen = false();
 
     var hrefnew2 = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew2 = hrefnew2 + ((hrefnew2 == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
@@ -1570,7 +1576,6 @@ function closeWin(){
 
     window.close(url3);
 
-    fullscreen = false;
 
     location.href = hrefnew2;
 
