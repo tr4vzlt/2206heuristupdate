@@ -130,7 +130,8 @@ var svg;        // The SVG where the visualisation will be executed on
             markercolor: "#000",
 
             entityradius: 30,
-            entitycolor: "#b5b5b5",
+            //testing entity color
+            entitycolor: setting_entitycolor,
 
             labels: true,
             fontsize: "8px",
