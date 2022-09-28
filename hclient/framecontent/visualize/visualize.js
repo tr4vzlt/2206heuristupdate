@@ -1533,6 +1533,11 @@ function refreshButton() {
 
 }
 
+function refreshButtonFullscreen() {
+    location.reload();
+
+}
+
 
 function openWin() {
     // TODO: Get button
@@ -1556,7 +1561,10 @@ function openWin() {
 function closeWin(){
     fullscreen = false();
 
-    var url3 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
+    var hrefnew2 = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
+    hrefnew2 = hrefnew2 + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
+
+    var url3 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew2;
     
     window.close(url3);
     
