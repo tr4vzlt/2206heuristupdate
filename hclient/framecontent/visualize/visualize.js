@@ -71,7 +71,7 @@ var svg;        // The SVG where the visualisation will be executed on
 var fullscreen = false;
 
 
-if (fullscreen) {
+if (fullscreen == true) {
     full_btn.style.visibility = 'hidden';
     cls_button.style.visibility = 'visible';
 }
