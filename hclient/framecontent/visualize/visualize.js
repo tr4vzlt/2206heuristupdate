@@ -1529,7 +1529,7 @@ function refreshButton() {
     newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
 
     location.href = newhref;
-    
+
 
 }
 
@@ -1554,19 +1554,19 @@ function openWin() {
 
     window.open(url2);
 
-    
+
 
 }
 
-function closeWin(){
-    fullscreen = false();
+function closeWin() {
+    fullscreen = false;
 
-    var hrefnew2 = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
-    hrefnew2 = hrefnew2 + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
+    var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
+    hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
 
-    var url3 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew2;
-    
-    window.close(url3);
-    
+    var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
+
+    window.close(url2);
+
 
 }
