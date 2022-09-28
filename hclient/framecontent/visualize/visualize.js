@@ -1558,17 +1558,5 @@ function openWin() {
     }
 }
 
-flexFont = function () {
-    var text = document.getElementsByClassName("flexFont");
-    for(var i = 0; i < text.length; i++) {
-        var relFontsize = text[i].offsetWidth*0.05;
-        text[i].style.fontSize = relFontsize+'px';
-    }
-};
-
-window.onload = function(event) {
-    flexFont();
-};
-window.onresize = function(event) {
-    flexFont();
-};
+var width = document.querySelectorAll('g#container').getBoundingClientRect().width;
+alert(width);
