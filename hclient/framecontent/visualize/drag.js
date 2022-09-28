@@ -32,7 +32,7 @@ function addNodes() {
                 .data(data.nodes)
                 .enter()
                 .append("g")
-                .on("mouseover", function(d) { alert("node was hovered"); });
+                .on("doubleclick", function(d) { alert("node was hovered"); });
                 
     
                
