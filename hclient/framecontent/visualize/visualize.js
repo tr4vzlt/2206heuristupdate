@@ -1528,7 +1528,10 @@ function refreshButton() {
     var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
 
+
+
     location.href = newhref;
+    tick();
 
 }
 
@@ -1543,19 +1546,27 @@ function openWin() {
 
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
 
-
-    window.open(url2);
-
     fullscreen = true;
 
     if (fullscreen) {
-
+        full_btn.style.visibility = 'hidden';
+        cls_button.style.visibility = 'visible';
     }
 
+    window.open(url2);
+
+    tick();
+
+    
+
+    
+
+   
 
 }
 
 function closeWin(){
+    fullscreen = false;
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
 
@@ -1563,5 +1574,5 @@ function closeWin(){
 
     window.close(url3);
 
-    fullscreen = false;
+    
 }
