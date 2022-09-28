@@ -70,128 +70,125 @@ var settings;   // Plugin settings object
 var svg;        // The SVG where the visualisation will be executed on
 var fullscreen = false;
 
-viz();
 
-function viz() {
+(function ($) {
+    // jQuery extension
+    $.fn.visualize = function (options) {
 
-    (function ($) {
-        // jQuery extension
-        $.fn.visualize = function (options) {
-
-            // Select and clear SVG.
-            svg = d3.select("#d3svg");
-            svg.selectAll("*").remove();
-            svg.append("text").text("Building graph ...").attr("x", "25").attr("y", "25");
+        // Select and clear SVG.
+        svg = d3.select("#d3svg");
+        svg.selectAll("*").remove();
+        svg.append("text").text("Building graph ...").attr("x", "25").attr("y", "25");
 
 
-            // Default plugin settings
-            settings = $.extend({
-                // Custom functions
-                getData: $.noop(), // Needs to be overriden with custom function
-                getLineLength: function () { return getSetting(setting_linelength, 200); },
+        // Default plugin settings
+        settings = $.extend({
+            // Custom functions
+            getData: $.noop(), // Needs to be overriden with custom function
+            getLineLength: function () { return getSetting(setting_linelength, 200); },
 
-                selectedNodeIds: [],
-                onRefreshData: function () { },
-                triggerSelection: function (selection) { },
+            selectedNodeIds: [],
+            onRefreshData: function () { },
+            triggerSelection: function (selection) { },
 
-                isDatabaseStructure: false,
+            isDatabaseStructure: false,
 
-                showCounts: true,
+            showCounts: true,
 
-                // UI setting controls
-                showLineSettings: true,
-                showLineType: true,
-                showLineLength: true,
-                showLineWidth: true,
-                showLineColor: true,
-                showMarkerColor: true,
+            // UI setting controls
+            showLineSettings: true,
+            showLineType: true,
+            showLineLength: true,
+            showLineWidth: true,
+            showLineColor: true,
+            showMarkerColor: true,
 
-                showEntitySettings: true,
-                showEntityRadius: true,
-                showEntityColor: true,
+            showEntitySettings: true,
+            showEntityRadius: true,
+            showEntityColor: true,
 
-                showTextSettings: true,
-                showLabels: true,
-                showFontSize: true,
-                showTextLength: true,
-                showTextColor: true,
+            showTextSettings: true,
+            showLabels: true,
+            showFontSize: true,
+            showTextLength: true,
+            showTextColor: true,
 
-                showTransformSettings: true,
-                showFormula: true,
-                showFishEye: true,
+            showTransformSettings: true,
+            showFormula: true,
+            showFishEye: true,
 
-                showGravitySettings: true,
-                showGravity: true,
-                showAttraction: true,
+            showGravitySettings: true,
+            showGravity: true,
+            showAttraction: true,
 
 
-                // UI default settings
-                advanced: false,
-                linetype: "straight",
-                line_show_empty: true,
-                linelength: 100,
-                linewidth: 3,
-                linecolor: "#22a",
-                markercolor: "#000",
+            // UI default settings
+            advanced: false,
+            linetype: "straight",
+            line_show_empty: true,
+            linelength: 100,
+            linewidth: 3,
+            linecolor: "#22a",
+            markercolor: "#000",
 
-                entityradius: 30,
-                entitycolor: "#b5b5b5",
+            entityradius: 30,
+            entitycolor: "#b5b5b5",
 
-                labels: true,
-                fontsize: "8px",
-                textlength: 25,
-                textcolor: "#000",
+            labels: true,
+            fontsize: "8px",
+            textlength: 25,
+            textcolor: "#000",
 
-                formula: "linear",
-                fisheye: false,
+            formula: "linear",
+            fisheye: false,
 
-                gravity: "off",
-                attraction: -3000,
+            gravity: "off",
+            attraction: -3000,
 
-                translatex: 200,
-                translatey: 200,
-                scale: 1
-            }, options);
+            translatex: 200,
+            translatey: 200,
+            scale: 1
+        }, options);
 
-            // Handle settings (settings.js)
-            checkStoredSettings();  //restore default settings
-            handleSettingsInUI();
+        // Handle settings (settings.js)
+        checkStoredSettings();  //restore default settings
+        handleSettingsInUI();
 
-            // Check visualisation limit
-            var amount = Object.keys(settings.data.nodes).length;
-            var MAXITEMS = window.hWin.HAPI4.get_prefs('search_detail_limit');
+        // Check visualisation limit
+        var amount = Object.keys(settings.data.nodes).length;
+        var MAXITEMS = window.hWin.HAPI4.get_prefs('search_detail_limit');
 
-            visualizeData();
+        visualizeData();
 
-            var ele_warn = $('#net_limit_warning');
-            if (amount >= MAXITEMS) {
-                ele_warn.html('These results are limited to ' + MAXITEMS + ' records<br>(limit set in your profile Preferences)<br>Please filter to a smaller set of results').show();//.delay(2000).fadeOut(10000);
-            } else {
-                ele_warn.hide();
+        var ele_warn = $('#net_limit_warning');
+        if (amount >= MAXITEMS) {
+            ele_warn.html('These results are limited to ' + MAXITEMS + ' records<br>(limit set in your profile Preferences)<br>Please filter to a smaller set of results').show();//.delay(2000).fadeOut(10000);
+        } else {
+            ele_warn.hide();
+        }
+
+        $('#btnZoomIn').button({ icons: { primary: 'ui-icon-plus' }, text: false }).click(
+            function () {
+                zoomBtn(true);
             }
+        );
 
-            $('#btnZoomIn').button({ icons: { primary: 'ui-icon-plus' }, text: false }).click(
-                function () {
-                    zoomBtn(true);
-                }
-            );
+        $('#btnZoomOut').button({ icons: { primary: 'ui-icon-minus' }, text: false }).click(
+            function () {
+                zoomBtn(false);
+            }
+        );
 
-            $('#btnZoomOut').button({ icons: { primary: 'ui-icon-minus' }, text: false }).click(
-                function () {
-                    zoomBtn(false);
-                }
-            );
+        $('#btnFitToExtent').button({ icons: { primary: 'ui-icon-fullscreen' }, text: false }).click(
+            function () {
+                zoomToFit();
+            }
+        );
 
-            $('#btnFitToExtent').button({ icons: { primary: 'ui-icon-fullscreen' }, text: false }).click(
-                function () {
-                    zoomToFit();
-                }
-            );
+        return this;
+    };
+}(jQuery));
 
-            return this;
-        };
-    }(jQuery));
-}
 
 /*******************************START OF VISUALISATION HELPER FUNCTIONS*******************************/
 var maxCountForNodes, maxCountForLinks;
@@ -1528,14 +1525,13 @@ function refreshButton() {
     // TODO: Get URL Param
     // NOTE: Refer to document on discord/zoom
 
-    if (fullscreen)
-        location.reload()
-    else {
-        var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
-        newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
+    tick();
 
-        location.href = newhref;
-    }
+    //var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
+    //newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
+
+    //location.href = newhref;
+
 }
 
 
@@ -1543,7 +1539,7 @@ function openWin() {
     // TODO: Get button
     let full_btn = document.getElementById("windowPopOut");
     let cls_button = document.getElementById("closegraphbutton");
-    
+
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
 
@@ -1553,10 +1549,9 @@ function openWin() {
     window.open(url2);
     fullscreen = true;
 
-    if (fullscreen){
-        
-    }
+    if (fullscreen) {
 
+    }
 
 
 }
