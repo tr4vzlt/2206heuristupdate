@@ -69,16 +69,6 @@
 var settings;   // Plugin settings object
 var svg;        // The SVG where the visualisation will be executed on
 
-if ( window.location !== window.parent.location ) {
-    // The page is in an iframe
-    document.getElementById("windowPopOut").style.display = 'block';
-    document.getElementById("closegraphbutton").style.display = 'none';
-  } else {
-    // The page is not in an iframe
-    document.getElementById("windowPopOut").style.display = 'none';
-    document.getElementById("closegraphbutton").style.display = 'block';
-  }
-
 (function ($) {
     // jQuery extension
     $.fn.visualize = function (options) {
@@ -1529,7 +1519,7 @@ function showEmbedDialog() {
 
 //New graph refresh button - Created by Travis Doyle 24/9/2022
 function refreshButton() {
-    let fullscreen = false
+    
     // TODO: Get URL Param
     // NOTE: Refer to document on discord/zoom
 
