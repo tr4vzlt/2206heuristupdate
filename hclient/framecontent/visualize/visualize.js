@@ -1555,7 +1555,7 @@ function openWin() {
 
     
 
-    while (fullscreen) {
+    if (fullscreen == true) {
         full_btn.style.visibility = 'hidden';
         cls_button.style.visibility = 'visible';
     }
