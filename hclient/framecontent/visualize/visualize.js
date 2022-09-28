@@ -1553,3 +1553,8 @@ function openWin() {
 
 
 }
+
+function closeWin(){
+    fullscreen = false;
+    window.close(url2);
+}
