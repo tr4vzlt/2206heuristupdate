@@ -27,17 +27,7 @@
 
 
 function addNodes() {
-    
 
-    if ( window.location !== window.parent.location ) {
-        // The page is in an iframe
-        document.getElementById("windowPopOut").style.display = 'block';
-        document.getElementById("closegraphbutton").style.display = 'none';
-      } else {
-        // The page is not in an iframe
-        document.getElementById("windowPopOut").style.display = 'none';
-        document.getElementById("closegraphbutton").style.display = 'block';
-      }
 
     // Append nodes
     var nodes = d3.select("#container")
