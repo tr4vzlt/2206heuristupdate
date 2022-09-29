@@ -1525,15 +1525,22 @@ function inIframe(){
 
    let fullscreenbtn = document.getElementById("windowPopOut");
    let closewindowbtn = document.getElementById("closegraphbutton");
+   let refreshiFrame = document.getElementById("resetbutton1");
+   let refreshbuttonfullscreen = document.getElementById("resetbuttonfullscreen");
+
 
     if (window.location !== window.parent.location){
         //Page is in iFrame
         fullscreenbtn.style.visibility = 'visible';
         closewindowbtn.style.visibility = 'hidden';
+        refreshiFrame.style.visibility = 'visible';
+        refreshbuttonfullscreen.style.visibility = 'hidden';
     }else {
         //Page is not in iFrame
         fullscreenbtn.style.visibility = 'hidden';
         closewindowbtn.style.visibility = 'visible';
+        refreshiFrame.style.visibility = 'hidden';
+        refreshbuttonfullscreen.style.visibility = 'visible';
     }
 
 }
