@@ -468,6 +468,8 @@ function visualizeData() {
         );
     }
 
+    inIframe();
+
     tick(); // update display
 
 } //end visualizeData
@@ -1519,9 +1521,22 @@ function showEmbedDialog() {
     */
 }
 
+function inIframe(){
 
+   let fullscreenbtn = document.getElementById("windowPopOut");
+   let closewindowbtn = document.getElementById("closegraphbutton");
 
+    if (window.location !== window.parent.location){
+        //Page is in iFrame
+        fullscreenbtn.style.visibility = 'visible';
+        closewindowbtn.style.visibility = 'hidden';
+    }else {
+        //Page is not in iFrame
+        fullscreenbtn.style.visibility = 'hidden';
+        closewindowbtn.style.visibility = 'visible';
+    }
 
+}
 
 //New graph refresh button - Created by Travis Doyle 24/9/2022
 function refreshButton() {
@@ -1534,7 +1549,6 @@ function refreshButton() {
 
 function refreshButtonFullscreen() {
     location.reload();
-
 }
 
 //open graph in fullscreen - Travis Doyle 28/9
@@ -1543,7 +1557,6 @@ function openWin() {
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
     window.open(url2);
-
 }
 //close fullscreen graph - Travis Doyle 28/9
 function closeWin() {
@@ -1551,6 +1564,4 @@ function closeWin() {
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
     window.close(url2);
-
-
 }
