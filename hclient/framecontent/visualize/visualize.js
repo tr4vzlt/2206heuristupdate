@@ -1532,14 +1532,14 @@ function inIframe(){
     if (window.location !== window.parent.location){
         //Page is in iFrame
         fullscreenbtn.style.visibility = 'visible';
-        closewindowbtn.style.visibility = 'hidden';
+        closewindowbtn.style.display = 'none';
         refreshiFrame.style.visibility = 'visible';
-        refreshbuttonfullscreen.style.visibility = 'hidden';
+        refreshbuttonfullscreen.style.display = 'none';
     }else {
         //Page is not in iFrame
-        fullscreenbtn.style.visibility = 'hidden';
+        fullscreenbtn.style.display = 'none';
         closewindowbtn.style.visibility = 'visible';
-        refreshiFrame.style.visibility = 'hidden';
+        refreshiFrame.style.display = 'none';
         refreshbuttonfullscreen.style.visibility = 'visible';
     }
 
