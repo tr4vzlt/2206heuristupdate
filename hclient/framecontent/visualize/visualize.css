@@ -279,7 +279,7 @@ text.shadow {
 }
 
 g#container {
-    border: 2px solid black;
+    outline: #4CAF50 solid 3px;
 }
 /*
 .nodelabel.namelabel {
