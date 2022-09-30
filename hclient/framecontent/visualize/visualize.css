@@ -279,7 +279,7 @@ text.shadow {
 }
 
 #container {
-    outline: #4CAF50 solid 3px;
+    outline: #4CAF50 solid 3px !important;
 }
 /*
 .nodelabel.namelabel {
