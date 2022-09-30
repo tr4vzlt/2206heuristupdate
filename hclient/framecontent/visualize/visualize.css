@@ -278,7 +278,7 @@ text.shadow {
     height: 16;
 }
 
-g#container {
+#container {
     outline: #4CAF50 solid 3px;
 }
 /*
