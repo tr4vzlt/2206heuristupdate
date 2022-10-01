@@ -1569,7 +1569,10 @@ function refreshButton() {
 //refresh graph while in fullscreen mode - Travis Doyle 28/9
 
 function refreshButtonFullscreen() {
-    location.reload();
+    var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request.q, false);
+    hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
+    var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
+    window.open(url2);
 }
 
 //open graph in fullscreen - Travis Doyle 28/9
@@ -1581,7 +1584,7 @@ function openWin() {
 }
 //close fullscreen graph - Travis Doyle 28/9
 function closeWin() {
-    var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
+    var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request.q, false);
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
     window.close(url2);
