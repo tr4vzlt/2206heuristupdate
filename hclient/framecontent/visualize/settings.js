@@ -175,26 +175,16 @@ function handleSettingsInUI() {
 
 
 
-    if (window.location !== window.parent.location) {
-        //Page is in iFrame
-        $('#gravityMode0').button(/*{icon: 'ui-icon-gravity0' , showLabel:false}*/)
-            .click(function () { setGravity('off'); });
-        $('#gravityMode1').button(/*{icon: 'ui-icon-gravity1' , showLabel:false}*/)
-            .click(function () { setGravity('touch'); });
-        /*$('#gravityMode2').button(/*{icon: 'ui-icon-gravity2' , showLabel:false})
-            .click( function(){setGravity('aggressive');} );*/
-        $("#setGravityMode").controlgroup();
 
-    } else {
-        //Page is not in iFrame
-        $('#gravityMode0').button(/*{icon: 'ui-icon-gravity0' , showLabel:false}*/)
-            .click(function () { setGravity2('off'); });
-        $('#gravityMode1').button(/*{icon: 'ui-icon-gravity1' , showLabel:false}*/)
-            .click(function () { setGravity2('touch'); });
-        /*$('#gravityMode2').button(/*{icon: 'ui-icon-gravity2' , showLabel:false})
-            .click( function(){setGravity('aggressive');} );*/
-        $("#setGravityMode").controlgroup();
-    }
+    //Page is in iFrame
+    $('#gravityMode0').button(/*{icon: 'ui-icon-gravity0' , showLabel:false}*/)
+        .click(function () { setGravity('off'); });
+    $('#gravityMode1').button(/*{icon: 'ui-icon-gravity1' , showLabel:false}*/)
+        .click(function () { setGravity('touch'); });
+    /*$('#gravityMode2').button(/*{icon: 'ui-icon-gravity2' , showLabel:false})
+        .click( function(){setGravity('aggressive');} );*/
+    $("#setGravityMode").controlgroup();
+
 
 
 
