@@ -164,15 +164,14 @@ function handleSettingsInUI() {
         .click(function () { changeViewMode('infoboxes_full'); });
     $("#setViewMode").controlgroup();
 
-    
-   //$('#gravityMode0').button(/*{icon: 'ui-icon-gravity0' , showLabel:false}*/)
-       // .click(function () { setGravity('off'); });
-   // $('#gravityMode1').button(/*{icon: 'ui-icon-gravity1' , showLabel:false}*/)
+
+    //$('#gravityMode0').button(/*{icon: 'ui-icon-gravity0' , showLabel:false}*/)
+    // .click(function () { setGravity('off'); });
+    // $('#gravityMode1').button(/*{icon: 'ui-icon-gravity1' , showLabel:false}*/)
     //    .click(function () { setGravity('touch'); });
     /*$('#gravityMode2').button(/*{icon: 'ui-icon-gravity2' , showLabel:false})
         .click( function(){setGravity('aggressive');} );*/
-   // $("#setGravityMode").controlgroup();
-    
+    // $("#setGravityMode").controlgroup();
 
 
 
@@ -196,6 +195,9 @@ function handleSettingsInUI() {
             .click( function(){setGravity('aggressive');} );*/
         $("#setGravityMode").controlgroup();
     }
+
+
+
 
 
 
@@ -608,9 +610,9 @@ function setGravity(gravity) {
         force.resume();
     }
 
-    refreshButton();
-
     _syncUI();
+
+    refreshButton();
 }
 
 function setGravity2(gravity) {
@@ -634,9 +636,10 @@ function setGravity2(gravity) {
         force.resume();
     }
 
-    refreshButtonFullscreen();
 
     _syncUI();
+
+    refreshButtonFullscreen();
 }
 //
 //
