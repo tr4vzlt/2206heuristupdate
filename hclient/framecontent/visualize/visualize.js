@@ -1569,7 +1569,9 @@ function refreshButton() {
 //refresh graph while in fullscreen mode - Travis Doyle 28/9
 
 function refreshButtonFullscreen() {
-    location.reload();
+    var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
+    newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
+    alert("Query is  " + window.hWin.HEURIST4.current_query_request);
 }
 
 //open graph in fullscreen - Travis Doyle 28/9
