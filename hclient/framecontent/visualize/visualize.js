@@ -1530,6 +1530,8 @@ function inIframe() {
 
     let gravitymodeZero = document.getElementById("gravityMode0");
     let gravitymodeOne = document.getElementById("gravityMode1");
+    let gravitymodeTwo = document.getElementById("gravityMode2");
+    let gravitymodeThree = document.getElementById("gravityMode3");
 
     if (window.location !== window.parent.location) {
         //Page is in iFrame
@@ -1537,10 +1539,10 @@ function inIframe() {
         closewindowbtn.style.display = 'none';
         refreshiFrame.style.visibility = 'visible';
         refreshbuttonfullscreen.style.display = 'none';
-
-
-        gravitymodeZero.addEventListener("click", refreshButton());
-        gravitymodeOne.addEventListener("click", refreshButton());
+        gravitymodeZero.style.visibility = 'visible';
+        gravitymodeOne.style.visibility = 'visible';
+        gravitymodeTwo.style.display = 'none';
+        gravitymodeThree.style.display = 'none';
 
     } else {
         //Page is not in iFrame
@@ -1548,10 +1550,11 @@ function inIframe() {
         closewindowbtn.style.visibility = 'visible';
         refreshiFrame.style.display = 'none';
         refreshbuttonfullscreen.style.visibility = 'visible';
+        gravitymodeZero.style.display = 'none';
+        gravitymodeOne.style.display = 'none';
+        gravitymodeTwo.style.visibility = 'visible';
+        gravitymodeThree.style.visibility = 'visible';
 
-
-        gravitymodeZero.addEventListener("click", refreshButtonFullscreen());
-        gravitymodeOne.addEventListener("click", refreshButtonFullscreen());
     }
         
 }
