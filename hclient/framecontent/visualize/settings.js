@@ -179,9 +179,9 @@ function handleSettingsInUI() {
     if (window.location !== window.parent.location) {
         //Page is in iFrame
         $('#gravityMode0').button(/*{icon: 'ui-icon-gravity0' , showLabel:false}*/)
-            .click(function () { setGravity('off'), refreshButton(); });
+            .click(function () { setGravity('off'); });
         $('#gravityMode1').button(/*{icon: 'ui-icon-gravity1' , showLabel:false}*/)
-            .click(function () { setGravity('touch'), refreshButton(); });
+            .click(function () { setGravity('touch'); });
         /*$('#gravityMode2').button(/*{icon: 'ui-icon-gravity2' , showLabel:false})
             .click( function(){setGravity('aggressive');} );*/
         $("#setGravityMode").controlgroup();
@@ -189,9 +189,9 @@ function handleSettingsInUI() {
     } else {
         //Page is not in iFrame
         $('#gravityMode0').button(/*{icon: 'ui-icon-gravity0' , showLabel:false}*/)
-            .click(function () { setGravity('off'), refreshButtonFullscreen(); });
+            .click(function () { setGravity2('off'); });
         $('#gravityMode1').button(/*{icon: 'ui-icon-gravity1' , showLabel:false}*/)
-            .click(function () { setGravity('touch'), refreshButtonFullscreen(); });
+            .click(function () { setGravity2('touch'); });
         /*$('#gravityMode2').button(/*{icon: 'ui-icon-gravity2' , showLabel:false})
             .click( function(){setGravity('aggressive');} );*/
         $("#setGravityMode").controlgroup();
@@ -607,6 +607,34 @@ function setGravity(gravity) {
     if (gravity !== "off") {
         force.resume();
     }
+
+    refreshButton();
+
+    _syncUI();
+}
+
+function setGravity2(gravity) {
+
+    putSetting(setting_gravity, gravity);
+
+    // Update gravity impact on nodes
+    svg.selectAll(".node").attr("fixed", function (d, i) {
+        if (gravity == "aggressive") {
+            d.fixed = false;
+            return false;
+        } else {
+            d.fixed = true;
+            return true;
+        }
+    });
+
+    //visualizeData();
+
+    if (gravity !== "off") {
+        force.resume();
+    }
+
+    refreshButtonFullscreen();
 
     _syncUI();
 }
