@@ -1571,7 +1571,7 @@ function refreshButton() {
 function refreshButtonFullscreen() {
     var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
-    alert("Query is  " + window.hWin.HEURIST4.current_query_request);
+    alert("Query is  " + window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false));
 }
 
 //open graph in fullscreen - Travis Doyle 28/9
