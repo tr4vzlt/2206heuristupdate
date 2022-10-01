@@ -1521,28 +1521,39 @@ function showEmbedDialog() {
     */
 }
 
-function inIframe(){
+function inIframe() {
 
-   let fullscreenbtn = document.getElementById("windowPopOut");
-   let closewindowbtn = document.getElementById("closegraphbutton");
-   let refreshiFrame = document.getElementById("resetbutton1");
-   let refreshbuttonfullscreen = document.getElementById("resetbuttonfullscreen");
+    let fullscreenbtn = document.getElementById("windowPopOut");
+    let closewindowbtn = document.getElementById("closegraphbutton");
+    let refreshiFrame = document.getElementById("resetbutton1");
+    let refreshbuttonfullscreen = document.getElementById("resetbuttonfullscreen");
 
+    let gravitymodeZero = document.getElementById("gravityMode0");
+    let gravitymodeOne = document.getElementById("gravityMode1");
 
-    if (window.location !== window.parent.location){
+    if (window.location !== window.parent.location) {
         //Page is in iFrame
         fullscreenbtn.style.visibility = 'visible';
         closewindowbtn.style.display = 'none';
         refreshiFrame.style.visibility = 'visible';
         refreshbuttonfullscreen.style.display = 'none';
-    }else {
+
+
+        gravitymodeZero.addEventListener("click", refreshButton());
+        gravitymodeOne.addEventListener("click", refreshButton());
+
+    } else {
         //Page is not in iFrame
         fullscreenbtn.style.display = 'none';
         closewindowbtn.style.visibility = 'visible';
         refreshiFrame.style.display = 'none';
         refreshbuttonfullscreen.style.visibility = 'visible';
-    }
 
+
+        gravitymodeZero.addEventListener("click", refreshButtonFullscreen());
+        gravitymodeOne.addEventListener("click", refreshButtonFullscreen());
+    }
+        
 }
 
 //New graph refresh button - Created by Travis Doyle 24/9/2022

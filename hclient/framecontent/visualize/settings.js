@@ -601,36 +601,8 @@ function setGravity(gravity) {
     }
 
     _syncUI();
-
-    refreshButton();
 }
 
-function setGravity2(gravity) {
-
-    putSetting(setting_gravity, gravity);
-
-    // Update gravity impact on nodes
-    svg.selectAll(".node").attr("fixed", function (d, i) {
-        if (gravity == "aggressive") {
-            d.fixed = false;
-            return false;
-        } else {
-            d.fixed = true;
-            return true;
-        }
-    });
-
-    //visualizeData();
-
-    if (gravity !== "off") {
-        force.resume();
-    }
-
-
-    _syncUI();
-
-    refreshButtonFullscreen();
-}
 //
 //
 //
