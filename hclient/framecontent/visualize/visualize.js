@@ -470,9 +470,6 @@ function visualizeData() {
 
     inIframe();
 
-    var q = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
-    alert ("Q =  " + q)
-
     tick(); // update display
 
 } //end visualizeData
@@ -1572,9 +1569,7 @@ function refreshButton() {
 //refresh graph while in fullscreen mode - Travis Doyle 28/9
 
 function refreshButtonFullscreen() {
-    var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
-    newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
-    alert("Query is  " + q);
+    location.reload();
 }
 
 //open graph in fullscreen - Travis Doyle 28/9
