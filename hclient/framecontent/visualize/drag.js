@@ -162,7 +162,10 @@ function showNodeInformation(d){
     infoBox.selectAll("h2").remove();//remove header
     infoBox.selectAll("p").remove();//remove paragraph
 
-    d.datum().text("Data is");
+    var rec = getSetting(d.id);
+    console.log(rec);
+
+    
 
     
     //Access info in the d object;
