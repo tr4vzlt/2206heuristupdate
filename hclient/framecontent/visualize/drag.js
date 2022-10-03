@@ -166,6 +166,9 @@ function showNodeInformation(d){
     const nameArray = name.split(",");
     console.log(nameArray[0] + nameArray[1]);
 
+    infoBox.append("h2").text("Person Details");
+    infoBox.append("p").text("Given name: " + nameArray[1]);
+
 
     
 
