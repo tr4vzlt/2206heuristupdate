@@ -160,6 +160,7 @@ function showNodeInformation(d){
     var infoBox = d3.select("#infoBox");//select infobox
     infoBox.selectAll("h2").remove();//remove header
     infoBox.selectAll("p").remove();//remove paragraph
+    console.log("Data id " + d.id);
     
     //get data from node
     //console.log("info" + d.datum());
