@@ -173,6 +173,10 @@ function showNodeInformation(d){
 
     //var info = d.gender;
     console.log(info);
+
+    //XMLHTTPRequest
+    //goes to PHP file
+    //capture data and handle as required
     
 
     

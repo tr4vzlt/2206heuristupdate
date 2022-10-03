@@ -520,7 +520,8 @@ function addContainer() {
 /**
 * Called after a zoom-event takes place.
 */
-function zoomed() { 
+function zoomed(e) { 
+    console.log("event", e);//added
     //keep current setting Translate   
     var translateXY = [];
     var notDefined = false;
