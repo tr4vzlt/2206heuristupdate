@@ -139,6 +139,7 @@ function addNodes() {
           })    
          .on("click", function(d) {
              showNodeInformation(d);//Added by ISH
+
             closeRectypeSelector();
             // Check if it's not a click after dragging
             if(!d3.event.defaultPrevented) {
@@ -160,7 +161,9 @@ function showNodeInformation(d){
     var infoBox = d3.select("#infoBox");//select infobox
     infoBox.selectAll("h2").remove();//remove header
     infoBox.selectAll("p").remove();//remove paragraph
-    console.log(d.name);
+
+    d.datum().text("Data is");
+
     
     //Access info in the d object;
     
