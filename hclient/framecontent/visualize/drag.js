@@ -32,7 +32,6 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g");
-                  //.on("click", showNodeInformation);
             
     // Dragging
     var drag = d3.behavior.drag()
