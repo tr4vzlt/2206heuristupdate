@@ -1561,22 +1561,17 @@ function inIframe() {
 
 //New graph refresh button - Created by Travis Doyle 24/9/2022
 function refreshButton() {
-    var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
-    newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
-    settings.isDatabaseStructure = false;
-    location.href = newhref;
+    //var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
+    //newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
+    //location.href = newhref;
 
-    
-
-    
+    getDataFromServer();
 }
 
 //refresh graph while in fullscreen mode - Travis Doyle 28/9
-
 function refreshButtonFullscreen() {
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, true);
     //hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
-    
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + '?q=' + hrefnew + '&db=' + window.hWin.HAPI4.database;
     window.open(url2, "_self");
 }
@@ -1586,9 +1581,7 @@ function openWin() {
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
-    settings.isDatabaseStructure = false;
     window.open(url2);
-    
 }
 //close fullscreen graph - Travis Doyle 28/9
 function closeWin() {
