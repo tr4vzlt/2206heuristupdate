@@ -162,8 +162,10 @@ function showNodeInformation(d){
     infoBox.selectAll("h2").remove();//remove header
     infoBox.selectAll("p").remove();//remove paragraph
 
-    var rec = getSetting(d.id);
-    console.log(rec);
+    var name = d.name;//name of person
+    const nameArray = name.split(",");
+    console.log(nameArray[0] + nameArray[1]);
+
 
     
 
