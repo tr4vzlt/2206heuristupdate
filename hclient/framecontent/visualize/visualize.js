@@ -1565,3 +1565,6 @@ function openWin() {
 function scaleFunction() {
     alert("Hello! I am an alert box!!");
 }
+
+
+
