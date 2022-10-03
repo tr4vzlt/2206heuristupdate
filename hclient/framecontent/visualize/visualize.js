@@ -518,7 +518,7 @@ function addContainer() {
         .translate([translateX, translateY])
         .scale(scale)
         .scaleExtent(scaleExtentVals)
-        .on("zoom", zoomed);
+        .on("zoom", zoomed, (d) => alert("yooooo"));
 
     return container;
 }
