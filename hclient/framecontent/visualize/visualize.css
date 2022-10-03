@@ -280,6 +280,7 @@ text.shadow {
 
 #container {
     outline: #4CAF50 solid 3px !important;
+    font-size: clamp(1rem, -0.875rem + 8.333333vw, 3.5rem) !important;
 }
 /*
 .nodelabel.namelabel {
@@ -287,6 +288,3 @@ text.shadow {
 }
 */
 
-.nodelabel {
-    font-size: clamp(1rem, -0.875rem + 8.333333vw, 3.5rem) !important;
-}
