@@ -505,6 +505,7 @@ function addContainer() {
     var container = svg.append("g")
         .attr("id", "container")
         .attr("transform", s);
+        
 
     var scaleExtentVals = [0.9, 2]; ////[0.75, 7.5]
 
@@ -518,9 +519,18 @@ function addContainer() {
         .translate([translateX, translateY])
         .scale(scale)
         .scaleExtent(scaleExtentVals)
-        .on("zoom", zoomed, (d) => alert("yooooo"));
+        .on("zoom", zoomed);
 
     return container;
+}
+
+//HANDLE ZOOM FOR TEXT
+
+let zoom = d3.zoom()
+	.on('zoom', handleZoom);
+
+function handleZoom(e) {
+    alert("message");
 }
 
 /**
