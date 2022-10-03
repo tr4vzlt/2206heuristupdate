@@ -138,7 +138,7 @@ function addNodes() {
               return false;
           })    
          .on("click", function(d) {
-             showNodeInformation(d);
+             showNodeInformation(d);//Added by ISH
             closeRectypeSelector();
             // Check if it's not a click after dragging
             if(!d3.event.defaultPrevented) {
@@ -154,13 +154,16 @@ function addNodes() {
      return nodes;
 }
 
+//Added by ISH
 function showNodeInformation(d){
     console.log("show Node func");//test to see if function accessed
     var infoBox = d3.select("#infoBox");//select infobox
     infoBox.selectAll("h2").remove();//remove header
     infoBox.selectAll("p").remove();//remove paragraph
+    
     //get data from node
-    //
+    console.log("info" + datum(d.id));
+    /*
     infoBox.append("h2").text("Person Details");
     if(d.id == 1){
         infoBox.append("p").text("Given Name: Ishmamul");
@@ -171,6 +174,7 @@ function showNodeInformation(d){
         infoBox.append("p").text("Family Name: Haque");
     }
     //append it to the info box
+    */
 }
 
 /**
