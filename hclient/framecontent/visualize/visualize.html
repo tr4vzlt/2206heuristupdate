@@ -28,11 +28,16 @@
 
    <div id="toolbar" style="display:none;">
 
+        <div class="menu_btn">
+            <div class="menu_btn_burger"></div>
+        </div>
+        <!--
         <div id="setAdvancedMode" style="border-left: solid 1px gray;padding-left:15px;min-height:22px;vertical-align:middle;font-size:0.8em">
             <span class="ui-icon ui-icon-triangle-1-w advanced" title="Hide advanced functions" style="height: 22px;">&nbsp;</span>
             <a href="#">Functions&nbsp;<span class="ui-icon ui-icon-triangle-1-e"
             style="display: inline-block;vertical-align: middle;height: 22px;"></span></a>
         </div>
+        -->
 
         <div id="setSelectMode" class="toolbar-section advanced" style="min-width:40px">
             
@@ -113,6 +118,18 @@
             
         </div>
 
+        
+        <div id="setDivExport" class="toolbar-section advanced" 
+            style="display:none;border-left: solid 1px gray; padding-left:10px;text-align:right;min-width:50px;">
+            <button type="button" id="gephi-export" onclick="getGephiFormat()">GEPHI</button>
+            <button type="button" id="embed-export">Embed</button>
+        </div>
+
+        <div id="newOne" class="toolbar-section advanced" style="display:none;border-left: solid 1px gray; padding-left: 10px; min-width:140px;">
+            <button type="button" id="windowPopOut" onclick="openWin()">Pop Out Window</button>
+            <a href="springDiagram.php?db=gerar_SecondDatabase" target="_blank">Another Window</a>
+        </div>
+
         <!-- add advanced class to toggle this section -->
         <div id="setDivLabels" class="toolbar-section" 
             style="display:none;border-left: solid 1px gray; padding-left: 10px; min-width:140px;">
@@ -127,16 +144,6 @@
         </div>
         
         
-        <div id="setDivExport" class="toolbar-section advanced" 
-            style="display:none;border-left: solid 1px gray; padding-left:10px;text-align:right;min-width:50px;">
-            <button type="button" id="gephi-export" onclick="getGephiFormat()">GEPHI</button>
-            <button type="button" id="embed-export">Embed</button>
-        </div>
-
-        <div id="newOne" class="toolbar-section advanced" style="display:none;border-left: solid 1px gray; padding-left: 10px; min-width:140px;">
-            <button type="button" id="windowPopOut" onclick="openWin()">Pop Out Window</button>
-            <a href="springDiagram.php?db=gerar_SecondDatabase" target="_blank">Another Window</a>
-        </div>
 
 
 
@@ -157,6 +164,7 @@
 
 <!--*html for information box which will show information when a node is clicked
     *information box is initially hidden
+    *ADDED BY ISH
 -->
 <div id="infoBox" class="infoBox" style="position: fixed; right: 0px; bottom:0px; background-color: white; padding: 5px;">
     <h2>Detail 1</h2>
