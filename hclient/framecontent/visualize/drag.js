@@ -170,7 +170,7 @@ function showNodeInformation(d){
     infoBox.append("p").text("Given name: " + nameArray[1]);//write first name
     infoBox.append("p").text("Family name: " + nameArray[0]);//write last name
 
-    var info = d.gender;
+    //var info = d.gender;
     console.log(info);
     
 
