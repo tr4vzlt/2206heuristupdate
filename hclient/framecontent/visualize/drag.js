@@ -139,7 +139,8 @@ function addNodes() {
           })    
          .on("click", function(d) {
              showNodeInformation(d);//Added by ISH
-
+             let info = node.data();
+             console.log(info);   
             closeRectypeSelector();
             // Check if it's not a click after dragging
             if(!d3.event.defaultPrevented) {
