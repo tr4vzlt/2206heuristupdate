@@ -520,8 +520,8 @@ function addContainer() {
 /**
 * Called after a zoom-event takes place.
 */
-function zoomed(e) { 
-    console.log("event", e);//added by ISH
+function zoomed() { 
+    console.log("d3.event", d3.event);//added by ISH
     //keep current setting Translate   
     var translateXY = [];
     var notDefined = false;
