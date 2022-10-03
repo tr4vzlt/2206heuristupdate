@@ -519,7 +519,7 @@ function addContainer() {
         .translate([translateX, translateY])
         .scale(scale)
         .scaleExtent(scaleExtentVals)
-        .on("zoom", zoomed);
+        .on("zoom", zoomed, (d) => document.getElementsByClassName(".nodelabel.namelabel").setAttribute('style', 'scale: 5'));
 
     return container;
 }

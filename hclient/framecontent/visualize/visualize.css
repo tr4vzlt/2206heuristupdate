@@ -288,11 +288,9 @@ text.shadow {
 }
 */
 
-/*
 .nodelabel.namelabel {
     font-size: clamp(1rem, -0.875rem + 8.333333vw, 3.5rem) !important;
 }
-*/
 
 /*
 #d3svg {
@@ -300,4 +298,10 @@ text.shadow {
 }
 */
 
-
+/*
+@container (minwidth: 400px) {
+    #container {
+        font-size: clamp(1rem, -0.875rem + 8.333333vw, 3.5rem) !important;
+    }
+}
+*/
