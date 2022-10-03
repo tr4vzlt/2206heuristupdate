@@ -162,7 +162,7 @@ function showNodeInformation(d){
     infoBox.selectAll("p").remove();//remove paragraph
     
     //get data from node
-    console.log("info" + d.datum());
+    //console.log("info" + d.datum());
     /*
     infoBox.append("h2").text("Person Details");
     if(d.id == 1){
