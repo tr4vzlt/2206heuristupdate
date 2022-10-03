@@ -529,7 +529,7 @@ function addContainer() {
 let zoom = d3.zoom()
 	.on('zoom', handleZoom);
 
-function handleZoom(e) {
+function handleZoom() {
     alert("message");
 }
 
