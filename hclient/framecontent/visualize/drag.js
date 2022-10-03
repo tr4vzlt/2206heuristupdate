@@ -163,13 +163,12 @@ function showNodeInformation(d){
     infoBox.selectAll("p").remove();//remove paragraph
 
     var name = d.name;//name of person
-    const nameArray = name.split(",");
-    console.log(nameArray[0] + nameArray[1]);
+    const nameArray = name.split(",");//split into given and family name
+    //console.log(nameArray[0] + nameArray[1]);
 
-    infoBox.append("h2").text("Person Details");
-    infoBox.append("p").text("Given name: " + nameArray[1]);
-
-
+    infoBox.append("h2").text("Person Details");//add heading for box
+    infoBox.append("p").text("Given name: " + nameArray[1]);//write first name
+    infoBox.append("p").text("Given name: " + nameArray[0]);//write last name
     
 
     
