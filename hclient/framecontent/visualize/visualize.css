@@ -126,11 +126,14 @@
 .menu-button:hover .menu-item {
     display: block;                                             
 }
-/*New infobox css*/
+/*New infobox css
+*ADDED BY ISH  
+*/
 #infoBox {
     width: fit-content;
     height: fit-content;
 }
+
 
 
 
