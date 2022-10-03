@@ -169,6 +169,9 @@ function showNodeInformation(d){
     infoBox.append("h2").text("Person Details");//add heading for box
     infoBox.append("p").text("Given name: " + nameArray[1]);//write first name
     infoBox.append("p").text("Given name: " + nameArray[0]);//write last name
+
+    var info = d.gender;
+    console.log(info);
     
 
     
