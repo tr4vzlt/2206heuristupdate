@@ -521,8 +521,8 @@ function addContainer() {
 * Called after a zoom-event takes place.
 */
 function zoomed() { 
-    console.log("d3.event", d3.event);//added by ISH
-    console.log("d3.event.scale", d3.event.scale);//added by ISH
+    //console.log("d3.event", d3.event);//added by ISH
+    //console.log("d3.event.scale", d3.event.scale);//added by ISH
     //keep current setting Translate   
     var translateXY = [];
     var notDefined = false;
