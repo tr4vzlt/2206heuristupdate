@@ -519,25 +519,34 @@ function addContainer() {
         .translate([translateX, translateY])
         .scale(scale)
         .scaleExtent(scaleExtentVals)
-        .on("zoom", zoomed, (d) => document.getElementsByClassName(".nodelabel.namelabel").setAttribute('style', 'scale: 5'));
+        .on("zoom", zoomed); //, (d) => document.getElementsByClassName(".nodelabel.namelabel").setAttribute('style', 'scale: 5'));
 
     return container;
 }
 
 //HANDLE ZOOM FOR TEXT
 
+/*
 let zoom = d3.zoom()
 	.on('zoom', handleZoom);
 
 function handleZoom() {
     alert("message");
 }
+*/
 
 /**
 * Called after a zoom-event takes place.
 */
 function zoomed() {
     //keep current setting Translate   
+    console.log("d3.event", d3.event);
+    console.log("d3.event.scale", d3.event.scale);
+
+    if (d3.event.scale == 2) {
+        document.getElementsByClassName(".nodelabel.namelabel").setAttribute('style', 'scale: 5 !important;');
+    }
+
     var translateXY = [];
     var notDefined = false;
     var transform = "translate(0,0)";
