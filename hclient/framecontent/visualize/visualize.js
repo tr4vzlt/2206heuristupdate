@@ -535,7 +535,13 @@ function zoomed() {
     console.log("d3.event.scale", d3.event.scale);
 
     if (d3.event.scale >= 2) {
-        document.querySelectorAll('.nodelabel').setAttribute('style', 'scale: 5 !important;');
+        const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
+         for (let i = 0; i < nodeList.length; i++) {
+            nodeList[i].style.scale = "5";
+         }
+        
+        
+        
         console.log("this event fired on scale 2");
     }
 
