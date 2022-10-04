@@ -538,7 +538,7 @@ function zoomed() {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
             nodeList[i].style.scale = "3";
-            nodeList[i].style.transform = "translate(-50px, -50px)";
+            nodeList[i].style.transform = "translate(-18px, -8px)";
          }
         
         
