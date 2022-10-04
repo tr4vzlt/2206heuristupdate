@@ -530,25 +530,53 @@ function addContainer() {
 * Called after a zoom-event takes place.
 */
 function zoomed() {
-    //keep current setting Translate   
+    //keep current setting Translate 
+    
+    //-----------------ZOOM TEXT SCALING--------------------//
     console.log("d3.event", d3.event);
     console.log("d3.event.scale", d3.event.scale);
 
-    if (d3.event.scale > 2) {
+    if (d3.event.scale > 0 && d3.event.scale < 1) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
-            nodeList[i].style.scale = "5";
+            nodeList[i].style.scale = "1";
             nodeList[i].style.transform = "translate(-18px, -8px)";
          }
     }
 
-    if (d3.event.scale < 2) {
+    if (d3.event.scale > 1 && d3.event.scale < 2) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
-            nodeList[i].style.scale = "4";
+            nodeList[i].style.scale = "2";
             nodeList[i].style.transform = "translate(-18px, -8px)";
          }
     }
+
+    if (d3.event.scale > 2 && d3.event.scale < 3) {
+        const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
+         for (let i = 0; i < nodeList.length; i++) {
+            nodeList[i].style.scale = "2";
+            nodeList[i].style.transform = "translate(-18px, -8px)";
+         }
+    }
+
+    if (d3.event.scale > 3 && d3.event.scale < 4) {
+        const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
+         for (let i = 0; i < nodeList.length; i++) {
+            nodeList[i].style.scale = "2";
+            nodeList[i].style.transform = "translate(-18px, -8px)";
+         }
+    }
+
+    if (d3.event.scale > 4 && d3.event.scale < 5) {
+        const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
+         for (let i = 0; i < nodeList.length; i++) {
+            nodeList[i].style.scale = "3";
+            nodeList[i].style.transform = "translate(-18px, -8px)";
+         }
+    }
+
+    
 
     var translateXY = [];
     var notDefined = false;
