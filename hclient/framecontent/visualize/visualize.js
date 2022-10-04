@@ -534,18 +534,18 @@ function zoomed() {
     console.log("d3.event", d3.event);
     console.log("d3.event.scale", d3.event.scale);
 
-    if (d3.event.scale >= 2) {
+    if (d3.event.scale > 2) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
-            nodeList[i].style.transform = "scale(3)";
+            nodeList[i].style.transform = "scale(5)";
             nodeList[i].style.transform = "translate(-18px, -8px)";
          }
     }
 
-    if (d3.event.scale <= 0.8) {
+    if (d3.event.scale < 2) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
-            nodeList[i].style.transform = "scale(2)";
+            nodeList[i].style.transform = "scale(4)";
             nodeList[i].style.transform = "translate(-18px, -8px)";
          }
     }
