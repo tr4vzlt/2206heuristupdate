@@ -540,10 +540,14 @@ function zoomed() {
             nodeList[i].style.scale = "3";
             nodeList[i].style.transform = "translate(-18px, -8px)";
          }
-        
-        
-        
-        console.log("this event fired on scale 2");
+    }
+
+    if (d3.event.scale <= 0.8) {
+        const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
+         for (let i = 0; i < nodeList.length; i++) {
+            nodeList[i].style.scale = "2";
+            nodeList[i].style.transform = "translate(-18px, -8px)";
+         }
     }
 
     var translateXY = [];
