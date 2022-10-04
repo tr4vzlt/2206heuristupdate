@@ -526,15 +526,6 @@ function addContainer() {
 
 //HANDLE ZOOM FOR TEXT
 
-/*
-let zoom = d3.zoom()
-	.on('zoom', handleZoom);
-
-function handleZoom() {
-    alert("message");
-}
-*/
-
 /**
 * Called after a zoom-event takes place.
 */
