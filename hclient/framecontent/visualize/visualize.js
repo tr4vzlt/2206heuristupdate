@@ -536,6 +536,7 @@ function zoomed() {
 
     if (d3.event.scale == 2) {
         document.getElementsByClassName(".nodelabel.namelabel").setAttribute('style', 'scale: 5 !important;');
+        console.log("this event fired on scale 2");
     }
 
     var translateXY = [];
