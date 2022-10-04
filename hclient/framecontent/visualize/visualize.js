@@ -537,7 +537,7 @@ function zoomed() {
     if (d3.event.scale >= 2) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
-            nodeList[i].style.scale = "(3, " + d3.event.scale + ")";
+            nodeList[i].style.scale = "(" + d3.event.sclae + ",3)";
             nodeList[i].style.transform = "translate(-18px, -8px)";
          }
     }
@@ -545,7 +545,7 @@ function zoomed() {
     if (d3.event.scale <= 0.8) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
-            nodeList[i].style.scale = "(2, " + d3.event.scale + ")";
+            nodeList[i].style.scale = "(" + d3.event.sclae + ",2)";
             nodeList[i].style.transform = "translate(-18px, -8px)";
          }
     }
