@@ -536,15 +536,7 @@ function zoomed() {
     console.log("d3.event", d3.event);
     console.log("d3.event.scale", d3.event.scale);
 
-    if (d3.event.scale > 0 && d3.event.scale < 1) {
-        const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
-         for (let i = 0; i < nodeList.length; i++) {
-            nodeList[i].style.scale = "5";
-            nodeList[i].style.transform = "translate(-18px, -8px)";
-         }
-    }
-
-    if (d3.event.scale > 1 && d3.event.scale < 2) {
+    if (d3.event.scale > 0 && d3.event.scale < 0.5) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
             nodeList[i].style.scale = "4";
@@ -552,15 +544,31 @@ function zoomed() {
          }
     }
 
-    if (d3.event.scale > 2 && d3.event.scale < 3) {
+    if (d3.event.scale > 0.5 && d3.event.scale < 0.9) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
-            nodeList[i].style.scale = "3";
+            nodeList[i].style.scale = "3.5";
             nodeList[i].style.transform = "translate(-18px, -8px)";
          }
     }
 
-    if (d3.event.scale > 3 && d3.event.scale < 4) {
+    if (d3.event.scale > 0.9 && d3.event.scale < 1.5) {
+        const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
+         for (let i = 0; i < nodeList.length; i++) {
+            nodeList[i].style.scale = "3.25";
+            nodeList[i].style.transform = "translate(-18px, -8px)";
+         }
+    }
+
+    if (d3.event.scale > 1.5 && d3.event.scale < 2) {
+        const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
+         for (let i = 0; i < nodeList.length; i++) {
+            nodeList[i].style.scale = "2.75";
+            nodeList[i].style.transform = "translate(-18px, -8px)";
+         }
+    }
+
+    if (d3.event.scale > 2 && d3.event.scale < 2.5) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
             nodeList[i].style.scale = "2";
@@ -568,7 +576,15 @@ function zoomed() {
          }
     }
 
-    if (d3.event.scale > 4 && d3.event.scale < 5) {
+    if (d3.event.scale > 2.5 && d3.event.scale < 3.5) {
+        const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
+         for (let i = 0; i < nodeList.length; i++) {
+            nodeList[i].style.scale = "1.5";
+            nodeList[i].style.transform = "translate(-18px, -8px)";
+         }
+    }
+
+    if (d3.event.scale > 3.5 && d3.event.scale < 5) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
             nodeList[i].style.scale = "1";
