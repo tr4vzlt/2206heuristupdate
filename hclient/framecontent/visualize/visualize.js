@@ -1573,7 +1573,7 @@ function refreshButtonFullscreen() {
 }
 
 
-
+//Gravity Fullscreen Button Fix - Travis Doyle 6/10
 function refreshGravity(){
     var GravityStatus = true;
     localStorage.setItem("Gravity", GravityStatus)
@@ -1587,6 +1587,13 @@ function refreshGravity(){
         setGravity('touch')
     }else(setGravity('off'))
     
+}
+function turnGravityOff(){
+    var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + window.location.search;
+    if (setGravity('touch')){
+        setGravity('off');
+        location.href = url2;
+    }
 }
 
 //open graph in fullscreen - Travis Doyle 28/9

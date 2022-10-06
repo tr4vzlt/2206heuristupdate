@@ -274,7 +274,7 @@ function onPageInit(success){
                     gravity: 'touch' // activate gravity, for a moment, to scatter graph
                 });
 
-                setTimeout(function(){ setGravity('off'); }, 3000); // turn off gravity
+                //setTimeout(function(){ setGravity('off'); }, 3000); // turn off gravity
 
                 changeViewMode('icons');
         }
