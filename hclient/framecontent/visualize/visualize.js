@@ -1575,8 +1575,7 @@ function refreshButtonFullscreen() {
 }
 
 function refreshforGravity(){
-    var url = window.location.href;
-    alert (url);
+    alert ("The URL is:" + window.location.href);
 }
 
 //open graph in fullscreen - Travis Doyle 28/9
