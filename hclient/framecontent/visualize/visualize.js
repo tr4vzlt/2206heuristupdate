@@ -1588,13 +1588,7 @@ function refreshGravity(){
     }else(setGravity('off'))
     
 }
-function turnGravityOff(){
-    var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + window.location.search;
-    if (setGravity('touch')){
-        setGravity('off');
-        location.href = url2;
-    }
-}
+
 
 //open graph in fullscreen - Travis Doyle 28/9
 function openWin() {
