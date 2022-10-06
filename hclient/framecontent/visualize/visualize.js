@@ -1575,9 +1575,14 @@ function refreshButtonFullscreen() {
 
 
 function refreshGravity(){
+    var gravitystatus = setGravity('touch');
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + window.location.search;
     location.href = url2;
-    setGravity('touch');
+    
+    if (gravitystatus){
+        setGravity('touch');
+    }else(setGravity('off'));
+    
 }
 
 //open graph in fullscreen - Travis Doyle 28/9

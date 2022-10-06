@@ -176,7 +176,7 @@ function handleSettingsInUI() {
 
 
 
-    //Page is in iFrame
+    
     $('#gravityMode0').button(/*{icon: 'ui-icon-gravity0' , showLabel:false}*/)
         .click(function () { setGravity('off'); });
     $('#gravityMode1').button(/*{icon: 'ui-icon-gravity1' , showLabel:false}*/)
