@@ -1591,6 +1591,7 @@ function refreshGravityOn(){
         setGravity('touch')
     }
 }
+
 function refreshGravityOff(){
     var GravityStatus = false;
     localStorage.setItem("Gravity", GravityStatus)
@@ -1600,7 +1601,7 @@ function refreshGravityOff(){
     
     var GravityStatus = localStorage.getItem("Gravity");
     
-    if (!GravityStatus){
+    if (GravityStatus){
         setGravity('off')
     }
 }
