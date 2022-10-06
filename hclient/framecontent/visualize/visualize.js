@@ -1564,6 +1564,10 @@ function refreshButton() {
     var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
     location.href = newhref;
+
+    if ($('#embed-export').css('visibility', 'hidden')){
+        $('#embed-export').css('visibility', 'visible');
+    }
 }
 
 //refresh graph while in fullscreen mode - Travis Doyle 28/9
@@ -1574,7 +1578,7 @@ function refreshButtonFullscreen() {
 
 
 //Gravity Fullscreen Button Fix - Travis Doyle 6/10
-function refreshGravity(){
+function refreshGravityOn(){
     var GravityStatus = true;
     localStorage.setItem("Gravity", GravityStatus)
 
@@ -1585,8 +1589,20 @@ function refreshGravity(){
     
     if (GravityStatus){
         setGravity('touch')
-    }else(setGravity('off'))
+    }
+}
+function refreshGravityOff(){
+    var GravityStatus = false;
+    localStorage.setItem("Gravity", GravityStatus)
+
+    var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + window.location.search;
+    location.href = url2;
     
+    var GravityStatus = localStorage.getItem("Gravity");
+    
+    if (!GravityStatus){
+        setGravity('off')
+    }
 }
 
 
