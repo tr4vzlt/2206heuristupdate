@@ -1569,7 +1569,7 @@ function refreshButton() {
 //refresh graph while in fullscreen mode - Travis Doyle 28/9
 function refreshButtonFullscreen() {
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + window.location.search;
-    window.open(url2, "_self");
+    location.href = url2;
 }
 
 
