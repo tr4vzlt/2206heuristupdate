@@ -1575,11 +1575,16 @@ function refreshButtonFullscreen() {
 
 
 function refreshGravity(){
-    
+    var GravityStatus = "true";
+    localStorage.setItem("Gravity", GravityStatus)
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + window.location.search;
     location.href = url2;
     
-    alert("Gravity should be set now.");
+    var GravityStatus = localStorage.getItem("Gravity");
+
+    if (GravityStatus){
+        setGravity('aggressive');
+    }else(setGravity('off'))
     
 }
 
