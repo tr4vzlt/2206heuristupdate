@@ -157,11 +157,6 @@ var svg;        // The SVG where the visualisation will be executed on
         var amount = Object.keys(settings.data.nodes).length;
         var MAXITEMS = window.hWin.HAPI4.get_prefs('search_detail_limit');
 
-        if (!settings.isDatabaseStructure && !$.isFunction(settings.onRefreshData)){
-            settings.onRefreshData = refreshButton();
-        }
-            
-        
         visualizeData();
 
         var ele_warn = $('#net_limit_warning');
@@ -1573,7 +1568,6 @@ function refreshButton() {
 
 //refresh graph while in fullscreen mode - Travis Doyle 28/9
 function refreshButtonFullscreen() {
-    
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, true);
     //hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + '?q=' + hrefnew + '&db=' + window.hWin.HAPI4.database;
@@ -1587,7 +1581,6 @@ function openWin() {
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
     window.open(url2);
 }
-
 //close fullscreen graph - Travis Doyle 28/9
 function closeWin() {
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
