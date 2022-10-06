@@ -271,7 +271,7 @@ function onPageInit(success){
                     showCounts: false,
                     showEntitySettings: false,
                     showFormula: false,
-                    gravity: 'touch' // activate gravity, for a moment, to scatter graph
+                    gravity: 'off' // activate gravity, for a moment, to scatter graph
                 });
 
                 //setTimeout(function(){ setGravity('off'); }, 3000); // turn off gravity
