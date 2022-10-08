@@ -806,7 +806,7 @@ function createOverlay(x, y, type, selector, node_obj, parent_node) {
                 }  
             });  
                 
-      if(!settings.isDatabaseStructure){ 
+      if(settings.isDatabaseStructure){ 
 
         if (window.hWin.HAPI4.is_admin()) { // add edit button
 
