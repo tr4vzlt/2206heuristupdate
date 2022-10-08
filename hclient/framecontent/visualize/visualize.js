@@ -1557,7 +1557,7 @@ function inIframe() {
         gravitymodeThree.style.visibility = 'visible';
 
     }
-        
+
 }
 
 //New graph refresh button - Created by Travis Doyle 24/9/2022
@@ -1570,7 +1570,7 @@ function refreshButton() {
     location.href = newhref;
     var DatabaseStructureStatus = localStorage.getItem("DatabaseStatus");
 
-    
+
 }
 
 //refresh graph while in fullscreen mode - Travis Doyle 28/9
@@ -1579,29 +1579,29 @@ function refreshButtonFullscreen() {
     location.href = url2;
 }
 //Gravity Fullscreen Button Fix - Travis Doyle 6/10
-function refreshGravityOn(){
+function refreshGravityOn() {
     var GravityStatus = true;
     localStorage.setItem("Gravity", GravityStatus)
 
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + window.location.search;
     location.href = url2;
-    
+
     var GravityStatus = localStorage.getItem("Gravity");
-    
-    if (GravityStatus){
+
+    if (GravityStatus) {
         setGravity('touch')
     }
 }
-function refreshGravityOff(){
+function refreshGravityOff() {
     var GravityStatus = false;
     localStorage.setItem("Gravity", GravityStatus)
 
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + window.location.search;
     location.href = url2;
-    
+
     var GravityStatus = localStorage.getItem("Gravity");
-    
-    if (GravityStatus){
+
+    if (GravityStatus) {
         setGravity('off')
     }
 }
