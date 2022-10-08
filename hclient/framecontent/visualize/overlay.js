@@ -725,7 +725,7 @@ function createOverlay(x, y, type, selector, node_obj, parent_node) {
                     tick();
                 });
       
-      if( !settings.isDatabaseStructure || settings.isDatabaseStructure ||  settings.onRefreshData){
+      if( settings.isDatabaseStructure ){ //||  settings.onRefreshData
       
           //link button      
           var btnAddLink = overlay
