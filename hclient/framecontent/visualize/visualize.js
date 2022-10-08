@@ -1569,7 +1569,7 @@ function refreshButton() {
     newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
     location.href = newhref;
     var DatabaseStructureStatus = localStorage.getItem("DatabaseStatus");
-    
+
 
 }
 

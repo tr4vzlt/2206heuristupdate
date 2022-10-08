@@ -825,10 +825,6 @@ function createOverlay(x, y, type, selector, node_obj, parent_node) {
                .text(function(d) {
                     return 'Click to edit the record';
                });
-        btnAddLink.append("title")
-               .text(function(d){
-                return 'Click and Drag to create a new Link';
-               });
       }
                 
 
