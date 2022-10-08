@@ -35,7 +35,7 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g")
-                  .style("fill", getSetting(setting_entitycolor))
+                  .style("fill", function(d) {return entitycolor;})
                     //Added Double Click to Edit Function - Travis Doyle 19/9
                   .on("dblclick",(d) => window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank'));
                     
