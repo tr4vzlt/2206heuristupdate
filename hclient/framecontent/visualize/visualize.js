@@ -1573,7 +1573,7 @@ function refreshButton() {
     var DatabaseStructureStatus = localStorage.getItem("DatabaseStatus");
 
     if (DatabaseStructureStatus){
-        putSetting(settings.isDatabaseStructure, DatabaseStructureStatus);
+        settings.isDatabaseStructure = false;
     }
 }
 
