@@ -1434,6 +1434,7 @@ function addForegroundCircles() {
     var circles = d3.selectAll(".node")
         .append("circle")
         .attr("r", circleSize)
+        .attr("fill", entitycolor)
         .attr("class", 'foreground')
         .style("stroke", "#ddd")
         .style("stroke-opacity", function (d) {
@@ -1571,8 +1572,6 @@ function refreshButtonFullscreen() {
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + window.location.search;
     location.href = url2;
 }
-
-
 //Gravity Fullscreen Button Fix - Travis Doyle 6/10
 function refreshGravityOn(){
     var GravityStatus = true;
@@ -1600,7 +1599,6 @@ function refreshGravityOff(){
         setGravity('off')
     }
 }
-
 //open graph in fullscreen - Travis Doyle 28/9
 function openWin() {
     var hrefnew = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
