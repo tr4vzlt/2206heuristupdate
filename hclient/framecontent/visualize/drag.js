@@ -35,11 +35,7 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g")
-                  .style("fill", function(d) {return '#1f77b4';})
-                  .attr("class", "node")
-                  .attr("cx", function(d) { return d.x; })
-                  .attr("cy", function(d) { return d.y; })
-                  .attr("r", function(d) { return r(d.textContent) || 5; })
+                  .style("fill", function(d) {return '#ff0000';})
                     //Added Double Click to Edit Function - Travis Doyle 19/9
                   .on("dblclick",(d) => window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank'));
                     
