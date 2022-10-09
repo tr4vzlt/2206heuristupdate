@@ -160,7 +160,6 @@ function addNodes() {
 function showNodeInformation(d){
     console.log("show Node func");//test to see if function accessed
     var infoBox = d3.select("#infoBox");//select infobox
-    var showBox = 
     infoBox.style('display: block;');
     infoBox.selectAll("h2").remove();//remove header
     infoBox.selectAll("p").remove();//remove paragraph
