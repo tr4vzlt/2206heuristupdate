@@ -536,11 +536,11 @@ function zoomed() {
     console.log("d3.event", d3.event);
     console.log("d3.event.scale", d3.event.scale);
 
-    if (d3.event.scale > 0 && d3.event.scale < 0.5) {
+    if (/*d3.event.scale > 0 && */d3.event.scale < 0.5) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
             nodeList[i].style.scale = "4";
-            nodeList[i].style.transform = "translate(-18px, -8px)";
+            nodeList[i].style.transform = "translate(-21px, -9px)";
          }
     }
 
@@ -548,7 +548,7 @@ function zoomed() {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
             nodeList[i].style.scale = "3.5";
-            nodeList[i].style.transform = "translate(-18px, -8px)";
+            nodeList[i].style.transform = "translate(-20px, -9px)";
          }
     }
 
@@ -556,7 +556,7 @@ function zoomed() {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
             nodeList[i].style.scale = "3.25";
-            nodeList[i].style.transform = "translate(-18px, -8px)";
+            nodeList[i].style.transform = "translate(-20px, -9px)";
          }
     }
 
@@ -572,7 +572,7 @@ function zoomed() {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
             nodeList[i].style.scale = "2";
-            nodeList[i].style.transform = "translate(-18px, -8px)";
+            nodeList[i].style.transform = "translate(-14px, -7px)";
          }
     }
 
@@ -580,15 +580,15 @@ function zoomed() {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
             nodeList[i].style.scale = "1.5";
-            nodeList[i].style.transform = "translate(-18px, -8px)";
+            nodeList[i].style.transform = "translate(-9px, -5px)";
          }
     }
 
-    if (d3.event.scale > 3.5 && d3.event.scale < 5) {
+    if (d3.event.scale > 3.5 /*&& d3.event.scale < 5*/) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
             nodeList[i].style.scale = "1";
-            nodeList[i].style.transform = "translate(-18px, -8px)";
+            nodeList[i].style.transform = "translate(0px, 0px)";
          }
     }
 
