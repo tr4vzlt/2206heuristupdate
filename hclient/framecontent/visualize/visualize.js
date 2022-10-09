@@ -897,7 +897,7 @@ function addLines(name, color, thickness) {
 */
 function tick() {
     // Junze: used for benchmark
-    // console.time("Tick");
+    console.time("Tick");
     //grab each set of lines
     var topLines = d3.selectAll(".top-lines");
     var bottomLines = d3.selectAll(".bottom-lines");
@@ -928,7 +928,7 @@ function tick() {
     // Update overlay
     updateOverlays();
     // Junze: used for benchmark
-    // console.timeEnd("Tick");
+    console.timeEnd("Tick");
 }
 
 /**
