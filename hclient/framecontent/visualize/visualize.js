@@ -896,7 +896,7 @@ function addLines(name, color, thickness) {
 * Updates the correct lines based on the linetype setting 
 */
 function tick() {
-    
+    console.time("Tick");
     //grab each set of lines
     var topLines = d3.selectAll(".top-lines"); 
     var bottomLines = d3.selectAll(".bottom-lines");
@@ -925,6 +925,7 @@ function tick() {
     
     // Update overlay
     updateOverlays(); 
+    console.timeEnd("Tick");
 }
 
 /**
@@ -1002,11 +1003,11 @@ function updateStraightLines(lines, type) {
             return '';
         }
         
-        var key = d.source.id+'_'+d.target.id,
+        var key = `${d.source.id}_${d.target.id}`,
             indent = 20;
 
-        if(pairs[d.target.id+'_'+d.source.id]){
-            key = d.target.id+'_'+d.source.id;
+        if(pairs[`${d.target.id}_${d.source.id}`]){
+            key = `${d.target.id}_${d.source.id}`;
         }else if(!pairs[key]){
             indent = 0;
         }
@@ -1038,8 +1039,8 @@ function updateStraightLines(lines, type) {
 
             if(currentMode == 'infoboxes_full'){
 
-                var $detail = $('.id'+d.source.id).find('[dtyid="'+ d.relation.id +'"]'),
-                    $source_rect = $($('.id'+d.source.id).find('rect[rtyid="'+ d.source.id +'"]')[0]);
+                var $detail = $(`.id${d.source.id}`).find(`[dtyid="${d.relation.id}"]`),
+                    $source_rect = $($(`.id${d.source.id}`).find(`rect[rtyid="${d.source.id}"]`)[0]);
 
                 if($detail.length == 1){
 
@@ -1057,7 +1058,7 @@ function updateStraightLines(lines, type) {
 
                 if(type == 'bottom-lines'){
 
-                    var line = d3.select("#container").insert("svg:line", ".id"+d.source.id+" + *");
+                    var line = d3.select("#container").insert("svg:line", `.id${d.source.id} + *`);
 
                     //add extra starting line
                     line.attr("class", "offset_line")
@@ -1099,9 +1100,9 @@ function updateStraightLines(lines, type) {
             if(currentMode == 'infoboxes_full'){
 
                 // Relevant svg Elements/Items
-                var $source_rect = $($('.id'+d.source.id).find('rect[rtyid="'+ d.source.id +'"]')[0]),
-                    $target_rect = $($('.id'+d.target.id).find('rect[rtyid="'+ d.target.id +'"]')[0]),
-                    $detail = $('.id'+d.source.id).find('[dtyid="'+ d.relation.id +'"]');
+                var $source_rect = $($(`.id${d.source.id}`).find(`rect[rtyid="${d.source.id}"]`)[0]),
+                    $target_rect = $($(`.id${d.target.id}`).find(`rect[rtyid="${d.target.id}"]`)[0]),
+                    $detail = $(`.id${d.source.id}`).find(`[dtyid="${d.relation.id}"]`);
 
                 // Get the width for source and target rectangles
                 var source_width = Number($source_rect.attr('width')),
@@ -1178,7 +1179,7 @@ function updateStraightLines(lines, type) {
 
                 if(type == 'bottom-lines'){
 
-                    line = d3.select("#container").insert("svg:line", ".id"+d.source.id+" + *");
+                    line = d3.select("#container").insert("svg:line", `.id${d.source.id} + *`);
 
                     //add extra starting line
                     line.attr("class", "offset_line")
@@ -1193,7 +1194,7 @@ function updateStraightLines(lines, type) {
 
                     var linecolour = (!ismultivalue) ? 'darkgray' : 'dimgray';
                     var linewidth = (!ismultivalue) ? '3px' : '2px';
-                    line = d3.select("#container").insert("svg:line", ".id"+d.target.id+" + *");
+                    line = d3.select("#container").insert("svg:line", `.id${d.target.id} + *`);
 
                     if(!elevation_diff){
 
@@ -1217,7 +1218,9 @@ function updateStraightLines(lines, type) {
                               .attr("stroke-linecap", "round")
                               .attr("stroke-width", linewidth)
                               .attr("fill", "none")
-                              .attr("d", "M " + t_x2 + " " + (t_y+5) + " L " + t_x + " " + t_y + " L " + t_x2 + " " + (t_y-5));
+                              .attr("d", `M ${t_x2} ${t_y+5} L $${t_x} ${t_y} L ${t_x2} ${t_y-5}`);
+                            // 11 times useless String objects are constructed
+                            //   .attr("d", "M " + t_x2 + " " + (t_y+5) + " L " + t_x + " " + t_y + " L " + t_x2 + " " + (t_y-5));
                         }
                     }else{
 
@@ -1241,7 +1244,8 @@ function updateStraightLines(lines, type) {
                               .attr("stroke-linecap", "round")
                               .attr("stroke-width", linewidth)
                               .attr("fill", "none")
-                              .attr("d", "M " + (t_x+5) + " " + t_y2 + " L " + t_x + " " + t_y + " L " + (t_x-5) + " " + t_y2);
+                              .attr("d", `M ${t_x+5} ${t_y2} L ${t_x} ${t_y} L ${t_x-5} ${t_y2}`);
+                            //   .attr("d", "M " + (t_x+5) + " " + t_y2 + " L " + t_x + " " + t_y + " L " + (t_x-5) + " " + t_y2);
                         }else{
                             t_y = t_y2;
                         }
