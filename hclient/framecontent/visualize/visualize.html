@@ -26,7 +26,7 @@
 <!-- Network diagram HTML -->
 <div class="ent_header" style="height:4em;border:none;display:table-row;top:5px;">
 
-   <div id="toolbar" style="display:none;">
+   <div id="toolbar" >
 
         <div id="setAdvancedMode" style="border-left: solid 1px rgb(241, 10, 10);padding-left:15px;min-height:22px;vertical-align:middle;font-size:0.8em">
             <span class="ui-icon ui-icon-triangle-1-w advanced" title="Hide advanced functions" style="height: 22px;">&nbsp;</span>
@@ -64,7 +64,7 @@
         
         <!-- -->
         <div id="setDivNodes" class="toolbar-section advanced" 
-            style="display:none;padding-left:15px; min-width:190px">
+            style="padding-left:15px; min-width:190px">
             <label>Nodes</label>
             <div class="colorblock" style="margin-top:-4px;width:auto;" title="Color of nodes">
                 <input id="entityColor" style="width:0px;border:none"/></div>
@@ -82,14 +82,14 @@
 
         <!-- add advanced class to toggle this section -->
         <div id="setDivLinks" class="toolbar-section advanced" 
-            style="display:none;border-left: solid 1px gray; min-width:214px;padding-right: 10px;">
+            style="border-left: solid 1px gray; min-width:214px;padding-right: 10px;">
             <label>Links</label>
             <label><input id="linksEmpty" title="Show empty links" type="checkbox"/>&nbsp;empty</label>
             <label><input id="expand-links" title="Expand all links" type="checkbox"/>&nbsp;expand</label>
         </div>
         
         <div id="setDivLinks2" class="toolbar-section" 
-            style="display:none;border-left: solid 1px gray; min-width:214px;padding-right: 10px;">
+            style="border-left: solid 1px gray; min-width:214px;padding-right: 10px;">
             <label>Links</label>
 
             <div id="linksPathColor" class="colorblock" title="Color of links" style="margin-left:10px">/<input id="linksPathColor_inpt" style="width:0px;border:none"/></div>
@@ -115,7 +115,7 @@
 
         <!-- add advanced class to toggle this section -->
         <div id="setDivLabels" class="toolbar-section" 
-            style="display:none;border-left: solid 1px gray; padding-left: 10px; min-width:140px;">
+            style="border-left: solid 1px gray; padding-left: 10px; min-width:140px;">
             <label>Labels</label>
 
             <input type="checkbox" id="textOnOff" value="on" title="Show labels when infobox is hidden" style="margin: 5px;">
@@ -128,12 +128,12 @@
         
         
         <div id="setDivExport" class="toolbar-section advanced" 
-            style="display:none;border-left: solid 1px gray; padding-left:10px;text-align:right;min-width:50px;">
+            style="border-left: solid 1px gray; padding-left:10px;text-align:right;min-width:50px;">
             <button type="button" id="gephi-export" onclick="getGephiFormat()">GEPHI</button>
             <button type="button" id="embed-export">Embed</button>
         </div>
 
-        <div id="newOne" class="toolbar-section advanced" style="display:none;border-left: solid 1px gray; padding-left: 10px; min-width:140px;">
+        <div id="newOne" class="toolbar-section advanced" style="border-left: solid 1px gray; padding-left: 10px; min-width:140px;">
             <button type="button" id="windowPopOut" onclick="openWin()">Pop Out Window</button>
             <a href="springDiagram.php?db=gerar_SecondDatabase" target="_blank">Another Window</a>
         </div>
