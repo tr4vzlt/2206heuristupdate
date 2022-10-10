@@ -120,7 +120,7 @@ A:link {
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/drag.js"></script>
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/visualizedb.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="<?php echo PDIR;?>hclient/framecontent/visualize/visualize.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo PDIR;?>hclient/framecontent/visualize/visualizedb.css">
 
         <!-- On Row Click -->
         <script>
