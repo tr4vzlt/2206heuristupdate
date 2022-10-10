@@ -179,7 +179,7 @@ function showNodeInformation(d){
     //iframe method
     //call the renderrecord php page
     //http://192.168.1.103:8080/HEURIST/heurist/viewers/record/renderRecordData.php?recID=1&amp;db=hawkb_finalDb
-    var srcURL = window.hWin.HAPI4.baseURL + '/viewers/record/renderRecordData.php?recID=' + d.id + '&amp; db=' + window.hWin.HAPI4.database;
+    var srcURL = window.hWin.HAPI4.baseURL + 'viewers/record/renderRecordData.php?recID=' + d.id + '&amp; db=' + window.hWin.HAPI4.database;
     console.log("src text = " + srcURL); 
     var infoBox = d3.select("#iframeInfo");
     infoBox.html("src = " + srcURL);
