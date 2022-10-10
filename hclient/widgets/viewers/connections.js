@@ -235,6 +235,8 @@ $.widget( "heurist.connections", {
     * private - send request to server side to find all relation withing given recordset
     * @param recordset
     */
+
+    
     _getRelations: function( recordset ){
         console.log("getRelations CALLED");
         console.log(recordset);
@@ -292,7 +294,7 @@ $.widget( "heurist.connections", {
         console.log("_parseDat Called");
         console.log(records_ids);
         console.log(relations);
-        
+
         console.log(relations.direct);
 
         var data = {}; 
