@@ -182,7 +182,7 @@ function showNodeInformation(d){
     var srcURL = window.hWin.HAPI4.baseURL + 'viewers/record/renderRecordData.php?recID=' + d.id + '&db=' + window.hWin.HAPI4.database;
     console.log("src text = " + srcURL); 
     var infoBox = d3.select("#iframeInfo");
-    infoBox.html("src = " + srcURL);
+    infoBox.attr("src", srcURL);
 
 
     //provide it with dbname, record id and and mappopup == 1
