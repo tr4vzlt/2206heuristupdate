@@ -253,6 +253,12 @@ text.shadow {
     padding: 10;
    background-color: #00ff00;
 }
+div.jianbo{
+    position: fixed;
+    width: 50%;
+    bottom: 10px;
+
+}
 
 
 .ui-icon-cursor{
