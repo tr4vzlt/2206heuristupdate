@@ -33,43 +33,31 @@
             <a href="#">Function Menu&nbsp;<span class="ui-icon ui-icon-star"
             style="display: inline-block;vertical-align: middle;height: 22px;"></span></a>
         </div>
-
-        
         <div id="111" class="toolbr-sectaion advanced" style="position:absolute;left:0px;top: 450px;">
 
             <h3>  View functions :   </h3>
-        </div>
-
-       <!-- <div id="222"  class="toolbr-sectaion advanced" style="position:absolute;left:0px;top: 500px;">
-        <ul>
-            <li><a href="#select">Select</a></li>
-            <li><a href="#zoom">Zoom</a></li>
-            <li><a href="#icons">Icons</a></li>
-            <li><a href="#gravity">Gravity</a></li>
-          </ul>
-        </div> -->
-
-        <div id="setSelectMode" class="toolbr-sectaion advanced" style="min-width:40px;position:absolute;left:100px;top: 500px;">
+        </div>>
+        <div id="setSelectMode" class="toolbr-sectaion advanced" style="min-width:40px;position:absolute;left:0px;top: 500px;">
             <label>Select</label>
             <button id="btnSingleSelect" name="selectMode" value="single">"Select and drag nodes"</button>
             <button id="btnMultipleSelect" name="selectMode" value="multi">Select multiple nodes</button>
         </div>    
-        <div id="setZoomMode" class="toolbr-sectaion advanced" style="min-width:40px;position:absolute;left:100px;top: 520px;">
+        <div id="setZoomMode" class="toolbr-sectaion advanced" style="min-width:40px;position:absolute;left:0px;top: 520px;">
             <label>Zoom</label>
             <button id="btnZoomIn" style="width:20px">Zoom In</button>
             <button id="btnZoomOut" style="width:20px">Zoom Out</button>
             <button id="btnFitToExtent" style="width:20px">Fit to extent</button>
         </div>
 
-        <div id="setViewMode" class="toolbar-section advanced" style="position:absolute;left:100px;top: 540px;" >
-           
+        <div id="setViewMode" class="toolbar-section advanced" style="position:absolute;left:0px;top: 540px;">
+            <label>Icons</label>
             <button id="btnViewModeIcon" name="videMode" value="icons">Icons</button>
             <button id="btnViewModeInfo" name="videMode" value="infoboxes">Info</button>
             <button id="btnViewModeFull" name="videMode" value="infoboxes_full">Info + Links</button>
         </div>
 
         <div id="setDivGravity" class="toolbar-section advanced" 
-            style="border-left: solid 1px gray; position:absolute;left:100px;top: 580px;">
+            style="border-left: solid 1px gray; position:absolute;left:0px;top: 580px;">
             
             <div id="setGravityMode" style="padding-left:10px">
                 <label class="ui-controlgroup-label" style="border:none;background:none">gravity</label> 
@@ -80,7 +68,7 @@
         
         <!-- -->
         <div id="setDivNodes" class="toolbar-section advanced" 
-            style="display:none;position:absolute;left:100px;top: 600px;">
+            style="display:none;position:absolute;left:0px;top: 600px;">
             <label>Nodes</label>
             <div class="colorblock" style="margin-top:-4px;width:auto;" title="Color of nodes">
                 <input id="entityColor" style="width:0px;border:none"/></div>
@@ -98,14 +86,14 @@
 
         <!-- add advanced class to toggle this section -->
         <div id="setDivLinks" class="toolbar-section advanced" 
-            style="display:none;border-left: solid 1px gray; position:absolute;left:100px;top: 620px;">
+            style="display:none;border-left: solid 1px gray; position:absolute;left:0px;top: 620px;">
             <label>Links</label>
             <label><input id="linksEmpty" title="Show empty links" type="checkbox"/>&nbsp;empty</label>
             <label><input id="expand-links" title="Expand all links" type="checkbox"/>&nbsp;expand</label>
         </div>
         
         <div id="setDivLinks2" class="toolbar-section" 
-            style="display:none;border-left: solid 1px gray; position:absolute;left:100px;top: 640px;">
+            style="display:none;border-left: solid 1px gray; position:absolute;left:0px;top: 640px;">
             <label>Links</label>
 
             <div id="linksPathColor" class="colorblock" title="Color of links" style="margin-left:10px">/<input id="linksPathColor_inpt" style="width:0px;border:none"/></div>
@@ -131,7 +119,7 @@
 
         <!-- add advanced class to toggle this section -->
         <div id="setDivLabels" class="toolbar-section" 
-            style="display:none;border-left: solid 1px gray; position:absolute;left:100px;top: 660px;">
+            style="display:none;border-left: solid 1px gray; position:absolute;left:0px;top: 660px;">
             <label>Labels</label>
 
             <input type="checkbox" id="textOnOff" value="on" title="Show labels when infobox is hidden" style="margin: 5px;">
@@ -144,12 +132,12 @@
         
         
         <div id="setDivExport" class="toolbar-section advanced" 
-            style="display:none;border-left: solid 1px gray; position:absolute;left:100px;top: 680px;">
+            style="display:none;border-left: solid 1px gray; position:absolute;left:0px;top: 680px;">
             <button type="button" id="gephi-export" onclick="getGephiFormat()">GEPHI</button>
             <button type="button" id="embed-export">Embed</button>
         </div>
 
-        <div id="newOne" class="toolbar-section advanced" style="display:none;border-left: solid 1px gray; position:absolute;left:100px;top: 700px;">
+        <div id="newOne" class="toolbar-section advanced" style="display:none;border-left: solid 1px gray; position:absolute;left:0px;top: 700px;">
             <button type="button" id="windowPopOut" onclick="openWin()">Pop Out Window</button>
              <a href="springDiagram.php?db=gerar_SecondDatabase" target="_blank">Another Window</a>
         </div>
