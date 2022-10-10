@@ -27,84 +27,76 @@
 
 
 function addNodes() {
-    var isDatabase = getSetting(settings.isDatabaseStructure)
+    var isDatabase = getSetting(settings.isDatabaseStructure);
+
 
     // Append nodes
-
-    if (isDatabase == 'false'){
-        var nodes = d3.select("#container")
-        .selectAll(".node")
-        .data(data.nodes)
-        .enter()
-        .append("g")
-        //Added Double Click to Edit Function - Travis Doyle 19/9
-        .on("dblclick", (d) => window.open(window.hWin.HAPI4.baseURL + '?fmt=edit&db=' + window.hWin.HAPI4.database + '&recID=' + d.id, '_blank'));
-    }
-   
-
-    if (isDatabase == 'true'){
-        var nodes = d3.select("#container")
-        .selectAll(".node")
-        .data(data.nodes)
-        .enter()
-        .append("g")
-    }
-
-    
+    var nodes = d3.select("#container")
+                  .selectAll(".node")
+                  .data(data.nodes)
+                  .enter()
+                  .append("g");
+                    //Added Double Click to Edit Function - Travis Doyle 19/9
+                  if (!isDatabase){
+                    d3.selectAll(".node").on("dblclick",(d) => window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank'));
+                  }
+                    
+                          
+                  
 
     // Dragging
     var drag = d3.behavior.drag()
-        .on("dragstart", dragstart)
-        .on("drag", dragmove)
-        .on("dragend", dragend);
-
-    var entitycolor = getSetting(setting_entitycolor);
-
-    // Details for each node            
-    nodes.each(function (d, i) {
+                 .on("dragstart", dragstart)
+                 .on("drag", dragmove)
+                 .on("dragend", dragend);
+     
+   var entitycolor = getSetting(setting_entitycolor);
+      
+   // Details for each node            
+   nodes.each(function(d, i) {
         // Restore location data
         var record = getSetting(d.id);
-        if (record) {
-            //console.log('restore id '+d.id+'   '+record);            
+        if(record) {
+//console.log('restore id '+d.id+'   '+record);            
             var obj = JSON.parse(record);
-            if ("x" in obj) {
+            if("x" in obj) {
                 d.x = obj.x;
             }
-            if ("y" in obj) {
+            if("y" in obj) {
                 d.y = obj.y;
             }
-            if ("px" in obj) {
+            if("px" in obj) {
                 d.px = obj.px;
             }
-            if ("py" in obj) {
+            if("py" in obj) {
                 d.py = obj.py;
             }
         }
 
-        var node = d3.select(this);
-
-        var icon_display = currentMode == 'icons' ? 'initial' : 'none';
-
+        var  node = d3.select(this);
+        
+        var icon_display = currentMode=='icons' ? 'initial' : 'none';
+        
         //add infobox
-        createOverlay(0, 0, "record", "id" + d.id, d, node);
-
+        createOverlay(0, 0, "record", "id"+d.id, d, node);
+        
         //add outer circle
         node.append("circle")
-            .attr("r", function (d) {
+            .attr("r", function(d) {
                 return getEntityRadius(d.count);
             })
             .attr("class", "background icon-background")
-            .style({ 'fill-opacity': '0.5', 'display': icon_display })
+            .style({'fill-opacity': '0.5', 'display': icon_display})
             .attr("fill", entitycolor);//added node colouring - Travis Doyle - 10/10        
-
+        
         //add internal circle
         node.append("circle")
             .attr("r", circleSize)
             .attr("class", 'foreground icon-foreground')
             .attr("fill", entitycolor)//added node colouring - Travis Doyle - 10/10
-            .style({ "stroke": "#ddd", 'display': icon_display })
-            .style("stroke-opacity", function (d) {
-                if (d.selected == true) {
+            .style({"stroke": "#ddd", 'display': icon_display})
+            .style("stroke-opacity", function(d) {
+                if(d.selected == true) {
                     return 1;
                 }
                 return .25;
@@ -112,81 +104,81 @@ function addNodes() {
 
         //add icon
         node.append("svg:image")
-            .attr("class", "icon node-icon")
-            .attr("xlink:href", function (d) {
-                if (d.image) {
+            .attr("class", "icon node-icon") 
+            .attr("xlink:href", function(d) {
+                if(d.image){
                     return d.image;
-                } else {
+                }else{
                     return '';
                 }
             })
-            .attr("x", -iconSize / 2)
-            .attr("y", -iconSize / 2)
+            .attr("x", -iconSize/2)
+            .attr("y", -iconSize/2)
             .attr("height", iconSize)
             .attr("width", iconSize)
-            .on("mouseover", function (d) {
-                if (drag_link_source_id != null) {
+            .on("mouseover", function(d) {
+                if(drag_link_source_id!=null){
                     drag_link_target_id = d.id;
-                    drag_link_line.attr("stroke", "#00ff00");  //green
+                    drag_link_line.attr("stroke","#00ff00");  //green
                 }
             })
-            .on("mouseout", function (d) {
-                if (drag_link_source_id != null) {
-                    setTimeout(function () {
-                        drag_link_target_id = null;
-                        if (drag_link_line) drag_link_line.attr("stroke", "#ff0000");  //red
-                    }, 200);
+            .on("mouseout", function(d) {
+                if(drag_link_source_id!=null){
+                setTimeout(function(){
+                    drag_link_target_id = null;
+                    if(drag_link_line) drag_link_line.attr("stroke","#ff0000");  //red
+                },200);
                 }
             })
             .style('display', icon_display);
-
+                           
         var gravity = getSetting(setting_gravity);
-
+        
         // Attributes
         node  //d3.select(this)
-            .attr("class", "node id" + d.id)
-            .attr("transform", "translate(10, 10)")
-            .attr("x", d.x)
-            .attr("y", d.y)
-            .attr("px", d.px)
-            .attr("py", d.py)
-            .attr("fixed", function (d) {
-                if (record && gravity == "off") {
-                    d.fixed = true;
-                    return true;
-                }
-                return false;
-            })
-            .on("click", function (d) {
+          .attr("class", "node id"+d.id)
+          .attr("transform", "translate(10, 10)")
+          .attr("x", d.x) 
+          .attr("y", d.y)
+          .attr("px", d.px)
+          .attr("py", d.py)
+          .attr("fixed", function(d) {
+              if(record && gravity == "off") {
+                  d.fixed = true;
+                  return true;
+              }
+              return false;
+          })    
+         .on("click", function(d) {
+             
+              closeRectypeSelector();
+              // Check if it's not a click after dragging
+              if(!d3.event.defaultPrevented) {
+                  // Remove all overlays and create a record overlay for selected node
+                  //tempXXX
+                  //removeOverlays();
+                  //onRecordNodeClick(d3.event, d, ".node.id"+d.id);
+              }
+         })
+         .call(drag);
 
-                closeRectypeSelector();
-                // Check if it's not a click after dragging
-                if (!d3.event.defaultPrevented) {
-                    // Remove all overlays and create a record overlay for selected node
-                    //tempXXX
-                    //removeOverlays();
-                    //onRecordNodeClick(d3.event, d, ".node.id"+d.id);
-                }
-            })
-            .call(drag);
+     });            
 
-    });
+    
+     
 
-
-
-
-    return nodes;
+     return nodes;
 }
 
 /**
 * Updates the locations of all nodes
 */
 function updateNodes() {
-    d3.selectAll(".node").attr("transform", function (d) {
+    d3.selectAll(".node").attr("transform", function(d) { 
         // Store new position
-        var obj = { px: d.px, py: d.py, x: d.x, y: d.y };
+        var obj = {px: d.px, py: d.py, x: d.x, y: d.y};
         putSetting(d.id, JSON.stringify(obj));
-        return "translate(" + d.x + "," + d.y + ")";
+        return "translate(" + d.x + "," + d.y + ")"; 
     });
 }
 
@@ -194,35 +186,35 @@ function updateNodes() {
 
 /** Called when a dragging event starts */
 function dragstart(d, i) {
-
+    
     d3.event.sourceEvent.stopPropagation();
     force.stop();
 
     // Fixed node positions?
     var gravity = getSetting(setting_gravity);
     svg.selectAll(".node")
-        .attr("fixed", function (d, i) {
+       .attr("fixed", function(d, i) {
             d.fixed = (gravity == "off");
             return d.fixed;
-        });
-    d.fixed = true;
-
-    updateCircles(".node.id" + d.id, selectionColor, selectionColor);
+       }); 
+    d.fixed = true; 
+    
+    updateCircles(".node.id"+d.id, selectionColor, selectionColor);
 }
 
 /** Caled when a dragging move event occurs */
-function dragmove(d, i) {
-
+function dragmove(d, i) {  
+    
     // Update all selected nodes. A node is selected when the .foreground color is 190,228,248
-    svg.selectAll(".node").each(function (d, i) {
+    svg.selectAll(".node").each(function(d, i) {
         var color = d3.select(this).select(".foreground").style("fill");
-        if (color == "rgb(190, 228, 248)") {
+        if(color == "rgb(190, 228, 248)") {
             // Update locations
             d.px += d3.event.dx;
             d.py += d3.event.dy;
             d.x += d3.event.dx;
             d.y += d3.event.dy;
-
+            
             /* Update the location in localstorage
             var record = getSetting(d.id); 
             //console.log("Record", record);
@@ -240,47 +232,47 @@ function dragmove(d, i) {
             obj.y = d.y;
             putSetting(d.id, JSON.stringify(obj));
             */
-        }
+        }   
     });
 
     // Update nodes & lines
-    tick();
+    tick();                                                          
 
 }
 
 /** Called when a dragging event ends */
 function dragend(d, i) {
-
+    
     // Update nodes & lines
     var gravity = getSetting(setting_gravity);
-    d.fixed = (gravity !== "aggressive");
-    //console.log("Fixed: ", d.fixed);
-
-
-    // Update the location in localstorage
-    var record = getSetting(d.id);
-    //console.log("Record", record);
-    var obj;
-    if (record === null) {
-        obj = {};
-    } else {
-        obj = JSON.parse(record);
-    }
-
-    // Set attributes 'x' and 'y' and store object
-    obj.px = d.px;
-    obj.py = d.py;
-    obj.x = d.x;
-    obj.y = d.y;
-    putSetting(d.id, JSON.stringify(obj));
-
-    //console.log("save pos "+d.id+'  '+JSON.stringify(obj));    
-
+    d.fixed = ( gravity !== "aggressive");
+//console.log("Fixed: ", d.fixed);
+    
+    
+            // Update the location in localstorage
+            var record = getSetting(d.id); 
+            //console.log("Record", record);
+            var obj;
+            if(record === null) {
+                obj = {}; 
+            }else{
+                obj = JSON.parse(record);
+            }  
+            
+            // Set attributes 'x' and 'y' and store object
+            obj.px = d.px;
+            obj.py = d.py;
+            obj.x = d.x;
+            obj.y = d.y;
+            putSetting(d.id, JSON.stringify(obj));
+    
+//console.log("save pos "+d.id+'  '+JSON.stringify(obj));    
+    
     // Check if force may resume
-    if (gravity !== "off") {
-        force.resume();
+    if(gravity !== "off") {
+        force.resume(); 
     }
-    /*    setTimeout(function(){    //tick();
-            d3.select("#container").attr("transform","scale(1)");
-        },500); */
+/*    setTimeout(function(){    //tick();
+        d3.select("#container").attr("transform","scale(1)");
+    },500); */
 }
