@@ -158,7 +158,7 @@ function addNodes() {
 
 //Added by ISH
 function showNodeInformation(d){
-    console.log("show Node func");//test to see if function accessed
+    /*console.log("show Node func");//test to see if function accessed
     var infoBox = d3.select("#infoBox");//select infobox
     infoBox.style("display", "block");//show hidden div
     infoBox.selectAll("h2").remove();//remove header
@@ -174,13 +174,20 @@ function showNodeInformation(d){
 
     //var info = d.gender;
     console.log(info);
-
+    */
 
     //iframe method
     //call the renderrecord php page
+    //http://192.168.1.103:8080/HEURIST/heurist/viewers/record/renderRecordData.php?recID=1&amp;db=hawkb_finalDb
+    var srcURL = window.hWin.HAPI4.baseURL + '/viewers/record/renderRecordData.php?recID=' + d.id + '&amp; db=' + window.hWin.HAPI4.database;
+    console.log(srcURL); 
+    var infoBox = d3.select("#iframeInfo");
+    infoBox.html("src = " + srcURL);
+
+
     //provide it with dbname, record id and and mappopup == 1
         //var to save the arguments
-        //var webpage url = ??
+        //var webpage url = ?? [baseline URL?]
         //var record ID = d.id
         //var database name = ??
     //put info into an iframe
@@ -193,6 +200,7 @@ function showNodeInformation(d){
     //XMLHTTPRequest
     //goes to PHP file
     //capture data and handle as required
+
     
 }
 
