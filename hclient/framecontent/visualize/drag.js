@@ -159,6 +159,10 @@ function addNodes() {
          .call(drag);
 
      });            
+
+     selectionColor = getSetting(setting_entitycolor);
+     updateCircles(".node", selectionColor, selectionColor);
+     
      return nodes;
 }
 
