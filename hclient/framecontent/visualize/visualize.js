@@ -533,8 +533,8 @@ function zoomed() {
     //keep current setting Translate 
     
     //-----------------ZOOM TEXT SCALING--------------------//
-    console.log("d3.event", d3.event);
-    console.log("d3.event.scale", d3.event.scale);
+    //console.log("d3.event", d3.event);
+    //console.log("d3.event.scale", d3.event.scale);
 
     if (/*d3.event.scale > 0 && */d3.event.scale < 0.5) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');

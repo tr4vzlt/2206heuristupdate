@@ -236,8 +236,8 @@ $.widget( "heurist.connections", {
     * @param recordset
     */
     _getRelations: function( recordset ){
-        //console.log("getRelations CALLED");
-        //console.log(recordset);
+        console.log("getRelations CALLED");
+        console.log(recordset);
         
         if(window.hWin.HEURIST4.util.isnull(recordset)) return;
 
