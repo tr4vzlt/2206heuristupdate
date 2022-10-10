@@ -35,7 +35,6 @@ function addNodes() {
                   .data(data.nodes)
                   .enter()
                   .append("g")
-                  .style("fill", function(d) {return '#ff0000';})
                     //Added Double Click to Edit Function - Travis Doyle 19/9
                   .on("dblclick",(d) => window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank'));
                     
@@ -91,6 +90,7 @@ function addNodes() {
         node.append("circle")
             .attr("r", circleSize)
             .attr("class", 'foreground icon-foreground')
+            .attr("fill", entitycolor)
             .style({"stroke": "#ddd", 'display': icon_display})
             .style("stroke-opacity", function(d) {
                 if(d.selected == true) {
