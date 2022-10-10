@@ -54,7 +54,7 @@ require_once(dirname(__FILE__).'/../../hsapi/dbaccess/db_rel_details_temp.php');
 define('ALLOWED_TAGS', '<i><b><u><em><strong><sup><sub><small><br>'); //for record title see output_chunker for other fields
 
 $noclutter = array_key_exists('noclutter', $_REQUEST);
-$is_map_popup = array_key_exists('mapPopup', $_REQUEST) && ($_REQUEST['mapPopup']==1);
+$is_map_popup = array_key_exists('mapPopup', $_REQUEST) && ($_REQUEST['mapPopup']==1);//send map pop up == 1
 $without_header = array_key_exists('noheader', $_REQUEST) && ($_REQUEST['noheader']==1);
 $layout_name = @$_REQUEST['ll'];
 $is_production = !$is_map_popup && $layout_name=='WebSearch';
