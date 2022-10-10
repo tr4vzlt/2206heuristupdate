@@ -179,9 +179,12 @@ function showNodeInformation(d){
     //iframe method
     //call the renderrecord php page
     //provide it with dbname, record id and and mappopup == 1
-    //put info into an iframe 
+        //var to save the arguments
+    //put info into an iframe
+    //var infoIframe = d3.select("#iframeInfo");
+    //infoIframe.html("src = ''"); 
 
-    
+
     //XMLHTTPRequest
     //goes to PHP file
     //capture data and handle as required
