@@ -235,13 +235,12 @@ text.shadow {
     line-height: 10px;    
     display:table-cell;
     height:auto;
-    bottom: 10px;
     /*border: solid 1px gray;*/
 }
 
 #toolbar > div{
     /*display:table-row;*/
-    float:right;
+    float:left;
 }
 #toolbar2{
     line-height: 0px;    
