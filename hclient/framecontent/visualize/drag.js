@@ -184,31 +184,16 @@ function showNodeInformation(d){
     //var infoIframe = d3.select("#iframeInfo");
     //infoIframe.html("src = ''"); 
 
+    //Used to open record editor
+    //window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank'
 
     //XMLHTTPRequest
     //goes to PHP file
     //capture data and handle as required
     
-
-    
-    //Access info in the d object;
-    
-    
-    //get data from node
-    //console.log("info" + d.datum());
-    /*
-    infoBox.append("h2").text("Person Details");
-    if(d.id == 1){
-        infoBox.append("p").text("Given Name: Ishmamul");
-        infoBox.append("p").text("Family Name: Haque");
-    }
-    else{
-        infoBox.append("p").text("Given Name: Sirajul");
-        infoBox.append("p").text("Family Name: Haque");
-    }
-    //append it to the info box
-    */
 }
+
+
 
 /**
 * Updates the locations of all nodes
