@@ -289,6 +289,10 @@ $.widget( "heurist.connections", {
     * @returns {Object}
     */
     , _parseData: function (records_ids, relations) {
+        console.log("_parseDat Called");
+        console.log(records_ids);
+        console.log(relations);
+
         var data = {}; 
         var nodes = {};                         
         var links = [];
