@@ -468,7 +468,7 @@ function visualizeData() {
         );
     }
 
-    inIframe(); //Added by Travis - Controls buttons appearing and disappearing
+    inIframe();
 
     tick(); // update display
 
@@ -1560,24 +1560,21 @@ function inIframe() {
 
 }
 
-function dbHide(){
-    let refreshiFrame = document.getElementById("resetbutton1");
-    let fullscreenbtn = document.getElementById("windowPopOut");
-    var isDatabase = getSetting(settings.isDatabaseStructure);
-
-    if (isDatabase){
-        refreshiFrame.style.display = 'none';
-        fullscreenbtn.style.display = 'none';
-    }
-}
-
-
-
 //New graph refresh button - Created by Travis Doyle 24/9/2022
 function refreshButton() {
+    alert(settings.isDatabaseStructure);
+    var DatabaseStructureStatus = getSetting(settings.isDatabaseStructure)
+    localStorage.setItem("DatabaseStatus", DatabaseStructureStatus)
     var newhref = window.hWin.HEURIST4.util.composeHeuristQuery2(window.hWin.HEURIST4.current_query_request, false);
     newhref = newhref + ((newhref == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
     location.href = newhref;
+    var DatabaseStructureStatus = localStorage.getItem("DatabaseStatus");
+
+    if (DatabaseStructureStatus){
+        $('#embed-export').css('visibility', 'visible');
+        btnAddLink.style('visibility', 'visible');
+    }
+
 }
 
 //refresh graph while in fullscreen mode - Travis Doyle 28/9
