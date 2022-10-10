@@ -35,7 +35,7 @@ function addNodes() {
                   .enter()
                   .append("g")
                     //Added Double Click to Edit Function - TD 19/9/2022
-                  .on("dblclick",(d) => console.log(record_id))
+                  .on("dblclick",(d) => console.log(records_ids))
                   
                   //THIS LINE BELOW IS FOR OPENING NODE INFORMATION IN NEW WINDOW
                   //.on("dblclick",(d) => window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank'))
