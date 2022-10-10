@@ -929,8 +929,6 @@ function tick() {
     // Update node locations
     updateNodes();
 
-   
-
     // Update overlay
     updateOverlays();
 }
@@ -1586,29 +1584,23 @@ function refreshButtonFullscreen() {
 }
 //Gravity Fullscreen Button Fix - Travis Doyle 6/10
 function refreshGravityOn() {
-    var GravityStatus = true;
-    localStorage.setItem("Gravity", GravityStatus)
+    var gravitystat = getSetting(setting_gravity);
 
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + window.location.search;
     location.href = url2;
 
-    var GravityStatus = localStorage.getItem("Gravity");
-
-    if (GravityStatus) {
-        setGravity('touch')
+    if (gravitystat == 'off') {
+        setGravity('touch');
     }
 }
 function refreshGravityOff() {
-    var GravityStatus = false;
-    localStorage.setItem("Gravity", GravityStatus)
+    var gravitystat = getSetting(setting_gravity);
 
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + window.location.search;
     location.href = url2;
 
-    var GravityStatus = localStorage.getItem("Gravity");
-
-    if (GravityStatus) {
-        setGravity('off')
+    if (gravitystat == 'touch') {
+        setGravity('off');
     }
 }
 //open graph in fullscreen - Travis Doyle 28/9
