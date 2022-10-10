@@ -1570,7 +1570,7 @@ function refreshButton() {
     location.href = newhref;
     var DatabaseStructureStatus = localStorage.getItem("DatabaseStatus");
 
-    if (DatabaseStructureStatus = false){
+    if (DatabaseStructureStatus){
         $('#embed-export').css('visibility', 'visible');
         btnAddLink.style('visibility', 'visible');
     }
