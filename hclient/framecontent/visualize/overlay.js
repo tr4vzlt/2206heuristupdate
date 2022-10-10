@@ -398,6 +398,9 @@ function createOverlay(x, y, type, selector, node_obj, parent_node) {
     var fontColor = getSetting(setting_textcolor, '#000000');
 
     var offset = (type=='record')?10:6;
+    if (currentMode == 'icons'){
+        offset = (type=='record')?29:25; 
+    }
     var position = 16;
 
     // Adding text
