@@ -175,6 +175,13 @@ function showNodeInformation(d){
     //var info = d.gender;
     console.log(info);
 
+
+    //iframe method
+    //call the renderrecord php page
+    //provide it with dbname, record id and and mappopup == 1
+    //put info into an iframe 
+
+    
     //XMLHTTPRequest
     //goes to PHP file
     //capture data and handle as required
