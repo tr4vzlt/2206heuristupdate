@@ -183,6 +183,7 @@ function showNodeInformation(d){
     console.log("src text = " + srcURL); 
     var infoBox = d3.select("#iframeInfo");
     infoBox.attr("src", srcURL);
+    infoBox.style("display", "block");
 
 
     //provide it with dbname, record id and and mappopup == 1
