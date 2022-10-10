@@ -229,7 +229,9 @@ function handleSettingsInUI() {
         .on('change.color', function (event, color) {
             if (color) {
                 putSetting(setting_entitycolor, color);
-                $(".background").attr("fill", color);
+                //$(".background").attr("fill", color);
+                updateCircles(".node", foregroundColor, getSetting(setting_entitycolor));
+                updateRectangles(".node", getSetting(setting_entitycolor));
                 visualizeData();
             }
         });
