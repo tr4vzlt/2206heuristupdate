@@ -27,6 +27,7 @@
 
 
 function addNodes() {
+    var isDatabase = getSetting(settings.isDatabaseStructure);
 
 
     // Append nodes
@@ -34,9 +35,11 @@ function addNodes() {
                   .selectAll(".node")
                   .data(data.nodes)
                   .enter()
-                  .append("g")
+                  .append("g");
                     //Added Double Click to Edit Function - Travis Doyle 19/9
-                  .on("dblclick",(d) => window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank'));
+                  if (!isDatabase){
+                    d3.selectAll(".node").on("dblclick",(d) => window.open(window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank'));
+                  }
                     
                           
                   
@@ -84,13 +87,13 @@ function addNodes() {
             })
             .attr("class", "background icon-background")
             .style({'fill-opacity': '0.5', 'display': icon_display})
-            .attr("fill", entitycolor);        
+            .attr("fill", entitycolor);//added node colouring - Travis Doyle - 10/10        
         
         //add internal circle
         node.append("circle")
             .attr("r", circleSize)
             .attr("class", 'foreground icon-foreground')
-            .attr("fill", entitycolor)
+            .attr("fill", entitycolor)//added node colouring - Travis Doyle - 10/10
             .style({"stroke": "#ddd", 'display': icon_display})
             .style("stroke-opacity", function(d) {
                 if(d.selected == true) {
