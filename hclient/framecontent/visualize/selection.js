@@ -52,7 +52,7 @@ function addSelectionBox() {
 */
 function updateCircles(selector, fgColor, bgColor) {
     var nodes = d3.selectAll(selector);
-    nodes.select(".foreground").style("fill", fgColor);
+    nodes.select(".foreground").style("fill", bgColor);
     nodes.select(".background").style("fill", bgColor);
 }
 
