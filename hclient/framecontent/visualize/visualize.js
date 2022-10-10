@@ -929,8 +929,8 @@ function tick() {
     // Update node locations
     updateNodes();
 
-    selectionColor = getSetting(setting_entitycolor);
-    updateCircles(".node", selectionColor, selectionColor);
+    //selectionColor = getSetting(setting_entitycolor);
+    //updateCircles(".node", selectionColor, selectionColor);
 
     // Update overlay
     updateOverlays();
