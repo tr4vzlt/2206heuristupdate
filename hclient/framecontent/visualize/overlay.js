@@ -370,25 +370,28 @@ function createOverlay(x, y, type, selector, node_obj, parent_node) {
     }
 
     var outline_colour = (type == 'record') ? '#666' : '#ff0000';
-    
-    // Draw a semi transparant rectangle       
+    var nodecolor = getSetting(setting_entitycolor);
+
+    // Draw a semi transparant rectangle
     var rect_full = overlay.append("rect")
-                           .attr("class", "semi-transparant info-mode-full rect-info-full")              
+                           .attr("class", "semi-transparant info-mode-full rect-info-full")
                            .attr("x", 0)
                            .attr("y", 0)
                            .attr("rx", 6)
                            .attr("ry", 6)
                            .attr("rtyid", info[0].rtyid)
+                           .attr("fill", nodecolor)
                            .style('stroke', outline_colour)
                            .style("stroke-width", 0.75);
 
     var rect_info = overlay.append("rect")
-                           .attr("class", "semi-transparant info-mode rect-info")              
+                           .attr("class", "semi-transparant info-mode rect-info")
                            .attr("x", 0)
                            .attr("y", 0)
                            .attr("rx", 6)
                            .attr("ry", 6)
                            .attr("rtyid", info[0].rtyid)
+                           .attr("fill", nodecolor)
                            .style('stroke', outline_colour)
                            .style("stroke-width", 0.75);
         
