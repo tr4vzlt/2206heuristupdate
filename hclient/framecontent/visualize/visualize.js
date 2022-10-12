@@ -590,7 +590,7 @@ function zoomed() {
     } else {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
             for (let i = 0; i < nodeList.length; i++) {
-                nodeList[i].style.fontsize = "9px";
+                nodeList[i].style.scale = "10";
                 //nodeList[i].style.transform = "translate(0px, 0px)";
             }
     }
