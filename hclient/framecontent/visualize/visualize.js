@@ -528,6 +528,9 @@ function addContainer() {
 */
 function zoomed() {
 
+
+    if (currentMode == 'icons') {
+
     if (/*d3.event.scale > 0 && */d3.event.scale < 0.5) {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
          for (let i = 0; i < nodeList.length; i++) {
@@ -583,7 +586,7 @@ function zoomed() {
             nodeList[i].style.transform = "translate(0px, 0px)";
          }
     }
-
+    }
     //keep current setting Translate   
     var translateXY = [];
     var notDefined = false;

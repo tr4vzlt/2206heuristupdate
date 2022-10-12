@@ -152,7 +152,7 @@ function visualizeSelection(selectedNodeIds) { //console.log(settings.data);
                 updateRectangles(selector, selectionColor);
             }
         }
-    }
+    }   
 }
 
 /************************************** SELECTION BOX **********************************/
