@@ -586,10 +586,11 @@ function zoomed() {
                 nodeList[i].style.transform = "translate(0px, 0px)";
             }
         }
+
     } else {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
             for (let i = 0; i < nodeList.length; i++) {
-                nodeList[i].style.size = "9px";
+                nodeList[i].style.fontsize = "9px";
                 //nodeList[i].style.transform = "translate(0px, 0px)";
             }
     }
