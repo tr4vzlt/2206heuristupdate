@@ -527,6 +527,8 @@ function addContainer() {
 * Called after a zoom-event takes place.
 */
 function zoomed() {
+
+    //Gerard Zoom Scaling + Bug Fix for other Icon modes
     if (currentMode == 'icons') {
 
         if (/*d3.event.scale > 0 && */d3.event.scale < 0.5) {
@@ -587,10 +589,10 @@ function zoomed() {
 
     } else {
         const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
-            for (let i = 0; i < nodeList.length; i++) {
-                nodeList[i].style.scale = "1";
-                nodeList[i].style.transform = "translate(0px, 0px)";
-            }
+        for (let i = 0; i < nodeList.length; i++) {
+            nodeList[i].style.scale = "1";
+            nodeList[i].style.transform = "translate(0px, 0px)";
+        }
     }
 
     //keep current setting Translate   
