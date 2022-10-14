@@ -47,7 +47,7 @@ function addNodes() {
                  .on("drag", dragmove)
                  .on("dragend", dragend);
      
-   var entitycolor = getSetting(setting_entitycolor);
+   //var entitycolor = getSetting(setting_entitycolor);
       
    // Details for each node            
    nodes.each(function(d, i) {
@@ -97,7 +97,7 @@ function addNodes() {
         node.append("circle")
             .attr("r", circleSize)
             .attr("class", 'foreground icon-foreground')
-            //.attr("fill", entitycolor)
+            .attr("fill", 'blue')
             .style({"stroke": "#ddd", 'display': icon_display})
             .style("stroke-opacity", function(d) {
                 if(d.selected == true) {
@@ -172,12 +172,12 @@ function addNodes() {
          .call(drag);
 
      });            
-
+    /*
     console.log("TESTING COLOURS");
     if (d.rty_ID == 10) {
         console.log("we have found a 10");
     }
-     
+     */
 
      return nodes;
 }
