@@ -181,9 +181,10 @@ function showNodeInformation(d){
     //http://192.168.1.103:8080/HEURIST/heurist/viewers/record/renderRecordData.php?recID=1&amp;db=hawkb_finalDb
     var srcURL = window.hWin.HAPI4.baseURL + 'viewers/record/renderRecordData.php?recID=' + d.id + '&db=' + window.hWin.HAPI4.database;
     console.log("src text = " + srcURL); 
+    var iframeDiv = d3.select("#iframeDiv");
     var infoBox = d3.select("#iframeInfo");
     infoBox.attr("src", srcURL);
-    infoBox.style("display", "block");
+    iframeDiv.style("display", "block");
 
 
     //provide it with dbname, record id and and mappopup == 1
