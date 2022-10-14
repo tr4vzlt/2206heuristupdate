@@ -1483,7 +1483,7 @@ function addTitles() {
 * These circles can be styled in the settings bar
 */
 function addBackgroundCircles() {
-    var entitycolor = getSetting(setting_entitycolor);
+    //var entitycolor = getSetting(setting_entitycolor);
     var circles = d3.selectAll(".node")
         .append("circle")
         .attr("r", function (d) {

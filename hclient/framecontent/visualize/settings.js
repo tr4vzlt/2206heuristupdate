@@ -30,7 +30,7 @@ var setting_linewidth = "setting_linewidth";
 var setting_linecolor = "setting_linecolor";
 var setting_markercolor = "setting_markercolor";
 var setting_entityradius = "setting_entityradius";
-//var setting_entitycolor = "setting_entitycolor";
+var setting_entitycolor = "setting_entitycolor";
 var setting_labels = "setting_labels";
 var setting_fontsize = "setting_fontsize";
 var setting_textlength = "setting_textlength";
@@ -92,7 +92,7 @@ function checkStoredSettings() {
     getSetting(setting_linecolor, 'blue'); //settings.linecolor   );
     getSetting(setting_markercolor, settings.markercolor);
     getSetting(setting_entityradius, settings.entityradius);
-    //getSetting(setting_entitycolor, settings.entitycolor);
+    getSetting(setting_entitycolor, settings.entitycolor);
     getSetting(setting_labels, settings.labels);
     getSetting(setting_fontsize, settings.fontsize);
     getSetting(setting_textlength, settings.textlength);
