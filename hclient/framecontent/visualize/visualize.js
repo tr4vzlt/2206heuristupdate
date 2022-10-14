@@ -530,8 +530,6 @@ function addContainer() {
 */
 function zoomed() {
 
-    changeNodeColour();
-
     if (currentMode == 'icons') {
 
         if (/*d3.event.scale > 0 && */d3.event.scale < 0.5) {
@@ -1677,5 +1675,9 @@ function closeWin() {
     hrefnew = hrefnew + ((hrefnew == '?') ? '' : '&') + 'db=' + window.hWin.HAPI4.database;
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
     window.close(url2);
+}
+
+function changeNodeColour() {
+    changeColour();
 }
 
