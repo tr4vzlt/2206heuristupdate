@@ -1678,6 +1678,9 @@ function closeWin() {
 }
 
 function changeNodeColour() {
-    console.log(d3)
+    console.log(d3.node)
+    console.log(d3.nodes)
+    console.log(d3.nodeList)
+
 }
 
