@@ -108,15 +108,7 @@ function addNodes() {
 
             
 
-        console.log("TESTING COLOURS");
-        console.log(d)
-        //console.log(d.rty_ID);
-          
         
-        if (d.rty_ID == 10) {
-            console.log("we have found a 10");
-            document.querySelectorAll('.node.id1 .foreground icon-foreground').style.fill = "blue";
-        }
 
 
         //add icon
@@ -182,7 +174,15 @@ function addNodes() {
      });            
 
     
-     
+     console.log("TESTING COLOURS");
+        console.log(d)
+        //console.log(d.rty_ID);
+          
+        
+        if (d.rty_ID == 10) {
+            console.log("we have found a 10");
+            document.querySelectorAll('.node.id1 .foreground icon-foreground').style.fill = "blue";
+        }
 
      return nodes;
 }
