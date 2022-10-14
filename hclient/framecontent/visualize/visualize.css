@@ -287,6 +287,6 @@ text.shadow {
     fill: blue !important;
 }
 
-#recID {
-    display: none !important;
+div#recID {
+    display: none;
 }
