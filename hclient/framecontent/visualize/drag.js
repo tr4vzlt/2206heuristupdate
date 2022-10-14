@@ -193,6 +193,7 @@ function hideBox(d){
     closeBtn.on("click", function(){
         var b = d3.select("#iframeDiv");
         b.style("display", "none");
+        console.log("Clicked button");
     });
 }
 
