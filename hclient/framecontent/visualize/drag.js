@@ -106,17 +106,17 @@ function addNodes() {
                 return .25;
             });
 
-            var nodeColours = d;
+            
 
         console.log("TESTING COLOURS");
-        console.log(nodeColours)
-        console.log(nodeColours.rty_ID);
+        console.log(d)
+        console.log(d.rty_ID);
             
-        /*
-            if (nodeColours.rty_ID == 10) {
-                document.getElementById(d.rty_10).style.fill = "pink";
+        
+            if (d.rty_ID == 10) {
+                document.querySelectorAll(".node.id" + d.id + " .foreground.icon-foreground").style.fill = "blue";
             }
-           */ 
+            
 
 
         //add icon
