@@ -443,6 +443,9 @@ function visualizeData() {
     addNodes();
     //addTitles();
 
+    //change node colour based on attributes
+    changeNodeColour();
+
     if (settings.isDatabaseStructure) {
 
         var cnt_vis = data.nodes ? data.nodes.length : 0;

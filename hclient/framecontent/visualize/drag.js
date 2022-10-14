@@ -174,7 +174,13 @@ function addNodes() {
      });            
 
     
-     console.log("TESTING COLOURS");
+     
+
+     return nodes;
+}
+
+function changeNodeColour() {
+    console.log("TESTING COLOURS");
         console.log(d)
         //console.log(d.rty_ID);
           
@@ -183,8 +189,6 @@ function addNodes() {
             console.log("we have found a 10");
             document.querySelectorAll('.node.id1 .foreground icon-foreground').style.fill = "blue";
         }
-
-     return nodes;
 }
 
 /**
