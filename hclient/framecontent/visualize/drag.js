@@ -173,7 +173,10 @@ function addNodes() {
 
      });            
 
-    
+    console.log("TESTING COLOURS");
+    if (d.rty_ID == 10) {
+        console.log("we have found a 10");
+    }
      
 
      return nodes;
@@ -181,7 +184,7 @@ function addNodes() {
 
 function changeColour() {
     console.log("TESTING COLOURS");
-        console.log(data.node)
+        console.log()
         //console.log(d.rty_ID);
           
         /*
