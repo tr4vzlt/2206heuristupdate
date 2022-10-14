@@ -181,8 +181,8 @@ function addNodes() {
 
 function changeColour() {
     console.log("TESTING COLOURS");
-        console.log(d)
-        console.log(d.rty_ID);
+        console.log(data.node)
+        //console.log(d.rty_ID);
           
         /*
         if (d.rty_ID == 10) {
