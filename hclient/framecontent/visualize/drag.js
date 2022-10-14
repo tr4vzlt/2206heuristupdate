@@ -95,7 +95,9 @@ function addNodes() {
         
         //add internal circle
         console.log(d);
-        
+        console.log(d.rty_ID);
+
+        if (d.rty_ID == 10) {
         node.append("circle")
             .attr("r", circleSize)
             .attr("class", 'foreground icon-foreground yellowClass')
@@ -107,7 +109,19 @@ function addNodes() {
                 }
                 return .25;
             });
-
+        } else if (d.rty_ID == 12) {
+            node.append("circle")
+            .attr("r", circleSize)
+            .attr("class", 'foreground icon-foreground BlueClass')
+            .attr("fill", 'blue')
+            .style({"stroke": "#ddd", 'display': icon_display})
+            .style("stroke-opacity", function(d) {
+                if(d.selected == true) {
+                    return 1;
+                }
+                return .25;
+            });
+        }
             
 
         
