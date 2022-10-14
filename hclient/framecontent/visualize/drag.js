@@ -91,7 +91,7 @@ function addNodes() {
             })
             .attr("class", "background icon-background")
             .style({'fill-opacity': '0.5', 'display': icon_display})
-            .attr("fill", entitycolor);        
+            .attr("fill", 'blue');        
         
         //add internal circle
         //console.log(d);
@@ -105,7 +105,7 @@ function addNodes() {
         node.append("circle")
             .attr("r", circleSize)
             .attr("class", 'foreground icon-foreground')
-            .attr("fill", 'blue !important')
+            .attr("fill", 'blue')
             .style({"stroke": "#ddd", 'display': icon_display})
             .style("stroke-opacity", function(d) {
                 if(d.selected == true) {
