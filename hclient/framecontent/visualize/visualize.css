@@ -286,3 +286,7 @@ text.shadow {
     width: 16;
     height: 16;
 }
+
+#recID{
+    display:none !important;
+}
