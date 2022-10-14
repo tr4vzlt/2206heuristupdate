@@ -199,7 +199,7 @@ function hideBox(){
     console.log("Clicked button");
 }
 
-
+//Regular code after this. Nothing by "ISH"
 
 /**
 * Updates the locations of all nodes
