@@ -154,49 +154,18 @@ function addNodes() {
      return nodes;
 }
 
-//Added by ISH
+//Added by "ISH"
 function showNodeInformation(d){
-    /*console.log("show Node func");//test to see if function accessed
-    var infoBox = d3.select("#infoBox");//select infobox
-    infoBox.style("display", "block");//show hidden div
-    infoBox.selectAll("h2").remove();//remove header
-    infoBox.selectAll("p").remove();//remove paragraph
-
-    var name = d.name;//name of person
-    const nameArray = name.split(",");//split into given and family name
-    //console.log(nameArray[0] + nameArray[1]);
-
-    infoBox.append("h2").text("Person Details");//add heading for box
-    infoBox.append("p").text("Given name: " + nameArray[1]);//write first name
-    infoBox.append("p").text("Family name: " + nameArray[0]);//write last name
-
-    //var info = d.gender;
-    console.log(info);
-    */
-
-    //iframe method
-    //call the renderrecord php page
-    //http://192.168.1.103:8080/HEURIST/heurist/viewers/record/renderRecordData.php?recID=1&amp;db=hawkb_finalDb
-    var srcURL = window.hWin.HAPI4.baseURL + 'viewers/record/renderRecordData.php?recID=' + d.id + '&db=' + window.hWin.HAPI4.database;//create the query for the iframe
-    console.log("src text = " + srcURL); 
+    var srcURL = window.hWin.HAPI4.baseURL + 'viewers/record/renderRecordData.php?recID=' + d.id + '&db=' + window.hWin.HAPI4.database;//URL for source of information iframe
+    //console.log("src text = " + srcURL); 
     var iframeDiv = d3.select("#iframeDiv");//select the parent div
     var infoBox = d3.select("#iframeInfo");//select the iframe
-    /*var recordId =*/ //document.getElementById('recID').style.display = "none";
     infoBox.attr("src", srcURL);//supply document to iframe
     iframeDiv.style("display", "block");//make iframe visible
-    //recordId.style("display", "none");//hide record ID
-
 }
 
 function hideBox(){
-    /*var closeBtn = d3.select("#closeButton");
-    closeBtn.on("click", function(){
-        var b = d3.select("#iframeDiv");
-        b.style("display", "none");
-        console.log("Clicked button");
-    });*/
-    d3.select("#iframeDiv").style("display", "none");
-    console.log("Clicked button");
+    d3.select("#iframeDiv").style("display", "none");//close the box when clicked
 }
 
 //Regular code after this. Nothing by "ISH"
