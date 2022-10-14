@@ -286,3 +286,7 @@ text.shadow {
 #blueClass {
     fill: blue !important;
 }
+
+#recID {
+    display: none !important;
+}
