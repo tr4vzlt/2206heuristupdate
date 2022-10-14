@@ -443,8 +443,7 @@ function visualizeData() {
     addNodes();
     //addTitles();
 
-    //change node colour based on attributes
-    changeNodeColour();
+    
 
     if (settings.isDatabaseStructure) {
 
@@ -1678,3 +1677,6 @@ function closeWin() {
     var url2 = window.hWin.HAPI4.baseURL + 'hclient/framecontent/visualize/springDiagram.php' + hrefnew;
     window.close(url2);
 }
+
+//change node colour based on attributes
+changeNodeColour();
