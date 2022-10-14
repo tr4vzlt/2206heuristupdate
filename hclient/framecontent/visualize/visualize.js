@@ -1678,6 +1678,6 @@ function closeWin() {
 }
 
 function changeNodeColour() {
-    changeColour();
+    console.log(data.link)
 }
 
