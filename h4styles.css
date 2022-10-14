@@ -2428,3 +2428,7 @@ li.edit-form-tab > a{
 .tox-tinymce-aux {
     z-index: 999999!important;
 }
+
+#recID {
+    display: none;
+}
