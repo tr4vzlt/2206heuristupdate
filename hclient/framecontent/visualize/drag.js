@@ -138,9 +138,7 @@ function addNodes() {
               return false;
           })    
          .on("click", function(d) {
-             showNodeInformation(d);//Added by ISH
-             let info = node.data();
-             console.log(info);   
+             showNodeInformation(d);//Added by ISH   
             closeRectypeSelector();
             // Check if it's not a click after dragging
             if(!d3.event.defaultPrevented) {
@@ -191,7 +189,10 @@ function showNodeInformation(d){
 }
 
 function hideBox(){
-    
+    var svgcanvas = d3.select("#d3svg");
+    svgcanvas.on("click", function(){
+        d3.select("iframeInfo").style("display", "none");
+    })
 }
 
 
