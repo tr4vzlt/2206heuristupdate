@@ -283,6 +283,6 @@ text.shadow {
     fill: yellow !important;
 }
 
-.blueClass {
+#blueClass {
     fill: blue !important;
 }

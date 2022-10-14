@@ -100,6 +100,7 @@ function addNodes() {
         node.append("circle")
             .attr("r", circleSize)
             .attr("class", 'foreground icon-foreground')
+            .attr("id", 'blueClass')
             .attr("fill", 'blue')
             .style({"stroke": "#ddd", 'display': icon_display})
             .style("stroke-opacity", function(d) {
