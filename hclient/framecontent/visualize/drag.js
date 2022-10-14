@@ -70,6 +70,14 @@ function addNodes() {
             }
         }
 
+        //COLOUR NODE TEST GROUND
+
+        var nodeColours = d;
+
+        console.log("TESTING COLOURS");
+        console.log(nodeColours);
+
+
         var  node = d3.select(this);
         
         var icon_display = currentMode=='icons' ? 'initial' : 'none';
