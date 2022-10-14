@@ -72,10 +72,7 @@ function addNodes() {
 
         //COLOUR NODE TEST GROUND
 
-        var nodeColours = d;
-
-        console.log("TESTING COLOURS");
-        console.log(nodeColours.rty_ID);
+        
 
         
 
@@ -109,13 +106,18 @@ function addNodes() {
                 return .25;
             });
 
+            var nodeColours = d;
+
+        console.log("TESTING COLOURS");
+        console.log(nodeColours)
+        console.log(nodeColours.rty_ID);
+            
+        /*
             if (nodeColours.rty_ID == 10) {
-                node.append("circle")
-                    .attr("class", 'node.id1.foreground.icon-foreground')
-                    .attr("fill", 'pink')
-            } else if (nodeColours.rty_ID == 12) {
-    
+                document.getElementById(d.rty_10).style.fill = "pink";
             }
+           */ 
+
 
         //add icon
         node.append("svg:image")
