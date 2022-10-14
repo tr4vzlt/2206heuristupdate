@@ -188,13 +188,15 @@ function showNodeInformation(d){
 
 }
 
-function hideBox(d){
-    var closeBtn = d3.select("#closeButton");
+function hideBox(){
+    /*var closeBtn = d3.select("#closeButton");
     closeBtn.on("click", function(){
         var b = d3.select("#iframeDiv");
         b.style("display", "none");
         console.log("Clicked button");
-    });
+    });*/
+    d3.select("#iframeDiv").style("display", "none");
+    console.log("Clicked button");
 }
 
 
