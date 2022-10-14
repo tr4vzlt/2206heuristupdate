@@ -112,11 +112,11 @@ function addNodes() {
         console.log(d)
         console.log(d.rty_ID);
             
-        
+        /*
             if (d.rty_ID == 10) {
                 document.querySelectorAll(".node.id" + d.id + " .foreground.icon-foreground").style.fill = "blue";
             }
-            
+           */ 
 
 
         //add icon
