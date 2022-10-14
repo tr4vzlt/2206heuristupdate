@@ -183,7 +183,7 @@ function showNodeInformation(d){
     console.log("src text = " + srcURL); 
     var iframeDiv = d3.select("#iframeDiv");//select the parent div
     var infoBox = d3.select("#iframeInfo");//select the iframe
-    /*var recordId =*/ document.getElementById('recID').style.display = "none";
+    /*var recordId =*/ //document.getElementById('recID').style.display = "none";
     infoBox.attr("src", srcURL);//supply document to iframe
     iframeDiv.style("display", "block");//make iframe visible
     //recordId.style("display", "none");//hide record ID
