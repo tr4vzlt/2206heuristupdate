@@ -190,8 +190,8 @@ function showNodeInformation(d){
 
 function hideBox(){
     var svgcanvas = d3.select("#d3svg");
-    svgcanvas.on("click", function(d){
-        d3.select("iframeInfo").style("display", "none");
+    svgcanvas.on("click", function(){
+        d3.select("#iframeInfo").style("display", "none");
     })
 }
 
