@@ -1503,7 +1503,7 @@ function addForegroundCircles() {
     var circles = d3.selectAll(".node")
         .append("circle")
         .attr("r", circleSize)
-        //.attr("fill", entitycolor)
+        .attr("fill", 'blue')
         .attr("class", 'foreground')
         .style("stroke", "#ddd")
         .style("stroke-opacity", function (d) {
