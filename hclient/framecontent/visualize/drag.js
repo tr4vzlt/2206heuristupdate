@@ -77,6 +77,8 @@ function addNodes() {
         console.log("TESTING COLOURS");
         console.log(nodeColours.rty_ID);
 
+        
+
 
         var  node = d3.select(this);
         
@@ -106,6 +108,14 @@ function addNodes() {
                 }
                 return .25;
             });
+
+            if (nodeColours.rty_ID == 10) {
+                node.append("circle")
+                    .attr("class", 'node.id1.foreground.icon-foreground')
+                    .attr("fill", 'pink')
+            } else if (nodeColours.rty_ID == 12) {
+    
+            }
 
         //add icon
         node.append("svg:image")
