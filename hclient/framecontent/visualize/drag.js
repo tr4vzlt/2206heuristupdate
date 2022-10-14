@@ -188,8 +188,10 @@ function showNodeInformation(d){
     iframeDiv.style("display", "block");//make iframe visible
     //recordId.style("display", "none");//hide record ID
 
+}
 
-
+function hideBox(){
+    
 }
 
 
