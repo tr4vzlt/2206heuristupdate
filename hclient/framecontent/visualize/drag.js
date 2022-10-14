@@ -96,6 +96,7 @@ function addNodes() {
         //add internal circle
         node.append("circle")
             .attr("r", circleSize)
+            console.log(d)
             .attr("class", 'foreground icon-foreground yellowClass')
             .attr("fill", 'blue')
             .style({"stroke": "#ddd", 'display': icon_display})
