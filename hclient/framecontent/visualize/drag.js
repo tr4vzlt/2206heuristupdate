@@ -186,7 +186,7 @@ function showNodeInformation(d){
     //var recordId = document.getElementById('recID').style.display = "none";
     infoBox.attr("src", srcURL);//supply document to iframe
     iframeDiv.style("display", "block");//make iframe visible
-    recordId.style("display", "none");//hide record ID
+    //recordId.style("display", "none");//hide record ID
 
 
 
