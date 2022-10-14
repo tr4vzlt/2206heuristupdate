@@ -187,7 +187,7 @@ function changeNodeColour() {
         
         if (d.rty_ID == 10) {
             console.log("we have found a 10");
-            document.querySelectorAll('.node.id1 .foreground.icon-foreground').style.fill = "blue";
+            document.querySelectorAll('.node.id1.foreground.icon-foreground').style.fill = "blue";
         }
 }
 
