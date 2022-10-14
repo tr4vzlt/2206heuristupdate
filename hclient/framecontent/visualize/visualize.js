@@ -131,7 +131,7 @@ var svg;        // The SVG where the visualisation will be executed on
 
             entityradius: 30,
             //testing entity color
-            entitycolor: setting_entitycolor,
+            //entitycolor: setting_entitycolor,
 
             labels: true,
             fontsize: "8px",
