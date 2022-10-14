@@ -1490,7 +1490,7 @@ function addBackgroundCircles() {
             return getEntityRadius(d.count);
         })
         .attr("class", "background")
-        .attr("fill", entitycolor);
+        //.attr("fill", entitycolor);
     return circles;
 }
 
