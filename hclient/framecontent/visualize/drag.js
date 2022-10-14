@@ -179,31 +179,17 @@ function showNodeInformation(d){
     //iframe method
     //call the renderrecord php page
     //http://192.168.1.103:8080/HEURIST/heurist/viewers/record/renderRecordData.php?recID=1&amp;db=hawkb_finalDb
-    var srcURL = window.hWin.HAPI4.baseURL + 'viewers/record/renderRecordData.php?recID=' + d.id + '&db=' + window.hWin.HAPI4.database;
+    var srcURL = window.hWin.HAPI4.baseURL + 'viewers/record/renderRecordData.php?recID=' + d.id + '&db=' + window.hWin.HAPI4.database;//create the query for the iframe
     console.log("src text = " + srcURL); 
-    var iframeDiv = d3.select("#iframeDiv");
-    var infoBox = d3.select("#iframeInfo");
-    infoBox.attr("src", srcURL);
-    iframeDiv.style("display", "block");
+    var iframeDiv = d3.select("#iframeDiv");//select the parent div
+    var infoBox = d3.select("#iframeInfo");//select the iframe
+    var recordId = d3.select("#recID");
+    infoBox.attr("src", srcURL);//supply document to iframe
+    iframeDiv.style("display", "block");//make iframe visible
+    recordId.style("display", "none");//hide record ID
 
 
-    //provide it with dbname, record id and and mappopup == 1
-        //var to save the arguments
-        //var webpage url = ?? [baseline URL?]
-        //var record ID = d.id
-        //var database name = ??
-    //put info into an iframe
-    //var infoIframe = d3.select("#iframeInfo");
-    //infoIframe.html("src = ''"); 
 
-    //Used to open record editor
-    //window.hWin.HAPI4.baseURL +'?fmt=edit&db='+window.hWin.HAPI4.database+'&recID='+d.id, '_blank'
-
-    //XMLHTTPRequest
-    //goes to PHP file
-    //capture data and handle as required
-
-    
 }
 
 
