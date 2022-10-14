@@ -191,7 +191,7 @@ function showNodeInformation(d){
 function hideBox(){
     var closeBtn = d3.select("#closeButton");
     closeBtn.on("click", function(){
-        d3.select("#iframeInfo").style("display", "none");
+        d3.select("#iframeDiv").style("display", "none");
     })
 }
 
