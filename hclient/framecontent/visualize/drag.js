@@ -47,7 +47,7 @@ function addNodes() {
                  .on("drag", dragmove)
                  .on("dragend", dragend);
      
-   //var entitycolor = getSetting(setting_entitycolor);
+   var entitycolor = getSetting(setting_entitycolor);
       
    // Details for each node            
    nodes.each(function(d, i) {
@@ -91,11 +91,11 @@ function addNodes() {
             })
             .attr("class", "background icon-background")
             .style({'fill-opacity': '0.5', 'display': icon_display})
-            //.attr("fill", entitycolor);        
+            .attr("fill", entitycolor);        
         
         //add internal circle
-        console.log(d);
-        console.log(d.rty_ID);
+        //console.log(d);
+        //console.log(d.rty_ID);
         
         node.append("circle")
             .attr("r", circleSize)
@@ -109,7 +109,7 @@ function addNodes() {
                 return .25;
             });
 
-            
+
         /*
         if (d.rty_ID == 10) {
         node.append("circle")
