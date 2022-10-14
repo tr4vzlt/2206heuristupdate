@@ -115,12 +115,8 @@ function addNodes() {
         
         if (d.rty_ID == 10) {
             console.log("we have found a 10");
+            document.querySelectorAll('.node id' + d.id + ' .foreground icon-foreground').style.fill = "blue";
         }
-        /*
-            if (d.rty_ID == 10) {
-                document.querySelectorAll(".node.id" + d.id + " .foreground.icon-foreground").style.fill = "blue";
-            }
-           */ 
 
 
         //add icon
