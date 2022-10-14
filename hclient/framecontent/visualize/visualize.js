@@ -530,6 +530,7 @@ function addContainer() {
 */
 function zoomed() {
 
+    changeNodeColour();
 
     if (currentMode == 'icons') {
 
@@ -1678,5 +1679,3 @@ function closeWin() {
     window.close(url2);
 }
 
-//change node colour based on attributes
-changeNodeColour();
