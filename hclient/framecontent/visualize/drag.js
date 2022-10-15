@@ -162,11 +162,13 @@ function showNodeInformation(d){
     var infoBox = d3.select("#iframeInfo");//select the iframe
     infoBox.attr("src", srcURL);//supply document to iframe
     iframeDiv.style("display", "block");//make iframe visible 
-    document.addEventListener('DOMContentLoaded', function(){
-        var recID = document.getElementById('recID');
+    var recID = document.getElementById("recID");
+    while(recID != null){
+        recID = document.getElementById("recID");
         console.log(recID);
         recID.style.setProperty('display', 'none', 'important');
-    });
+    }
+
     
     /* 
     var x = document.getElementById("iframeInfo");
