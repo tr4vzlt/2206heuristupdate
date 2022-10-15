@@ -166,7 +166,7 @@ function showNodeInformation(d){
         var recID = document.getElementById('recID');
         console.log(recID);
         recID.style.setProperty('display', 'none', 'important');
-    })
+    });
     
     /* 
     var x = document.getElementById("iframeInfo");
