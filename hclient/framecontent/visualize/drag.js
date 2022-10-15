@@ -162,22 +162,12 @@ function showNodeInformation(d){
     var infoBox = d3.select("#iframeInfo");//select the iframe
     infoBox.attr("src", srcURL);//supply document to iframe
     iframeDiv.style("display", "block");//make iframe visible
-    var iframe = document.getElementById("iframeInfo");
-    iframe.onreadystatechange = function(){
-        if(iframe.readyState == "complete"){
-            var recID = getElementById("recID");
-            console.log(recID);
-            document.getElementById("recID").style.setProperty("display", "none", "important");
-        } 
-    };
-
-
-    /* 
+    
     var x = document.getElementById("iframeInfo");
     var y = (x.contentWindow || x.contentDocument);
-    document.addEventListener('DOMContentLoaded', )
+    if(y.document)y = y.document;
     y.body.style.backgroundColor = "red"; 
-    */
+    
     /*var recID = document.getElementById('recID');
     console.log(recID);
     recID.style.setProperty('display', 'none', 'important');*/ 
