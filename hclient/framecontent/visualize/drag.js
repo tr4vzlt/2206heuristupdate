@@ -163,7 +163,8 @@ function showNodeInformation(d){
     infoBox.attr("src", srcURL);//supply document to iframe
     iframeDiv.style("display", "block");//make iframe visible
     var x = document.getElementById("iframeInfo");
-    var y = x.contentWindow.document;
+    var y = (x.contentWindow || x.contentDocument);
+    if (y.document)y = y.document;
     y.body.style.backgroundColor = "red"; 
     
     /*var recID = document.getElementById('recID');
