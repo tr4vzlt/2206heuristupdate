@@ -163,8 +163,12 @@ function showNodeInformation(d){
     infoBox.attr("src", srcURL);//supply document to iframe
     iframeDiv.style("display", "block");//make iframe visible
     var iframe = document.getElementById("iframeInfo");
-    iframe.onload = function(){
-        document.getElementById("recID").style.setProperty("display", "none", "important");
+    iframe.onreadystatechange = function(){
+        if(iframe.readyState == "complete"){
+            var recID = getElementById("recID");
+            console.log(recID);
+            document.getElementById("recID").style.setProperty("display", "none", "important");
+        } 
     };
 
 
