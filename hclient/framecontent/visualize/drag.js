@@ -162,16 +162,17 @@ function showNodeInformation(d){
     var infoBox = d3.select("#iframeInfo");//select the iframe
     infoBox.attr("src", srcURL);//supply document to iframe
     iframeDiv.style("display", "block");//make iframe visible
+    var x = document.getElementById("iframeInfo");
+    var y = x.contentWindow.document;
+    y.body.style.backgroundColor = "red"; 
+    
     /*var recID = document.getElementById('recID');
     console.log(recID);
     recID.style.setProperty('display', 'none', 'important');*/ 
 }
 
-function hideBox(){
-    //d3.select("#iframeDiv").style("display", "none");//close the box when clicked
-    var recID = document.getElementById('recID');
-    console.log(recID);
-    recID.style.setProperty('display', 'none', 'important'); 
+function hideNodeInformation(){
+    d3.select("#iframeDiv").style("display", "none");//close the box when clicked 
 }
 
 //Regular code after this. Nothing by "ISH"
