@@ -161,12 +161,19 @@ function showNodeInformation(d){
     var iframeDiv = d3.select("#iframeDiv");//select the parent div
     var infoBox = d3.select("#iframeInfo");//select the iframe
     infoBox.attr("src", srcURL);//supply document to iframe
-    iframeDiv.style("display", "block");//make iframe visible
+    iframeDiv.style("display", "block");//make iframe visible 
+    document.addEventListener('DOMContentLoaded', function(){
+        var recID = document.getElementById('recID');
+        console.log(recID);
+        recID.style.setProperty('display', 'none', 'important');
+    })
+    
+    /* 
     var x = document.getElementById("iframeInfo");
     var y = (x.contentWindow || x.contentDocument);
-    if (y.document)y = y.document;
+    document.addEventListener('DOMContentLoaded', )
     y.body.style.backgroundColor = "red"; 
-    
+    */
     /*var recID = document.getElementById('recID');
     console.log(recID);
     recID.style.setProperty('display', 'none', 'important');*/ 
