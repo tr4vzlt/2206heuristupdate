@@ -101,7 +101,7 @@
             <h3>Nodes Function 3 :</h3>
              
         <div id="setDivLinks2" class="toolbar-section" 
-        style="display:none;border-left: solid 1px gray; position:absolute;left:0px;top: 700px;">
+        style="display:none;border-left: solid 1px gray;">
         <label>Links</label>
 
         <div id="linksPathColor" class="colorblock" title="Color of links" style="margin-left:10px">/<input id="linksPathColor_inpt" style="width:0px;border:none"/></div>
@@ -140,12 +140,20 @@
         
         <div id="setDivExport" class="toolbar-section advanced" 
             style="display:none;border-left: solid 1px gray; ">
+            <label>
+                GephiFormat
+            </label>
             <button type="button" id="gephi-export" onclick="getGephiFormat()">GEPHI</button>
+            <br>
+            <label>
+                Embed
+            </label>
             <button type="button" id="embed-export">Embed</button>
         </div>
 
         <div id="newOne" class="toolbar-section advanced" style="display:none;border-left: solid 1px gray; ">
             <button type="button" id="windowPopOut" onclick="openWin()">Pop Out Window</button>
+            <br>
              <a href="springDiagram.php?db=gerar_SecondDatabase" target="_blank">Another Window</a>
         </div>
 
