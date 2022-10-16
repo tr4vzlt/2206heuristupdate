@@ -40,7 +40,7 @@
         
         <div class="toolbr-sectaion advanced" style="min-width:40px;position:absolute;left:0px;top: 30px;" >
         <h1>  The Diagram  </h1>
-        <h2>  Nodes Function 1 :</h2>
+        <h3>  Nodes Function 1 :</h3>
         <label>
             Select Nodes
         </label>
@@ -51,41 +51,53 @@
         <button id="btnZoomIn" style="width:20px">Zoom In</button>
             <button id="btnZoomOut" style="width:20px">Zoom Out</button>
             <button id="btnFitToExtent" style="width:20px">Fit to extent</button>
-        </div>
-        
-        
-        
-    
-
-
-
-        <div id="setViewMode" class="toolbar-section advanced" style="position:absolute;left:0px;top: 100px;">
-            <button id="btnViewModeIcon" name="videMode" value="icons">Icons</button>
-            <button id="btnViewModeInfo" name="videMode" value="infoboxes">Info</button>
-            <button id="btnViewModeFull" name="videMode" value="infoboxes_full">Info + Links</button>
+        <br>
+        <label class="ui-controlgroup-label" style="border:none;background:none">View Mode</label> 
+        <button id="btnViewModeIcon" name="videMode" value="icons">Icons</button>
+        <button id="btnViewModeInfo" name="videMode" value="infoboxes">Info</button>
+        <button id="btnViewModeFull" name="videMode" value="infoboxes_full">Info + Links</button>
+        <br>
         </div>
 
         <div id="setDivGravity" class="toolbar-section advanced" 
-            style="border-left: solid 1px gray; position:absolute;left:0px;top: 120px;">
+            style="border-left: solid 1px gray; position:absolute;left:0px;top: 630px;">
             
-            <div id="setGravityMode" style="padding-left:10px">
-                <label class="ui-controlgroup-label" style="border:none;background:none">gravity</label> 
+
+
+        <div class="toolbr-sectaion advanced" style="min-width:40px;position:absolute;left:0px;top: 630px;" >
+            <h3>  Nodes Function 2 :</h3>
+            <label class="ui-controlgroup-label" style="border:none;background:none">gravity</label> 
                 <button id="gravityMode0" name="gravityMode" value="off">off</button>
-                <button id="gravityMode1" name="gravityMode" value="touch">on</button>           
+                <button id="gravityMode1" name="gravityMode" value="touch">on</button> 
+            <br>
+            <label class="ui-controlgroup-label" style="border:none;background:none">Nodes Color</label> 
+            <div class="colorblock" style="margin-top:-4px;width:auto;" title="Color of nodes">
+                <input id="entityColor" style="width:0px;border:none"/></div>
+            <br>
+            <label class="ui-controlgroup-label" style="border:none;background:none">Set Nodes</label> 
+            <div id="setNodesMode" style="display:inline-block">
+                <button id="nodesMode0" name="nodesMode" value="linear" 
+                    title="radius of nodes changes linearly">lin</button>
+                <button id="nodesMode1" name="nodesMode" value="logarithmic"
+                    title="radius of nodes changes logarithmically">log</button>
+                <button id="nodesMode2" name="nodesMode" value="unweighted" checked="checked" 
+                    title="radius of nodes has fixed size">fixed</button>
             </div>
+            <input id="nodesRadius" class="number-input small" type="number" min="12" max="45" step="1" />
+            <br>
+            <div id="setDivLinks" class="toolbar-section advanced" 
+            style="display:none;border-left: solid 1px gray; ">
+            <label>Links</label>
+            <label><input id="linksEmpty" title="Show empty links" type="checkbox"/>&nbsp;empty</label>
+            <label><input id="expand-links" title="Expand all links" type="checkbox"/>&nbsp;expand</label>
+            </div>
+        
         </div>
 
 
-        <div id="112" class="toolbr-sectaion advanced" style="position:absolute;left:0px;top: 630px;">
-
-            <h3>   functions 2 :   </h3>
-        </div>
         <!-- -->
         <div id="setDivNodes" class="toolbar-section advanced" 
             style="display:none;position:absolute;left:0px;top: 660px;">
-            <label>Nodes</label>
-            <div class="colorblock" style="margin-top:-4px;width:auto;" title="Color of nodes">
-                <input id="entityColor" style="width:0px;border:none"/></div>
                 
             <div id="setNodesMode" style="display:inline-block">
                 <button id="nodesMode0" name="nodesMode" value="linear" 
