@@ -290,3 +290,15 @@ text.shadow {
 div#recID {
     display: none;
 }
+
+#toolbar2 > div {
+    float: left;
+}
+
+#toolbar2 {
+    line-height: 10px;    
+    display:table-cell;
+    position:absolute;
+    bottom:0;
+    left:0;
+}
