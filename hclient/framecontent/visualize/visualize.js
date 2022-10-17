@@ -458,7 +458,7 @@ function visualizeData() {
 
     }
 
-    if (settings.isDatabaseStructure /*|| isStandAlone*/ ) {
+    if (isStandAlone || settings.isDatabaseStructure  ) {
         $('#embed-export').css('visibility', 'hidden');//hide();
     } else {
         $('#embed-export').button({ icons: { primary: 'ui-icon-globe' }, text: false }).click(
