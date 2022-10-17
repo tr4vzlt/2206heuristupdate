@@ -54,8 +54,14 @@ function addSelectionBox() {
 
 function updateCircles(selector, fgColor, bgColor) {
     var nodes = d3.selectAll(selector);
-    nodes.select(".foreground").style("fill", bgColor);
+
+    nodes.select(".foreground").style("fill", determineColour);
     nodes.select(".background").style("fill", bgColor);
+}
+
+function determineColour(dataColour) {
+    console.log(dataColour)
+    console.log(dataColour.rty_ID)
 }
 
 /**
@@ -87,6 +93,7 @@ function onRecordNodeClick(event, data, node) {
 
     // Clicked with ctrl key?
     var bgColor = getSetting(setting_entitycolor);
+    console.log("")
     if(event.ctrlKey){
         // Select multiple
         var idx = settings.selectedNodeIds.indexOf(recID);
