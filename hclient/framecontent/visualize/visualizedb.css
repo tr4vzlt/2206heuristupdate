@@ -239,7 +239,7 @@ text.shadow {
 }
 #toolbar > div{
     /*display:table-row;*/
-    float:left;
+    /* float:left; */
 }
 
 .ui-icon-cursor{
