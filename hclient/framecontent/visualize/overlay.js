@@ -732,7 +732,7 @@ function createOverlay(x, y, type, selector, node_obj, parent_node) {
                     tick();
                 });
       
-      if( settings.isDatabaseStructure ||  settings.onRefreshData){
+      if( !settings.isDatabaseStructure ||  settings.onRefreshData){
       
           //link button      
           var btnAddLink = overlay
@@ -824,7 +824,7 @@ function createOverlay(x, y, type, selector, node_obj, parent_node) {
         }else{ // disabled buttons
 
             btnEdit.style('display', 'none');
-            //btnAddLink.style('display', 'none');
+            btnAddLink.style('display', 'none');
         }
       }else{ // add edit button
         
