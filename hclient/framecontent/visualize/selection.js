@@ -65,27 +65,29 @@ function determineColour(dataColour) {
     if (dataColour.rty_ID == 1) {
         return '#F0E68C';
     } else if (dataColour.rty_ID == 2) {
-        return 'yellow';
-    } else if (dataColour.rty_ID == 3) {
-        return 'yellow';    
-    } else if (dataColour.rty_ID == 4) {
-        return 'yellow';
-    } else if (dataColour.rty_ID == 5) {
-        return 'yellow';
-    } else if (dataColour.rty_ID == 6) {
-        return 'yellow';
-    } else if (dataColour.rty_ID == 7) {
-        return 'yellow';
-    } else if (dataColour.rty_ID == 8) {
-        return 'yellow';
-    } else if (dataColour.rty_ID == 9) {
-        return 'yellow';
-    } else if (dataColour.rty_ID == 10) {
-        return '#E6E6FA';
-    } else if (dataColour.rty_ID == 11) {
-        return 'yellow';
-    } else if (dataColour.rty_ID == 12) {
         return '#ADD8E6';
+    } else if (dataColour.rty_ID == 3) {
+        return '#FFF0F5';    
+    } else if (dataColour.rty_ID == 4) {
+        return '#7CFC00';
+    } else if (dataColour.rty_ID == 5) {
+        return '#FFFACD';
+    } else if (dataColour.rty_ID == 6) {
+        return '#778899';
+    } else if (dataColour.rty_ID == 7) {
+        return '#F08080';
+    } else if (dataColour.rty_ID == 8) {
+        return '#E0FFFF';
+    } else if (dataColour.rty_ID == 9) {
+        return '#66CDAA';
+    } else if (dataColour.rty_ID == 10) {
+        return '#D3D3D3';
+    } else if (dataColour.rty_ID == 11) {
+        return '#90EE90';
+    } else if (dataColour.rty_ID == 12) {
+        return '#FFB6C1';
+    } else {
+        return '#ffffff';
     }
 }
 
