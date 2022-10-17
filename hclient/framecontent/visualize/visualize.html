@@ -71,14 +71,17 @@
 
     <div id="toolbar" style="display:none;">
 
-         <div id="toolbar1 " class="toolbar-section advanced" style="position:absolute;left:0px;top: 0px;">
-           
-            <div id="setSelectMode" class="toolbar-section advanced" >
-            <label>
-                Select Nodes :
-            </label>
-             <button id="btnSingleSelect" name="selectMode" value="single">"Select and drag nodes"</button>
-             <button id="btnMultipleSelect" name="selectMode" value="multi">Select multiple nodes</button>
+         <div id="toolbar1 " class="toolbar-section advanced" >
+            <h2>The Diagram</h2>
+
+           <div class="dropdown1" style="position: absolute;left: 0px;top:0px">
+            <label>Select Nodes</label>
+            <div class="dropdown-content">
+                <div id="setSelectMode" class="toolbar-section advanced" >
+                    <button id="btnSingleSelect" name="selectMode" value="single">"Select and drag nodes"</button>
+                    <button id="btnMultipleSelect" name="selectMode" value="multi">Select multiple nodes</button>   
+            </div>
+           </div>
              <br>
              <label>
                 Set Zoom :
