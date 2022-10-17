@@ -110,6 +110,24 @@
                     <button id="btnViewModeInfo" name="videMode" value="infoboxes">Info</button>
                     <button id="btnViewModeFull" name="videMode" value="infoboxes_full">Info + Links</button>
                 </div>
+
+                <div id="setDivNodes" class="toolbar-section advanced" 
+                style="display:none;padding-left:15px; min-width:190px">
+                <label>Nodes color</label>
+                <div class="colorblock" style="margin-top:-4px;width:auto;" title="Color of nodes">
+                    <input id="entityColor" style="width:0px;border:none"/></div><br>
+                <div id="setNodesMode" style="display:inline-block">
+                    <button id="nodesMode0" name="nodesMode" value="linear" 
+                        title="radius of nodes changes linearly">lin</button>
+                    <button id="nodesMode1" name="nodesMode" value="logarithmic"
+                        title="radius of nodes changes logarithmically">log</button>
+                    <button id="nodesMode2" name="nodesMode" value="unweighted" checked="checked" 
+                        title="radius of nodes has fixed size">fixed</button>
+                </div>
+                <input id="nodesRadius" class="number-input small" type="number" min="12" max="45" step="1" />
+                </div>
+
+
             </div>
          </div>
       
@@ -130,21 +148,7 @@
          <div id="toolbar 22" class="toolbar-section advanced" style="position:absolute;right:0px;top: 0px;">
          
          <!-- -->
-         <div id="setDivNodes" class="toolbar-section advanced" 
-             style="display:none;padding-left:15px; min-width:190px">
-             <label>Nodes color</label>
-             <div class="colorblock" style="margin-top:-4px;width:auto;" title="Color of nodes">
-                 <input id="entityColor" style="width:0px;border:none"/></div>
-             <div id="setNodesMode" style="display:inline-block">
-                 <button id="nodesMode0" name="nodesMode" value="linear" 
-                     title="radius of nodes changes linearly">lin</button>
-                 <button id="nodesMode1" name="nodesMode" value="logarithmic"
-                     title="radius of nodes changes logarithmically">log</button>
-                 <button id="nodesMode2" name="nodesMode" value="unweighted" checked="checked" 
-                     title="radius of nodes has fixed size">fixed</button>
-             </div>
-             <input id="nodesRadius" class="number-input small" type="number" min="12" max="45" step="1" />
-         </div>
+        
  
          <!-- add advanced class to toggle this section -->
          <div id="setDivLinks" class="toolbar-section advanced" 
