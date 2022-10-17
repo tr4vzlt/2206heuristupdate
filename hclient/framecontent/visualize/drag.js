@@ -162,10 +162,10 @@ function showNodeInformation(d){
     var infoBox = d3.select("#iframeInfo");//select the iframe
     infoBox.attr("src", srcURL);//supply document to iframe
     iframeDiv.style("display", "block");//make iframe visible
-    $("#recID").load(srcURL, function(){
+    /*$("#recID").load(srcURL, function(){
         console.log("accessed");
         $("#recID").css("display", "none", "important");
-    })
+    })*/
 
     /*var x = document.getElementById("iframeInfo");
     var y = (x.contentWindow || x.contentDocument);
