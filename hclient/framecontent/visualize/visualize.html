@@ -73,7 +73,7 @@
 
          <div id="toolbar1 " class="toolbar-section advanced" >
            
-            <div id="setSelectMode" class="toolbar-section advanced" style="position:flex;right:0px;top: 0px;">
+            <div id="setSelectMode" class="toolbar-section advanced" style="position:absolute;right:0px;top: 0px;">
             <label>
                 Select Nodes :
             </label>
@@ -89,18 +89,26 @@
          </div>
          
          <div id="setViewMode" class="toolbar-section advanced" >
-            <label>
-                View Mode :
-            </label>
+            <label class="ui-controlgroup-label" style="border:none;background:none">View Mode:</label> 
             <button id="btnViewModeIcon" name="videMode" value="icons">Icons</button>
             <button id="btnViewModeInfo" name="videMode" value="infoboxes">Info</button>
             <button id="btnViewModeFull" name="videMode" value="infoboxes_full">Info + Links</button>
         </div>
+
+        <div class="dropdown">
+            <h3 class="playSelector dropdown">Create By</h3>
+            <div class="dropdown-content">
+                <a>Travis Doyle </a>
+                <a>Gerard Holman-Lee </a>
+                <a>Junze Cao </a>
+                <a>Ish Haque </a>
+                <a>Jianbo Yan </a>
+            </div>
+        </div>
          </div>
+         
 
-
-
-         <div id="toolbar 22" class="toolbar-section advanced" style="position:flex;right:0px;top: 0px;">
+         <div id="toolbar 22" class="toolbar-section advanced" style="position:absolute;right:0px;top: 0px;">
         
          <div id="setDivGravity" class="toolbar-section advanced" style="border-left: solid 1px gray; min-width:90px">
             <label>
