@@ -101,7 +101,7 @@ function addNodes() {
 
 
     
-        if (d.rty_ID == 10) {
+       // if (d.rty_ID == 10) {
 
         node.append("circle")
             .attr("r", circleSize)
@@ -114,8 +114,8 @@ function addNodes() {
                 }
                 return .25;
             });
-        } else if (d.rty_ID == 12) {
-            
+        /*} else if (d.rty_ID == 12) {
+
             node.append("circle")
             .attr("r", circleSize)
             .attr("class", 'foreground icon-foreground')
@@ -129,7 +129,7 @@ function addNodes() {
             });
         }
         
-
+*/
         
 
 
