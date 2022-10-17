@@ -232,11 +232,15 @@ function updateNodes() {
 // Functions to make dragging, moving and zooming possible
 
 /** Called when a dragging event starts */
+var currentNode;
+
 function dragstart(d, i) {
     
     d3.event.sourceEvent.stopPropagation();
     force.stop();
 
+    currentNode = d.id
+    
     // Fixed node positions?
     var gravity = getSetting(setting_gravity);
     svg.selectAll(".node")
@@ -246,7 +250,7 @@ function dragstart(d, i) {
        }); 
     d.fixed = true; 
     
-    //updateCircles(".node.id"+d.id, selectionColor, selectionColor);
+    updateCircles(".node.id"+d.id, selectionColor, selectionColor);
 }
 
 /** Caled when a dragging move event occurs */
@@ -254,8 +258,8 @@ function dragmove(d, i) {
     
     // Update all selected nodes. A node is selected when the .foreground color is 190,228,248
     svg.selectAll(".node").each(function(d, i) {
-        var color = d3.select(this).select(".foreground").style("fill");
-        if(color == "rgb(190, 228, 248)") {
+        //var color = d3.select(this).select(".foreground").style("fill");
+        if(d.id == currentNode) {
             // Update locations
             d.px += d3.event.dx;
             d.py += d3.event.dy;
