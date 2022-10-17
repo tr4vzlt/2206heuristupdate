@@ -307,6 +307,7 @@ div#recID {
 
 #toolbar3 > div {
     float: right;
+    z-index: 100;
 }
 
 #toolbar3 {
@@ -314,7 +315,7 @@ div#recID {
     display:table-cell;
     position:absolute;
     height: auto;
-    margin-left: 50%;
+    margin-left: 33%;
 }
 
 .ent_header {
