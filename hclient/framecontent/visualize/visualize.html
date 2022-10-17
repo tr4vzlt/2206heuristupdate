@@ -70,14 +70,15 @@
 
 
 
-
+    <div class="ent_header" style="height:4em;border:none;display:table-row;top:5px;">
     <div id="toolbar">
-            <div  style="min-width:40px;position:absolute;left:0px;top: 0px;">
+            <div class="toolbr-sectaion advanced" style="min-width:40px;position:absolute;left:0px;top: 0px;">
             <h1> The Diagram </h1>
             <h3> Nodes Function 1 :</h3>
             <label>
                 Select Nodes :
             </label>
+            
             <button id="btnSingleSelect" name="selectMode" value="single">"Select and drag nodes"</button>
             <button id="btnMultipleSelect" name="selectMode" value="multi">Select multiple nodes</button>
             <br>
@@ -93,7 +94,7 @@
             <br>
         </div>
     </div>
-
+    </div>
 
     <div id="toolbar">
         <div class="toolbr-sectaion advanced" style="min-width:40px;position:absolute;left:0px;top: 630px;">
@@ -266,4 +267,5 @@
         <textarea id="code-textbox2" onclick="select(); if (window.clipboardData) clipboardData.setData('Text', value);"
             style="     border: 1px dotted gray; padding: 3px; margin: 2; font-family: times; width: 100%; height: 40px;"
             readonly=""></textarea>
+    </div>
     

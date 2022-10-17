@@ -254,13 +254,6 @@ text.shadow {
    background-color: #00ff00;
 }
 
-h1, h2, h3, p, label {
-    display: block;
-    font-family: 'Karla', sans-serif;
-    color: #373737;
-    background-color: transparent;
-    text-align: left;
-}
 
 
 .ui-icon-cursor{
