@@ -282,7 +282,7 @@ function onPageInit(success){
         function onVisualizeResize(){
                 var width = $(window).width();
                 var supw = (width<744)?3.8:0; //1120
-                //$('#divSvg').css('top', 5+supw+'em');
+                $('#divSvg').css('top', 0);
         }
             
         </script>
