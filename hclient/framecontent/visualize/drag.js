@@ -246,7 +246,7 @@ function dragstart(d, i) {
        }); 
     d.fixed = true; 
     
-    updateCircles(".node.id"+d.id, selectionColor, selectionColor);
+    //updateCircles(".node.id"+d.id, selectionColor, selectionColor);
 }
 
 /** Caled when a dragging move event occurs */
