@@ -159,7 +159,7 @@ circle.around {
 }
 
 circle.foreground {
-    fill: #fff;
+    /* fill: #fff; */
 }
 
 circle.selected {
