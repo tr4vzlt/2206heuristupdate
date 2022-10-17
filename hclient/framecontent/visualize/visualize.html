@@ -24,6 +24,48 @@
 
 <!-- Network diagram HTML -->
 <!-- Network diagram HTML -->
+<style>
+    .dropbtn {
+        background-color: #7d8180;
+        color: rgb(121, 111, 111);
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: rgb(78, 74, 74);
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #82df82;
+    }
+</style>
 
 <div class="ent_header" style="height:4em;border:none;display:table-row;top:5px;">
 
@@ -34,25 +76,39 @@
              <a href="#">Hamburger Menu&nbsp;<span class="ui-icon ui-icon-triangle-1-e"
              style="display: inline-block;vertical-align: middle;height: 22px;"></span></a>
          </div>
- 
-         <div id="setSelectMode" class="toolbar-section advanced" style="min-width:40px">
-             
+
+         <div id="toolbar1 " class="toolbar-section advanced" style="position:absolute;left:0px;top: 0px;">
+            <h1> The Diagram </h1>
+            <h3> Nodes Function 1 :</h3>
+            <div id="setSelectMode" class="toolbar-section advanced" style="min-width:40px">
+            <label>
+                Select Nodes :
+            </label>
              <button id="btnSingleSelect" name="selectMode" value="single">"Select and drag nodes"</button>
              <button id="btnMultipleSelect" name="selectMode" value="multi">Select multiple nodes</button>
-             
+             <br>
              <span style="display:inline-block;width:15px"></span>
-             
+             <label>
+                Set Zoom :
+            </label>
              <button id="btnZoomIn" style="width:20px">Zoom In</button>
              <button id="btnZoomOut" style="width:20px">Zoom Out</button>
              <button id="btnFitToExtent" style="width:20px">Fit to extent</button>
          </div>
- 
+         <br>
          <div id="setViewMode" class="toolbar-section advanced" style="min-width:40px;padding-left:15px;">
+            <label>
+                View Mode :
+            </label>
              <button id="btnViewModeIcon" name="videMode" value="icons">Icons</button>
              <button id="btnViewModeInfo" name="videMode" value="infoboxes">Info</button>
              <button id="btnViewModeFull" name="videMode" value="infoboxes_full">Info + Links</button>
          </div>
- 
+         </div>
+
+
+
+
          <div id="setDivGravity" class="toolbar-section advanced" 
              style="border-left: solid 1px gray; min-width:90px">
              
