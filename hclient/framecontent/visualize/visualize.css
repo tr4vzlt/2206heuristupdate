@@ -302,22 +302,9 @@ div#recID {
     position:absolute;
     bottom:0;
     left:0;
-    margin-right: 50%;
 }
 
-#toolbar3 > div {
+#setDivLinks2 {
     float: right;
-    z-index: 100;
 }
 
-#toolbar3 {
-    line-height: 10px;    
-    display:table-cell;
-    position:absolute;
-    height: auto;
-    margin-left: 33%;
-}
-
-.ent_header {
-    margin-right: 66%;
-}
