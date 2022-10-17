@@ -167,11 +167,11 @@ function showNodeInformation(d){
         $("#recID").css("display", "none", "important");
     })*/
 
-    /*var x = document.getElementById("iframeInfo");
+    var x = document.getElementById("iframeInfo");
     var y = (x.contentWindow || x.contentDocument);
     if(y.document)y = y.document;
     y.body.style.backgroundColor = "red";
-     */
+    
     
     /*var recID = document.getElementById('recID');
     console.log(recID);
