@@ -235,6 +235,7 @@ text.shadow {
     line-height: 10px;    
     display:table-cell;
     height:auto;
+    margin-right: 50%;
     /*border: solid 1px gray;*/
 }
 #toolbar > div{
@@ -302,4 +303,16 @@ div#recID {
     bottom:0;
     left:0;
     margin-right: 50%;
+}
+
+#toolbar3 > div {
+    float: right;
+}
+
+#toolbar3 {
+    line-height: 10px;    
+    display:table-cell;
+    position:absolute;
+    height: auto;
+    margin-left: 50%;
 }
