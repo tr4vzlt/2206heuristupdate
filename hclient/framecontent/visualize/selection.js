@@ -60,8 +60,11 @@ function updateCircles(selector, fgColor, bgColor) {
 }
 
 function determineColour(dataColour) {
-    console.log(dataColour)
     console.log(dataColour.rty_ID)
+
+    if (dataColour.rty_ID == 10) {
+        return 'yellow';
+    }
 }
 
 /**
