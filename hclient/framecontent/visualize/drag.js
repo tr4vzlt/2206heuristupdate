@@ -160,7 +160,7 @@ function showNodeInformation(d){
     //console.log("src text = " + srcURL);
     var iframeDiv = d3.select("#iframeDiv");//select the parent div
     var infoBox = d3.select("#iframeInfo");//select the iframe
-    infoBox.attr("src", srcURL);//supply document to iframe
+    //infoBox.attr("src", srcURL);//supply document to iframe
     iframeDiv.style("display", "block");//make iframe visible
     $("#iframeInfo").load(srcURL, function(){
         console.log("accessed");
