@@ -62,8 +62,30 @@ function updateCircles(selector, fgColor, bgColor) {
 function determineColour(dataColour) {
     console.log(dataColour.rty_ID)
 
-    if (dataColour.rty_ID == 10) {
+    if (dataColour.rty_ID == 1) {
+        return '#F0E68C';
+    } else if (dataColour.rty_ID == 2) {
         return 'yellow';
+    } else if (dataColour.rty_ID == 3) {
+        return 'yellow';    
+    } else if (dataColour.rty_ID == 4) {
+        return 'yellow';
+    } else if (dataColour.rty_ID == 5) {
+        return 'yellow';
+    } else if (dataColour.rty_ID == 6) {
+        return 'yellow';
+    } else if (dataColour.rty_ID == 7) {
+        return 'yellow';
+    } else if (dataColour.rty_ID == 8) {
+        return 'yellow';
+    } else if (dataColour.rty_ID == 9) {
+        return 'yellow';
+    } else if (dataColour.rty_ID == 10) {
+        return '#E6E6FA';
+    } else if (dataColour.rty_ID == 11) {
+        return 'yellow';
+    } else if (dataColour.rty_ID == 12) {
+        return '#ADD8E6';
     }
 }
 
