@@ -93,36 +93,7 @@
             <label><input id="expand-links" title="Expand all links" type="checkbox" />&nbsp;expand</label>
         </div>
 
-        <div id="toolbar3">
-            <div id="setDivLinks2" class="toolbar-section"
-                style="display:none;border-left: solid 1px gray; min-width:214px;padding-right: 10px;">
-                <label>Links</label>
 
-                <div id="linksPathColor" class="colorblock" title="Color of links" style="margin-left:10px">/<input
-                        id="linksPathColor_inpt" style="width:0px;border:none" /></div>
-
-                <div id="linksMarkerColor" class="colorblock" title="Color of markers/arrows on links"></div>
-                <div style="display:inline-block;width:0"><input id="linksMarkerColor_inpt"
-                        style="width:0px;border:none;" /></div>
-                <div id="setLinksMode" style="display:inline-block">
-                    <button id="linksMode0" name="linksMode" value="straight"
-                        title="link shape is straight">straight</button>
-
-                    <button id="linksMode1" name="linksMode" value="curved" checked="checked"
-                        title="link shape is curved">curved</button>
-
-                    <button id="linksMode2" name="linksMode" value="stepped"
-                        title="link shape is stepped">stepped</button>
-                </div>
-
-                <input id="linksLength" title="Links Length" class="number-input medium" type="number" min="1"
-                    step="25" />
-                x
-                <input id="linksWidth" title="Links Thickness" class="number-input small" type="number" min="1" max="25"
-                    step="1" />
-
-            </div>
-        </div>
 
         <!-- add advanced class to toggle this section -->
         <div id="setDivLabels" class="toolbar-section"
@@ -138,11 +109,41 @@
             x
             <input id="fontSize" title="Font Size" class="number-input small" type="number" min="8" max="25" step="1" />
         </div>
+    </div>
+
+    
+    <div id="toolbar3">
+        <div id="setDivLinks2" class="toolbar-section"
+            style="display:none;border-left: solid 1px gray; min-width:214px;padding-right: 10px;">
+            <label>Links</label>
+
+            <div id="linksPathColor" class="colorblock" title="Color of links" style="margin-left:10px">/<input
+                    id="linksPathColor_inpt" style="width:0px;border:none" /></div>
+
+            <div id="linksMarkerColor" class="colorblock" title="Color of markers/arrows on links"></div>
+            <div style="display:inline-block;width:0"><input id="linksMarkerColor_inpt"
+                    style="width:0px;border:none;" /></div>
+            <div id="setLinksMode" style="display:inline-block">
+                <button id="linksMode0" name="linksMode" value="straight"
+                    title="link shape is straight">straight</button>
+
+                <button id="linksMode1" name="linksMode" value="curved" checked="checked"
+                    title="link shape is curved">curved</button>
+
+                <button id="linksMode2" name="linksMode" value="stepped" title="link shape is stepped">stepped</button>
+            </div>
+
+            <input id="linksLength" title="Links Length" class="number-input medium" type="number" min="1" step="25" />
+            x
+            <input id="linksWidth" title="Links Thickness" class="number-input small" type="number" min="1" max="25"
+                step="1" />
+
+        </div>
+    </div>
 
 
 
-
-        <!-- Added Open/Close fullscreen buttons - Travis Doyle 27/9
+    <!-- Added Open/Close fullscreen buttons - Travis Doyle 27/9
         <div id="newOne" class="toolbar-section advanced" style="display:none;border-left: solid 1px gray; padding-left: 10px; min-width:140px;">
             <button type="button" id="windowPopOut" onclick="openWin();">Fullscreen</button>
             
@@ -152,7 +153,7 @@
 
 
 
-    </div> <!-- end of toolbar -->
+
 
 </div>
 
