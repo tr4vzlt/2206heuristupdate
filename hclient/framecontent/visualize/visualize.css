@@ -299,10 +299,10 @@ text.shadow {
   li {
     display: inline;
   }
-  
+
   li a {
     display: block;
-    padding: 8px;
+    padding: 8px 16px;
     background-color: #dddddd;
   }
 
