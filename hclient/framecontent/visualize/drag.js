@@ -157,25 +157,10 @@ function addNodes() {
 //Added by "ISH"
 function showNodeInformation(d){
     var srcURL = window.hWin.HAPI4.baseURL + 'viewers/record/renderRecordData.php?recID=' + d.id + '&db=' + window.hWin.HAPI4.database;//URL for source of information iframe
-    //console.log("src text = " + srcURL);
     var iframeDiv = d3.select("#iframeDiv");//select the parent div
     var infoBox = d3.select("#iframeInfo");//select the iframe
     infoBox.attr("src", srcURL);//supply document to iframe
     iframeDiv.style("display", "block");//make iframe visible
-    /*$("#iframeInfo").load(srcURL, function(){
-        console.log("accessed");
-        $("#recID").css("display", "none", "important");
-    });*/
-
-    /*var x = document.getElementById("iframeInfo");
-    var y = (x.contentWindow || x.contentDocument);
-    if(y.document)y = y.document;
-    y.body.style.backgroundColor = "red";
-    */
-    
-    /*var recID = document.getElementById('recID');
-    console.log(recID);
-    recID.style.setProperty('display', 'none', 'important');*/ 
 }
 
 function hideNodeInformation(){
