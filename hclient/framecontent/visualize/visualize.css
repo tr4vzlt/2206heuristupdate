@@ -294,11 +294,10 @@ text.shadow {
     list-style-type: none;
     margin: 0;
     padding: 0;
-   
   }
   
   li {
-    float: left;
+    display: inline;
   }
   
   li a {
@@ -306,6 +305,7 @@ text.shadow {
     padding: 8px;
     background-color: #dddddd;
   }
+
 .ui-icon-cursor{
     background-image: url(cursor.png) !important; 
     width: 16;
