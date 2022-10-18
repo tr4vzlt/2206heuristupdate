@@ -310,7 +310,7 @@ text.shadow {
     text-align: center;
   }
   li a:hover {
-    background-color: #111;
+    background-color: rgb(245, 245, 245);
   }
 
 .ui-icon-cursor{
