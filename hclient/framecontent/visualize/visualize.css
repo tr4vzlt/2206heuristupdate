@@ -290,6 +290,14 @@ text.shadow {
   
   .dropdown:hover .dropbtn {background-color: #1fb5cf;}
 
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  
+   
+  }
+  
   nav {
     display: inline;
     
@@ -299,11 +307,6 @@ text.shadow {
     background-color: #dddddd;
     text-align: center;
   }
-  nav:hover {
-    background-color: rgb(245, 245, 245);
-  }
-
-
 .ui-icon-cursor{
     background-image: url(cursor.png) !important; 
     width: 16;
