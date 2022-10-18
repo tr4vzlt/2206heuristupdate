@@ -299,6 +299,7 @@ text.shadow {
   }
   
   li {
+    display: inline;
     float: left;
   }
 
