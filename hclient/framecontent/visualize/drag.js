@@ -84,7 +84,7 @@ function addNodes() {
             })
             .attr("class", "background icon-background")
             .style({'fill-opacity': '0.5', 'display': icon_display})
-            .attr("fill", entitycolor);        
+            .attr("fill", determineColour);        
         
         //add internal circle
         node.append("circle")
@@ -204,8 +204,8 @@ function dragmove(d, i) {
     
     // Update all selected nodes. A node is selected when the .foreground color is 190,228,248
     svg.selectAll(".node").each(function(d, i) {
-        var color = d3.select(this).select(".foreground").style("fill");
-        if(color == "rgb(190, 228, 248)") {
+        //var color = d3.select(this).select(".foreground").style("fill");
+        if(d.id == currentNode) {
             // Update locations
             d.px += d3.event.dx;
             d.py += d3.event.dy;
