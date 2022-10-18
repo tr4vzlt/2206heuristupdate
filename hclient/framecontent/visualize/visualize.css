@@ -294,19 +294,24 @@ text.shadow {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    overflow: hidden;
   
    
   }
   
-  nav {
+  li {
     display: inline;
-    
+  }
+
+  li a {
     display: block;
     
     padding: 8px 30px;
     background-color: #dddddd;
     text-align: center;
   }
+
+
 .ui-icon-cursor{
     background-image: url(cursor.png) !important; 
     width: 16;
