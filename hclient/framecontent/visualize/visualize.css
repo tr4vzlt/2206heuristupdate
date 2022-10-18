@@ -304,7 +304,7 @@ text.shadow {
 
   li a {
     display: block;
-   
+    color: rgb(247, 247, 247);
     padding: 8px 30px;
     background-color: #dddddd;
     text-align: center;
