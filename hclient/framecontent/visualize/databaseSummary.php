@@ -117,7 +117,7 @@ A:link {
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/overlay.js"></script>
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/selection.js"></script>
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/gephi.js"></script>
-        <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/drag.js"></script>
+        <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/dragdb.js"></script>
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/visualizedb.js"></script>
 
         <link rel="stylesheet" type="text/css" href="<?php echo PDIR;?>hclient/framecontent/visualize/visualizedb.css">
