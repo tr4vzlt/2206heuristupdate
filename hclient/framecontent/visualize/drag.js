@@ -139,7 +139,7 @@ function addNodes() {
           })    
          .on("click", function(d) {
              showNodeInformation(d);//Added by ISH   
-            closeRectypeSelector();
+             closeRectypeSelector();
             // Check if it's not a click after dragging
             if(!d3.event.defaultPrevented) {
                   // Remove all overlays and create a record overlay for selected node
@@ -154,7 +154,9 @@ function addNodes() {
      return nodes;
 }
 
-//Added by "ISH"
+/*Shows the record details in an iframe when a node is clicked
+  Added by "ISH"
+*/
 function showNodeInformation(d){
     var srcURL = window.hWin.HAPI4.baseURL + 'viewers/record/renderRecordData.php?recID=' + d.id + '&db=' + window.hWin.HAPI4.database;//URL for source of information iframe
     var iframeDiv = d3.select("#iframeDiv");//select the parent div
@@ -163,10 +165,12 @@ function showNodeInformation(d){
     iframeDiv.style("display", "block");//make iframe visible
 }
 
+/*Hides record details shown by showNodeInformation
+  Added by "ISH"
+*/
 function hideNodeInformation(){
     d3.select("#iframeDiv").style("display", "none");//close the box when clicked 
 }
-
 //Regular code after this. Nothing by "ISH"
 
 /**

@@ -126,14 +126,6 @@
 .menu-button:hover .menu-item {
     display: block;                                             
 }
-/*New infobox css
-*ADDED BY ISH  
-*/
-#infoBox {
-    width: fit-content;
-    height: fit-content;
-}
-
 
 
 
@@ -223,6 +215,32 @@ text.shadow {
     cursor: pointer;
 }
 
+/**Node information iframe 
+  *ADDED BY ISH */
+#iframeDiv {
+    display: none; 
+    position: absolute; 
+    right: 16px; 
+    bottom: 0px; 
+    width: 30%; 
+    height: 40%; 
+    min-width: 300px; 
+    min-height: 330px; 
+    max-width: 330px; 
+    max-height: 350px;  
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+/**Close Node information iframe button
+  *ADDED BY ISH */
+#closeButton {
+    display: block; 
+    position: absolute; 
+    top: 0px; 
+    right: 0px; 
+    overflow: visible;
+}
+
 /** Selection */
 #selection {
     fill: #fff;
@@ -285,8 +303,4 @@ text.shadow {
     background-image: url(link_stepped.png) !important; 
     width: 16;
     height: 16;
-}
-
-div.recID {
-    display: none !important;
 }
