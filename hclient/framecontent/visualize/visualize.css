@@ -254,37 +254,7 @@ text.shadow {
    background-color: #00ff00;
 }
 
-nav {
-    margin: 27px auto 0;
-  
-    position: relative;
-    width: 590px;
-    height: 50px;
-    background-color: #34495e;
-    border-radius: 8px;
-    font-size: 0;
-  }
-  nav label {
-    line-height: 50px;
-    height: 100%;
-    font-size: 15px;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
-    cursor: pointer;
-  }
-  nav .animation {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    z-index: 0;
-    transition: all .5s ease 0s;
-    border-radius: 8px;
-  }
+
 
 .ui-icon-cursor{
     background-image: url(cursor.png) !important; 
