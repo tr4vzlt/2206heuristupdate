@@ -294,6 +294,8 @@ text.shadow {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    background-color: #333;
   }
   
   li {
@@ -302,10 +304,14 @@ text.shadow {
 
   li a {
     display: block;
+    color: white;
     padding: 8px 30px;
-    background-color: #dddddd;
+  
+    text-align: center;
   }
-
+  li a:hover {
+    background-color: #111;
+  }
 .ui-icon-cursor{
     background-image: url(cursor.png) !important; 
     width: 16;
