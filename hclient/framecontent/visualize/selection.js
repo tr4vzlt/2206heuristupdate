@@ -31,15 +31,15 @@ var selectionColor = "#bee4f8";
 function addSelectionBox() {
     // Selection element
     var selector = svg.append("g")
-                      .attr("class", "selector"); 
-                             
+        .attr("class", "selector");
+
     selectionBox = selector.append("rect")
-                           .attr("id", "selection")
-                           .attr("x", 0)
-                           .attr("y", 0);
-    
+        .attr("id", "selection")
+        .attr("x", 0)
+        .attr("y", 0);
+
     // Mouse listeners
-    svg.on("contextmenu", function() { d3.event.preventDefault(); });
+    svg.on("contextmenu", function () { d3.event.preventDefault(); });
     svg.on("mousedown", onMouseDown);
     svg.on("mousemove", onMouseMove);
     svg.on("mouseup", onMouseUp);
@@ -59,36 +59,106 @@ function updateCircles(selector, fgColor, bgColor) {
     nodes.select(".background").style("fill", bgColor);
 }
 
+
+
 function determineColour(dataColour) {
     console.log(dataColour.rty_ID)
 
-    if (dataColour.rty_ID == 1) {
-        return '#F0E68C';
-    } else if (dataColour.rty_ID == 2) {
-        return '#ADD8E6';
-    } else if (dataColour.rty_ID == 3) {
-        return '#FFF0F5';    
-    } else if (dataColour.rty_ID == 4) {
-        return '#7CFC00';
-    } else if (dataColour.rty_ID == 5) {
-        return '#FFFACD';
-    } else if (dataColour.rty_ID == 6) {
-        return '#778899';
-    } else if (dataColour.rty_ID == 7) {
-        return '#F08080';
-    } else if (dataColour.rty_ID == 8) {
-        return '#E0FFFF';
-    } else if (dataColour.rty_ID == 9) {
-        return '#66CDAA';
-    } else if (dataColour.rty_ID == 10) {
-        return '#D3D3D3';
-    } else if (dataColour.rty_ID == 11) {
-        return '#90EE90';
-    } else if (dataColour.rty_ID == 12) {
-        return '#FFB6C1';
-    } else {
-        return '#ffffff';
+    const colours = ['#FFEBEE', '#FFCDD2', '#EF9A9A', '#E57373', '#EF5350', '#FCE4EC', '#F8BBD0', '#F48FB1', '#F06292', '#EC407A','#F3E5F5', '#E1BEE7', '#CE93D8', '#BA68C8','#AB47BC', '#EDE7F6', '#D1C4E9', '#B39DDB','#9575CD', '#7E57C2', '#E8EAF6', '#C5CAE9','#9FA8DA', '#7986CB', '#5C6BC0', '#E3F2FD','#BBDEFB', '#90CAF9', '#64B5F6', '#42A5F5','#E1F5FE', '#B3E5FC', '#81D4FA', '#4FC3F7','#29B6F6', '#E0F7FA', '#B2EBF2', '#80DEEA','#4DD0E1', '#26C6DA', '#E0F2F1', '#B2DFDB','#80CBC4', '#4DB6AC', '#26A69A', '#E8F5E9','#C8E6C9', '#A5D6A7', '#81C784', '#66BB6A',  '#F1F8E9', '#DCEDC8', '#C5E1A5', '#AED581','#9CCC65', '#F9FBE7', '#F0F4C3', '#E6EE9C','#DCE775', '#D4E157', '#FFFDE7', '#FFF9C4','#FFF59D', '#FFF176', '#FFEE58', '#fff8e1','#ffecb3', '#ffe082', '#ffd54f', '#ffca28', '#FFF3E0', '#FFE0B2', '#FFCC80', '#FFB74D','#FFA726', '#FBE9E7', '#FFCCBC', '#FFAB91','#FF8A65', '#FF7043', '#EFEBE9', '#D7CCC8','#BCAAA4', '#A1887F', '#8D6E63', '#FAFAFA','#F5F5F5', '#EEEEEE', '#E0E0E0', '#BDBDBD',  '#ECEFF1', '#CFD8DC', '#B0BEC5', '#90A4AE','#78909C']
+
+    for (i = 0; i < 100; i++) {
+        if (dataColour.rty_ID == i) {
+            return colours[i];
+        }
     }
+
+    /*
+    if (dataColour.rty_ID == 10) {
+        return '#F0E68C';
+    } else if (dataColour.rty_ID == 12) {
+        return '#ADD8E6';
+    } else if (dataColour.rty_ID == 61) {
+        return '#FFF0F5';
+    } else if (dataColour.rty_ID == 93) {
+        return '#7CFC00';
+    } else if (dataColour.rty_ID == 60) {
+        return '#FFFACD';
+    } else if (dataColour.rty_ID == 4) {
+        return '#778899';
+    } else if (dataColour.rty_ID == 92) {
+        return '#F08080';
+    } else if (dataColour.rty_ID == 94) {
+        return '#E0FFFF';
+    } else if (dataColour.rty_ID == 91) {
+        return '#66CDAA';
+    } else if (dataColour.rty_ID == 66) {
+        return '#D3D3D3';
+    } else if (dataColour.rty_ID == 7) {
+        return '#90EE90';
+    } else if (dataColour.rty_ID == 5) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 9) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 2) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 89) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 8) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 62) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 3) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 63) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 54) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 55) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 56) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 48) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 65) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 100) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 59) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 57) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 58) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 64) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 67) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 68) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 84) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 70) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 69) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 72) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 75) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 73) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 74) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 5) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 5) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 5) {
+        return '#FFB6C1';
+    } else if (dataColour.rty_ID == 5) {
+        return '#FFB6C1';
+    } else
+    */
 }
 
 /**
@@ -109,19 +179,19 @@ function updateRectangles(selector, colour) {
 * @param node  Clicked node
 */
 function onRecordNodeClick(event, data, node) {
-//console.log("On record selection click");
+    //console.log("On record selection click");
     var needSelect = true;
-    var recID = ""+data.id;
-    
+    var recID = "" + data.id;
+
     // Selected node id's
-    if(settings.selectedNodeIds == null) {
-        settings.selectedNodeIds = [];    
+    if (settings.selectedNodeIds == null) {
+        settings.selectedNodeIds = [];
     }
 
     // Clicked with ctrl key?
     var bgColor = getSetting(setting_entitycolor);
     console.log("")
-    if(event.ctrlKey){
+    if (event.ctrlKey) {
         // Select multiple
         var idx = settings.selectedNodeIds.indexOf(recID);
         if (idx > -1) {
@@ -130,35 +200,36 @@ function onRecordNodeClick(event, data, node) {
             updateCircles(".node", foregroundColor, bgColor);
             settings.selectedNodeIds.splice(idx, 1);
         }
-    }else{
+    } else {
         // Select single, deselect all
         updateCircles(".node", foregroundColor, bgColor);
         settings.selectedNodeIds = [];
-    }            
-    
+    }
+
     // Select new nodes
-    if(needSelect){
+    if (needSelect) {
         data.selected = true;
         settings.selectedNodeIds.push(recID);
-        
+
         // Update circles and show overlay
         updateCircles(node, selectionColor, selectionColor);
         //was shown on mouse click event.offsetX, event.offsetY, now in center of node
         //was createOverlay(event.offsetX, event.offsetY, "record", "id"+recID, getRecordOverlayData(data));  
-        
-        var nodePos = $(node).offset();
-        
-        var r = getEntityRadius(data.count);
-        
-        var dx = event.x - event.offsetX; 
-        var dy = event.y - event.offsetY; 
 
-        createOverlay(Math.round(nodePos.left-dx+r), Math.round(nodePos.top-dy+r), "record", "id"+recID, getRecordOverlayData(data));    }
-    
+        var nodePos = $(node).offset();
+
+        var r = getEntityRadius(data.count);
+
+        var dx = event.x - event.offsetX;
+        var dy = event.y - event.offsetY;
+
+        createOverlay(Math.round(nodePos.left - dx + r), Math.round(nodePos.top - dy + r), "record", "id" + recID, getRecordOverlayData(data));
+    }
+
     // Trigger selection
-    if(settings.triggerSelection){
-       settings.triggerSelection.call(this, settings.selectedNodeIds); 
-    }  
+    if (settings.triggerSelection) {
+        settings.triggerSelection.call(this, settings.selectedNodeIds);
+    }
 }
 
 /**
@@ -169,26 +240,26 @@ function onRecordNodeClick(event, data, node) {
 function visualizeSelection(selectedNodeIds) { //console.log(settings.data);
     settings.selectedNodeIds = selectedNodeIds; // Update settings object
 
-    if(currentMode == 'icons'){
+    if (currentMode == 'icons') {
         updateCircles(".node", foregroundColor, getSetting(setting_entitycolor)); // Deselect all
-    }else if(selectedNodeIds && selectedNodeIds.length>0){
+    } else if (selectedNodeIds && selectedNodeIds.length > 0) {
         updateRectangles(".node", getSetting(setting_entitycolor));
-    }else{
+    } else {
         updateRectangles(".node", foregroundColor);
     }
 
     // Select new nodes
-    if(selectedNodeIds && selectedNodeIds.length>0){
-        for(var i=0; i<selectedNodeIds.length; i++){
-            var selector = ".id"+selectedNodeIds[i];
+    if (selectedNodeIds && selectedNodeIds.length > 0) {
+        for (var i = 0; i < selectedNodeIds.length; i++) {
+            var selector = ".id" + selectedNodeIds[i];
 
-            if(currentMode == 'icons'){
+            if (currentMode == 'icons') {
                 updateCircles(selector, selectionColor, selectionColor);
-            }else{
+            } else {
                 updateRectangles(selector, selectionColor);
             }
         }
-    }   
+    }
 }
 
 /************************************** SELECTION BOX **********************************/
@@ -202,8 +273,8 @@ function preventMenu(event) {
     event.preventDefault();
 }
 
-function closeRectypeSelector(){     
-    if(settings.isDatabaseStructure){
+function closeRectypeSelector() {
+    if (settings.isDatabaseStructure) {
         $($('body.popup div.ent_wrapper')[0]).layout().close('west');
     }
 }
@@ -214,24 +285,24 @@ function closeRectypeSelector(){
 * 
 */
 function onMouseDown() {
-//console.log("Mouse down");
+    //console.log("Mouse down");
 
     closeRectypeSelector();
 
-    rightClicked = (selectionMode=='multi');
-    if(rightClicked) {
+    rightClicked = (selectionMode == 'multi');
+    if (rightClicked) {
         d3.event.preventDefault();
         svg.on(".zoom", null);
         console.log("Unbinded zoom");
 
         // X-position
-        positions.x1 = d3.event.offsetX; 
+        positions.x1 = d3.event.offsetX;
         positions.clickX1 = d3.event.x;
-       
+
         // Y-position 
-        positions.y1 = d3.event.offsetY; 
+        positions.y1 = d3.event.offsetY;
         positions.clickY1 = d3.event.y;
-        
+
         // Deselect all nodes
         var bgColor = getSetting(setting_entitycolor);
         updateCircles(".node", foregroundColor, bgColor);
@@ -244,30 +315,30 @@ function onMouseDown() {
 * 
 */
 function onMouseMove() {
-//console.log("Mouse moved");
-    if(rightClicked) {
+    //console.log("Mouse moved");
+    if (rightClicked) {
         // X-positions
         positions.x2 = d3.event.offsetX;
         positions.clickX2 = d3.event.x;
 
-        if(positions.x1 < positions.x2) {
-            selectionBox.attr("x", positions.x1);   
-        }else{
+        if (positions.x1 < positions.x2) {
+            selectionBox.attr("x", positions.x1);
+        } else {
             selectionBox.attr("x", positions.x2);
         }
-        selectionBox.attr("width", Math.abs(positions.x2-positions.x1));
-        
-        
+        selectionBox.attr("width", Math.abs(positions.x2 - positions.x1));
+
+
         // Y-positions
         positions.y2 = d3.event.offsetY;
         positions.clickY2 = d3.event.y;
-        
-        if(positions.y1 < positions.y2) {
-            selectionBox.attr("y", positions.y1);   
-        }else{
+
+        if (positions.y1 < positions.y2) {
+            selectionBox.attr("y", positions.y1);
+        } else {
             selectionBox.attr("y", positions.y2);
         }
-        selectionBox.attr("height", Math.abs(positions.y2-positions.y1));
+        selectionBox.attr("height", Math.abs(positions.y2 - positions.y1));
         selectionBox.style("display", "block");
     }
 }
@@ -278,30 +349,30 @@ function onMouseMove() {
 * Selects the circles inside the selectionBox
 */
 function onMouseUp() {
-//console.log("Mouse up, rightClicked="+rightClicked);
-    if(rightClicked) {
+    //console.log("Mouse up, rightClicked="+rightClicked);
+    if (rightClicked) {
         rightClicked = false;
-        selectionBox.style("display", "none"); 
+        selectionBox.style("display", "none");
 
         // Calculate which nodes are in the selection box
-        d3.selectAll(".node").each(function(d, i) {
-            var selector = ".node.id"+d.id;
+        d3.selectAll(".node").each(function (d, i) {
+            var selector = ".node.id" + d.id;
             var nodePos = $(selector).offset();
-            
+
             // X in selection box?
-            if((nodePos.left >= positions.clickX1 && nodePos.left <= positions.clickX2) ||
-               (nodePos.left <= positions.clickX1 && nodePos.left >= positions.clickX2)) {
+            if ((nodePos.left >= positions.clickX1 && nodePos.left <= positions.clickX2) ||
+                (nodePos.left <= positions.clickX1 && nodePos.left >= positions.clickX2)) {
                 // Y in selection box?
-                if((nodePos.top >= positions.clickY1 && nodePos.top <= positions.clickY2) ||
-                   (nodePos.top <= positions.clickY1 && nodePos.top >= positions.clickY2)) {    
-                       // Node is in selection box
-//DEBUG console.log(d.name + " is in selection box!");
-                       updateCircles(selector, selectionColor, selectionColor);      
+                if ((nodePos.top >= positions.clickY1 && nodePos.top <= positions.clickY2) ||
+                    (nodePos.top <= positions.clickY1 && nodePos.top >= positions.clickY2)) {
+                    // Node is in selection box
+                    //DEBUG console.log(d.name + " is in selection box!");
+                    updateCircles(selector, selectionColor, selectionColor);
                 }
             }
-        
+
         });
-    }else{
+    } else {
         // Remove all selections
         var bgColor = getSetting(setting_entitycolor);
         updateCircles(".node", foregroundColor, bgColor);
