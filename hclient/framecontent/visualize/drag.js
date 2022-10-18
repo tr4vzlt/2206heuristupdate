@@ -179,6 +179,8 @@ function updateNodes() {
     });
 }
 
+var currentNode;
+
 // Functions to make dragging, moving and zooming possible
 
 /** Called when a dragging event starts */
@@ -186,6 +188,8 @@ function dragstart(d, i) {
     
     d3.event.sourceEvent.stopPropagation();
     force.stop();
+
+    currentNode = d.id
 
     // Fixed node positions?
     var gravity = getSetting(setting_gravity);
