@@ -303,7 +303,8 @@ text.shadow {
 }
 
 .dropdown {
-    position: relative;
+    /*position: relative;*/
+    position:absolute;
     display: inline-block;
 }
 
