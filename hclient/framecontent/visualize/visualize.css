@@ -305,7 +305,7 @@ text.shadow {
 .dropdown {
     /*position: relative;*/
     position:absolute;
-    display: inline-block;
+    display:list-item;
 }
 
 .dropdown-content {
