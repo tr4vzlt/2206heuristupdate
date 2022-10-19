@@ -541,14 +541,15 @@ function zoomed() {
         }
         */
 
-
-        if (/*d3.event.scale > 0.5 && */d3.event.scale < 0.9) {
+        /*
+        if (/*d3.event.scale > 0.5 && d3.event.scale < 0.9) {
             const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
             for (let i = 0; i < nodeList.length; i++) {
                 nodeList[i].style.scale = "3.5";
                 nodeList[i].style.transform = "translate(-20px, -9px)";
             }
         }
+        */
 
         if (d3.event.scale > 0.9 && d3.event.scale < 1.5) {
             const nodeList = document.querySelectorAll('.nodelabel');  //.setAttribute('style', 'scale: 5 !important;');
