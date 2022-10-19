@@ -147,7 +147,10 @@ function addNodes() {
                 return false;
             })
             .on("click", function (d) {
-                showNodeInformation(d);//Added by ISH   
+                if (currentMode == 'icons'){
+                    showNodeInformation(d);//Added by ISH  
+                }
+                 
                 closeRectypeSelector();
                 // Check if it's not a click after dragging
                 if (!d3.event.defaultPrevented) {
