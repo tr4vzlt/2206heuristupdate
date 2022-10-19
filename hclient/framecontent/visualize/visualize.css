@@ -360,3 +360,8 @@ text.shadow {
     width: 16;
     height: 16;
 }
+
+#nodecontrolbox {
+    border: 2px solid black ;
+    fill: grey;
+}
