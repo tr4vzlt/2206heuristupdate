@@ -400,3 +400,7 @@ ul {
     padding-right: 2px;
 }
 
+.ui-controlgroup-label{
+    font-size: 100%
+}
+
