@@ -396,5 +396,7 @@ ul {
     border: 1px solid black;
     fill: grey;
     font-size: 20px;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
