@@ -261,12 +261,12 @@ text.shadow {
     line-height: 10px;    
     display:table-cell;
     height:auto;
-    
+    justify-content: center;
     /*border: solid 1px gray;*/
 }
 #toolbar > div{
     /*display:table-row;*/
-    justify-content: center;
+    /*float:left;*/
 }
 
 #toolbar2{
