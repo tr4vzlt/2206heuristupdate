@@ -20,35 +20,36 @@
 
 /** Visualisation settings */
 #visualisation-settings {
-    float: left; 
+    float: left;
 }
-      
+
 .settings {
     display: block;
     border-bottom: 1px solid lightgray;
-}  
+}
 
 .settings div {
     display: inline-block;
-}     
+}
 
 .space {
     font-size: 0.7em;
-    padding:3px 5px;
+    padding: 3px 5px;
 }
 
 .middle {
-   vertical-align: middle; 
+    vertical-align: middle;
 }
 
 .dotted-link {
     border-bottom: dotted 1px #6A7C99;
 }
-  
+
 .mouse-icon {
     cursor: pointer;
     padding: 2px;
 }
+
 .mouse-icon.selected {
     background: #d5d5d5;
 }
@@ -58,7 +59,8 @@
     display: inline-block;
     /* width: 18px; */
     height: 18px;
-    border: none; /*1px solid black; */
+    border: none;
+    /*1px solid black; */
     vertical-align: middle;
 }
 
@@ -66,13 +68,15 @@
     cursor: pointer;
 }
 
-.number-input { 
+.number-input {
     cursor: text;
     text-align: center;
 }
+
 .number-input.small {
-     max-width: 40px;
+    max-width: 40px;
 }
+
 .number-input.medium {
     max-width: 50px;
 }
@@ -86,27 +90,30 @@
 #visualisation-menu {
     max-width: 150px;
     position: absolute;
-    top:5px;
+    top: 5px;
     right: 5px;
 }
 
 .menu-items {
     padding: 0px;
     margin: 0px;
-    list-style-type: none; 
+    list-style-type: none;
 }
+
 .menu-items.level2 .menu-item {
     text-align: left;
     display: none;
 }
- 
-.menu-item {  
+
+.menu-item {
     display: block;
-    list-style-type: none;                                   
+    list-style-type: none;
 }
+
 .menu-item:hover {
-    cursor: pointer;  
+    cursor: pointer;
 }
+
 .menu-item.padding {
     padding: 3px;
 }
@@ -123,8 +130,9 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 .menu-button:hover .menu-item {
-    display: block;                                             
+    display: block;
 }
 
 
@@ -143,8 +151,8 @@ g:hover {
 
 /** Lines between records */
 .link {
-    fill: none;    
-    stroke-opacity: 0.7;  
+    fill: none;
+    stroke-opacity: 0.7;
 }
 
 .link:hover {
@@ -170,7 +178,7 @@ circle.selected {
 /** Text above circle */
 text.center {
     font-weight: bold;
-    text-anchor: middle;   
+    text-anchor: middle;
 }
 
 text.bold {
@@ -184,10 +192,10 @@ text.shadow {
 }
 
 /** Overlay */
-.overlay:hover {   
+.overlay:hover {
     cursor: default;
     pointer-events: none;
-}                 
+}
 
 .semi-transparant {
     fill: #fff;
@@ -200,11 +208,11 @@ text.shadow {
 .close-button {
     fill: #fff;
     stroke: #000;
-    stroke-width: 0.5; 
-    pointer-events: all; 
+    stroke-width: 0.5;
+    pointer-events: all;
     cursor: pointer;
-    width:8;
-    height:8;
+    width: 8;
+    height: 8;
 }
 
 .close-text {
@@ -216,27 +224,27 @@ text.shadow {
 
 /**Node information iframe 
   *ADDED BY ISH */
-  #iframeDiv {
-    display: none; 
-    position: absolute; 
-    right: 16px; 
-    bottom: 0px; 
-    width: 30%; 
-    height: 40%; 
-    min-width: 300px; 
-    min-height: 330px; 
-    max-width: 330px; 
-    max-height: 350px;  
+#iframeDiv {
+    display: none;
+    position: absolute;
+    right: 16px;
+    bottom: 0px;
+    width: 30%;
+    height: 40%;
+    min-width: 300px;
+    min-height: 330px;
+    max-width: 330px;
+    max-height: 350px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 /**Close Node information iframe button
   *ADDED BY ISH */
 #closeButton {
-    display: block; 
-    position: absolute; 
-    top: 0px; 
-    right: 0px; 
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
     overflow: visible;
 }
 
@@ -245,39 +253,43 @@ text.shadow {
     fill: #fff;
     fill-opacity: 0.3;
     stroke: #000;
-    stroke-dasharray: 5,5;
+    stroke-dasharray: 5, 5;
     stroke-width: 1.5;
 }
 
 
-.toolbar-section{
-    padding:0 4px;
+.toolbar-section {
+    padding: 0 4px;
     margin-bottom: 5px;
 }
-.toolbar-section > label{
-    font-size:0.8em;
-}
-#toolbar{
-    line-height: 10px;    
-    display:table-cell;
-    height:auto;
-    /*border: solid 1px gray;*/
-}
-#toolbar > div{
-    /*display:table-row;*/
-    float:left;
+
+.toolbar-section>label {
+    font-size: 0.8em;
 }
 
-#toolbar2{
-    line-height: 0px;    
-    display:table-cell;
-    height:70;
+#toolbar {
+    line-height: 10px;
+    display: table-cell;
+    height: auto;
+    /*border: solid 1px gray;*/
+}
+
+#toolbar>div {
+    /*display:table-row;*/
+    float: left;
+}
+
+#toolbar2 {
+    line-height: 0px;
+    display: table-cell;
+    height: 70;
     bottom: 0;
 }
-#toolbar2 > div {
-    bottom: 0; 
+
+#toolbar2>div {
+    bottom: 0;
     padding: 10;
-   background-color: #00ff00;
+    background-color: #00ff00;
 }
 
 .dropbtn {
@@ -286,82 +298,94 @@ text.shadow {
     padding: 16px;
     font-size: 16px;
     border: none;
-  }
-  
-  .dropdown {
+}
+
+.dropdown {
     position: relative;
     display: inline-block;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-  }
-  
-  .dropdown-content a {
+}
+
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
+}
 
-  
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  .dropdown:hover .dropdown-content {display: block;}
-  
-  .dropdown:hover .dropbtn {background-color: #1fb5cf;}
 
-  ul{
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #1fb5cf;
+}
+
+ul {
 
     list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  }
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
 
-.ui-icon-cursor{
-    background-image: url(cursor.png) !important; 
+.ui-icon-cursor {
+    background-image: url(cursor.png) !important;
     width: 16;
     height: 16;
 }
-.ui-icon-gravity0{
-    background-image: url(gravity_0.png) !important; 
+
+.ui-icon-gravity0 {
+    background-image: url(gravity_0.png) !important;
     width: 16;
     height: 16;
 }
-.ui-icon-gravity1{
-    background-image: url(gravity_1.png) !important; 
+
+.ui-icon-gravity1 {
+    background-image: url(gravity_1.png) !important;
     width: 16;
     height: 16;
 }
-.ui-icon-gravity2{
-    background-image: url(gravity_2.png) !important; 
+
+.ui-icon-gravity2 {
+    background-image: url(gravity_2.png) !important;
     width: 16;
     height: 16;
 }
-.ui-icon-link-streight{
-    background-image: url(link_streight.png) !important; 
+
+.ui-icon-link-streight {
+    background-image: url(link_streight.png) !important;
     width: 16;
     height: 16;
 }
-.ui-icon-link-curved{
-    background-image: url(link_curved.png) !important; 
+
+.ui-icon-link-curved {
+    background-image: url(link_curved.png) !important;
     width: 16;
     height: 16;
 }
-.ui-icon-link-stepped{
-    background-image: url(link_stepped.png) !important; 
+
+.ui-icon-link-stepped {
+    background-image: url(link_stepped.png) !important;
     width: 16;
     height: 16;
 }
 
 #nodecontrolbox {
-    border: 2px solid black ;
+    border: 2px solid black;
     fill: grey;
 }
