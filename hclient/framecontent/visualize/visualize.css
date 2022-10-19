@@ -400,7 +400,18 @@ ul {
     padding-right: 2px;
 }
 
+#Functions{
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+.ui-controlgroup-label-contents{
+    font-size: 13px;
+
+}
+
 .ui-controlgroup-label{
-    font-size: 100%
+    font-size: 13px;
+    padding-left: 12px;
 }
 
