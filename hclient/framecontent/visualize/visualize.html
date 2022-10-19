@@ -136,11 +136,13 @@
                         <button id="btnViewModeInfo" name="videMode" value="infoboxes">Info</button>
                         <button id="btnViewModeFull" name="videMode" value="infoboxes_full">Info + Links</button>
                     </div>
+                    <div>
+                        <label>Set Zoom: </label>
+                        <button id="btnZoomIn" style="width:20px">Zoom In</button>
+                        <button id="btnZoomOut" style="width:20px">Zoom Out</button>
+                        <button id="btnFitToExtent" style="width:20px">Fit to extent</button>
+                    </div>
 
-                    <label>Set Zoom: </label>
-                    <button id="btnZoomIn" style="width:20px">Zoom In</button>
-                    <button id="btnZoomOut" style="width:20px">Zoom Out</button>
-                    <button id="btnFitToExtent" style="width:20px">Fit to extent</button>
 
                     <!--<div id="setDivLinks" class="toolbar-section advanced"
                     style="display:none; min-width:214px;padding-right: 10px;">
@@ -177,8 +179,7 @@
                         max="25" step="1" />
                 -->
 
-                    <div id="setDivExport" class="toolbar-section advanced"
-                        style="display:none; padding-left:10px;text-align:right;min-width:50px;">
+                    <div id="setDivExport" class="toolbar-section advanced">
                         <button type="button" id="gephi-export" onclick="getGephiFormat()">GEPHI</button>
                         <button type="button" id="embed-export">Embed</button>
                     </div>
