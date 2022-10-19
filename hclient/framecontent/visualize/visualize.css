@@ -269,14 +269,16 @@ text.shadow {
 
 #toolbar {
     line-height: 10px;
-    display: table-cell;
+    /*display: table-cell;*/
+    display: flex;
     height: auto;
+    justify-content: center;
     /*border: solid 1px gray;*/
 }
 
 #toolbar>div {
     /*display:table-row;*/
-    float: left;
+    /*float: left;*/
 }
 
 #toolbar2 {
