@@ -392,3 +392,8 @@ ul {
     border: 2px solid black;
     fill: grey;
 }
+
+.ui-controlgroup-label{
+    font-size: 4px;
+    
+}
