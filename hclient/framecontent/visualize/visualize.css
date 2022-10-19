@@ -256,7 +256,7 @@ text.shadow {
 
 .dropbtn {
     background-color: #04AA6D;
-    color: white;
+    color: rgb(65, 31, 31);
     padding: 16px;
     font-size: 16px;
     border: none;
