@@ -53,108 +53,112 @@
 <!-- Network diagram HTML -->
 <!-- Network diagram HTML -->
 
-<div id="toolbar " class="toolbar-section advanced">
+<div id="toolbar" style="display:none;">
+    <div id="toolbara " class="toolbar-section advanced">
+        <ul>
+            <div class="dropdown" style="position: absolute;left: 0px;top:10px;">
 
-    <ul>
-        <div class="dropdown" style="position: absolute;left: 0px;top:10px;">
-
-            <label id="nodecontrolbox">Node Control</label>
-            <div class="dropdown-content"></a></li>
-                <div id="setSelectMode" class="toolbar-section advanced">
-                    <label>Select Nodes: </label>
-                    <button id="btnSingleSelect" name="selectMode" value="single">"Select and drag nodes"</button>
-                    <button id="btnMultipleSelect" name="selectMode" value="multi">Select multiple nodes</button>
-                </div>
+                <label id="nodecontrolbox">Node Control</label>
+                <div class="dropdown-content"></a></li>
+                    <div id="setSelectMode" class="toolbar-section advanced">
+                        <label>Select Nodes: </label>
+                        <button id="btnSingleSelect" name="selectMode" value="single">"Select and drag nodes"</button>
+                        <button id="btnMultipleSelect" name="selectMode" value="multi">Select multiple nodes</button>
+                    </div>
 
 
-                <div id="setDivGravity" class="toolbar-section advanced" style=" min-width:90px">
-                    <label>
-                        Gravity:
-                    </label>
+                    <div id="setDivGravity" class="toolbar-section advanced" style=" min-width:90px">
+                        <label>
+                            Gravity:
+                        </label>
 
-                    <div id="setGravityMode" style="padding-left:10px">
-                        <label class="ui-controlgroup-label" style="border:none;background:none">Gravity</label>
-                        <button id="gravityMode0" name="gravityMode" value="off">off</button>
-                        <button id="gravityMode1" name="gravityMode" value="touch"
-                            onclick="refreshButton();">on</button>
-                        <button id="gravityMode2" name="gravityMode" value="off"
-                            onclick="refreshGravityOff()">off</button>
-                        <button id="gravityMode3" name="gravityMode" value="touch"
-                            onclick="refreshGravityOn()">on</button>
+                        <div id="setGravityMode" style="padding-left:10px">
+                            <label class="ui-controlgroup-label" style="border:none;background:none">Gravity</label>
+                            <button id="gravityMode0" name="gravityMode" value="off">off</button>
+                            <button id="gravityMode1" name="gravityMode" value="touch"
+                                onclick="refreshButton();">on</button>
+                            <button id="gravityMode2" name="gravityMode" value="off"
+                                onclick="refreshGravityOff()">off</button>
+                            <button id="gravityMode3" name="gravityMode" value="touch"
+                                onclick="refreshGravityOn()">on</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </ul>
-    <div class="dropdown" style="position: absolute;left: 130px;top:10px; ">
-        <label id="nodecontrolbox">Link Control</label>
-        <div class="dropdown-content">
-            <div id="setDivLinks" class="toolbar-section advanced"
-                style="display:none; min-width:214px;padding-right: 10px;">
-                <label>Links</label>
-                <label><input id="linksEmpty" title="Show empty links" type="checkbox" />&nbsp;empty</label>
-                <label><input id="expand-links" title="Expand all links" type="checkbox" />&nbsp;expand</label>
+        </ul>
+        <ul>
+            <div class="dropdown" style="position: absolute;left: 130px;top:10px; ">
+                <label id="nodecontrolbox">Link Control</label>
+                <div class="dropdown-content">
+                    <div id="setDivLinks" class="toolbar-section advanced"
+                        style="display:none; min-width:214px;padding-right: 10px;">
+                        <label>Links</label>
+                        <label><input id="linksEmpty" title="Show empty links" type="checkbox" />&nbsp;empty</label>
+                        <label><input id="expand-links" title="Expand all links" type="checkbox" />&nbsp;expand</label>
+                    </div>
+
+                    <div id="setDivNodes" class="toolbar-section advanced"
+                        style="display:none;padding-left:15px; min-width:190px">
+                        <!--<label>Nodes color</label>
+                        <div class="colorblock" style="margin-top:-4px;width:auto;" title="Color of nodes">
+                        <input id="entityColor" style="width:0px;border:none"/></div>--><br>
+                        <div id="setNodesMode" style="display:inline-block">
+                            <button id="nodesMode0" name="nodesMode" value="linear"
+                                title="radius of nodes changes linearly">lin</button>
+                            <button id="nodesMode1" name="nodesMode" value="logarithmic"
+                                title="radius of nodes changes logarithmically">log</button>
+                            <button id="nodesMode2" name="nodesMode" value="unweighted" checked="checked"
+                                title="radius of nodes has fixed size">fixed</button>
+                        </div>
+                        <input id="nodesRadius" class="number-input small" type="number" min="12" max="45" step="1" />
+                    </div>
+                </div>
             </div>
+        </ul>
 
-            <div id="setDivNodes" class="toolbar-section advanced"
-                style="display:none;padding-left:15px; min-width:190px">
-                <!--<label>Nodes color</label>
-                    <div class="colorblock" style="margin-top:-4px;width:auto;" title="Color of nodes">
-                    <input id="entityColor" style="width:0px;border:none"/></div>--><br>
-                <div id="setNodesMode" style="display:inline-block">
-                    <button id="nodesMode0" name="nodesMode" value="linear"
-                        title="radius of nodes changes linearly">lin</button>
-                    <button id="nodesMode1" name="nodesMode" value="logarithmic"
-                        title="radius of nodes changes logarithmically">log</button>
-                    <button id="nodesMode2" name="nodesMode" value="unweighted" checked="checked"
-                        title="radius of nodes has fixed size">fixed</button>
-                </div>
-                <input id="nodesRadius" class="number-input small" type="number" min="12" max="45" step="1" />
-            </div>
-        </div>
-    </div>
-
-    <div class="dropdown" style="position: absolute;left: 260px;top:10px;">
-        <label id="nodecontrolbox">Graph Control</label>
-        <div class="dropdown-content">
-            <!-- Added Refresh Graph Buttons - Travis Doyle 19/9-->
-            <div id="NewFunctions" class="toolbar-section advanced" style="border-left: solid 1px gray; min-width:90px">
-                <div id="ResetButton" style="padding-left:10px">
-                    <button id="resetbutton1" name="reset" onclick="refreshButton();">Refresh Data</button>
-                </div>
-                <div id="ResetButton2" style="padding-left:10px">
-                    <button id="resetbuttonfullscreen" name="reset" onclick="refreshButtonFullscreen();">Refresh
-                        Data</button>
-                </div>
-                <div>
-                    <button type="button" id="windowPopOut" onclick="openWin();">Open Fullscreen</button>
-                </div>
-                <div>
-                    <button type="button" id="closegraphbutton" onclick="closeWin();">Close Fullscreen</button>
-                </div>
+        <ul>
+            <div class="dropdown" style="position: absolute;left: 260px;top:10px;">
+                <label id="nodecontrolbox">Graph Control</label>
+                <div class="dropdown-content">
+                    <!-- Added Refresh Graph Buttons - Travis Doyle 19/9-->
+                    <div id="NewFunctions" class="toolbar-section advanced"
+                        style="border-left: solid 1px gray; min-width:90px">
+                        <div id="ResetButton" style="padding-left:10px">
+                            <button id="resetbutton1" name="reset" onclick="refreshButton();">Refresh Data</button>
+                        </div>
+                        <div id="ResetButton2" style="padding-left:10px">
+                            <button id="resetbuttonfullscreen" name="reset" onclick="refreshButtonFullscreen();">Refresh
+                                Data</button>
+                        </div>
+                        <div>
+                            <button type="button" id="windowPopOut" onclick="openWin();">Open Fullscreen</button>
+                        </div>
+                        <div>
+                            <button type="button" id="closegraphbutton" onclick="closeWin();">Close Fullscreen</button>
+                        </div>
 
 
-            </div>
-            <div id="setViewMode" class="toolbar-section advanced">
-                <label class="ui-controlgroup-label" style="border:none;background:none">View Mode:</label>
-                <button id="btnViewModeIcon" name="videMode" value="icons">Icons</button>
-                <button id="btnViewModeInfo" name="videMode" value="infoboxes">Info</button>
-                <button id="btnViewModeFull" name="videMode" value="infoboxes_full">Info + Links</button>
-            </div>
+                    </div>
+                    <div id="setViewMode" class="toolbar-section advanced">
+                        <label class="ui-controlgroup-label" style="border:none;background:none">View Mode:</label>
+                        <button id="btnViewModeIcon" name="videMode" value="icons">Icons</button>
+                        <button id="btnViewModeInfo" name="videMode" value="infoboxes">Info</button>
+                        <button id="btnViewModeFull" name="videMode" value="infoboxes_full">Info + Links</button>
+                    </div>
 
-            <label>Set Zoom: </label>
-            <button id="btnZoomIn" style="width:20px">Zoom In</button>
-            <button id="btnZoomOut" style="width:20px">Zoom Out</button>
-            <button id="btnFitToExtent" style="width:20px">Fit to extent</button>
+                    <label>Set Zoom: </label>
+                    <button id="btnZoomIn" style="width:20px">Zoom In</button>
+                    <button id="btnZoomOut" style="width:20px">Zoom Out</button>
+                    <button id="btnFitToExtent" style="width:20px">Fit to extent</button>
 
-            <!--<div id="setDivLinks" class="toolbar-section advanced"
+                    <!--<div id="setDivLinks" class="toolbar-section advanced"
                     style="display:none; min-width:214px;padding-right: 10px;">
                     <label>Links</label>
                     <label><input id="linksEmpty" title="Show empty links" type="checkbox" />&nbsp;empty</label>
                     <label><input id="expand-links" title="Expand all links" type="checkbox" />&nbsp;expand</label>
                 </div>-->
 
-            <!--<div id="setDivLinks2" class="toolbar-section"
+                    <!--<div id="setDivLinks2" class="toolbar-section"
                     style="display:none;border-left: solid 1px gray; min-width:214px;padding-right: 10px;">
                     <label>Links</label>
 
@@ -182,30 +186,32 @@
                         max="25" step="1" />
                 -->
 
-            <div id="setDivExport" class="toolbar-section advanced"
-                style="display:none; padding-left:10px;text-align:right;min-width:50px;">
-                <button type="button" id="gephi-export" onclick="getGephiFormat()">GEPHI</button>
-                <button type="button" id="embed-export">Embed</button>
-            </div>
-        </div>
+                    <div id="setDivExport" class="toolbar-section advanced"
+                        style="display:none; padding-left:10px;text-align:right;min-width:50px;">
+                        <button type="button" id="gephi-export" onclick="getGephiFormat()">GEPHI</button>
+                        <button type="button" id="embed-export">Embed</button>
+                    </div>
+                </div>
 
-        <!-- add advanced class to toggle this section -->
-        <div id="setDivLabels" class="toolbar-section" style="display:none; padding-left: 10px; min-width:140px;">
-            <label>Labels</label>
-            <input type="checkbox" id="textOnOff" value="on" title="Show labels when infobox is hidden"
-                style="margin: 5px;">
-            <div id="textColor" class="xcolorblock" title="Text color">Text</div>
+                <!-- add advanced class to toggle this section -->
+                <div id="setDivLabels" class="toolbar-section"
+                    style="display:none; padding-left: 10px; min-width:140px;">
+                    <label>Labels</label>
+                    <input type="checkbox" id="textOnOff" value="on" title="Show labels when infobox is hidden"
+                        style="margin: 5px;">
+                    <div id="textColor" class="xcolorblock" title="Text color">Text</div>
 
-            <input id="textLength" title="Labels Length" class="number-input medium" type="number" min="50" max="250"
-                step="10" />
-            x
-            <input id="fontSize" title="Font Size" class="number-input small" type="number" min="8" max="25" step="1" />
-        </div>
+                    <input id="textLength" title="Labels Length" class="number-input medium" type="number" min="50"
+                        max="250" step="10" />
+                    x
+                    <input id="fontSize" title="Font Size" class="number-input small" type="number" min="8" max="25"
+                        step="1" />
+                </div>
 
 
 
-        <!-- Added Open/Close fullscreen buttons - Travis Doyle 27/9-->
-        <!--<div id="newOne" class="toolbar-section advanced"
+                <!-- Added Open/Close fullscreen buttons - Travis Doyle 27/9-->
+                <!--<div id="newOne" class="toolbar-section advanced"
                     style="display:none;border-left: solid 1px gray; padding-left: 10px; min-width:140px;">
                     <button type="button" id="windowPopOut" onclick="openWin();">Open Fullscreen</button>
 
@@ -215,11 +221,10 @@
 
 
 
+            </div>
+        </ul>
     </div>
 </div>
-
-
-
 
 
 
