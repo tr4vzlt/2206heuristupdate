@@ -73,7 +73,7 @@ function addNodes() {
         var node = d3.select(this);
 
         var icon_display = currentMode == 'icons' ? 'initial' : 'none';
-        
+
         //add infobox
         createOverlay(0, 0, "record", "id" + d.id, d, node);
 
@@ -147,7 +147,7 @@ function addNodes() {
                 return false;
             })
             .on("click", function (d) {
-                if (icon_display == 'icons'){
+                if (currentMode == 'icons'){
                     showNodeInformation(d);//Added by ISH  
                 }
                  
