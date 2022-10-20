@@ -1270,12 +1270,12 @@ function updateStraightLines(lines, type) {
                     if (selectedLine.empty()) {
                     //add extra starting line
                         selectedLine = container.insert("svg:line", `.id${d.source.id} + *`)
-                            .attr("class", "offset_line")
-                            .attr("id", id)
+                        .attr("class", "offset_line")
+                        .attr("id", id)
                         .attr("stroke", "darkgray")
                         .attr("stroke-linecap", "round")
                         .style("stroke-width", "3px")
-                            .attr("marker-end", "url(#blob)");
+                        .attr("marker-end", "url(#blob)");
                     }
                     selectedLine
                         .attr("x1", s_x)
@@ -1294,8 +1294,8 @@ function updateStraightLines(lines, type) {
                         if (selectedLine.empty()) {
                             // Junze: if not exist create the line
                             selectedLine = container.insert("svg:line", `.id${d.target.id} + *`)
-                                .attr("class", "offset_line")
-                                .attr("id", id)
+                            .attr("class", "offset_line")
+                            .attr("id", id)
                             .attr("stroke", linecolour)
                             .attr("stroke-linecap", "round")
                             .style("stroke-width", linewidth)
@@ -1310,19 +1310,24 @@ function updateStraightLines(lines, type) {
                         //add crows foot, if multi value
                         if (ismultivalue) {
 
+                            let hideId = `#n2nibfsrc_${d.target.id}`;
+                            let hideLine = container.select(hideId);
+                            if (!hideLine.empty())
+                                hideLine.style("display", "none")
                             // Node2NodeInfoBoxesFullBottomLineSourceMultiValue
                             id = `n2nibfblsrcmv_${d.source.id}`;
                             selectedLine = container.select(`#${id}`);
                             if (selectedLine.empty()) {
                                 selectedLine = container.insert("svg:path", `.id${d.source.id} + *`)
-                                    .attr("id", id)
+                                .attr("id", id)
                                 .attr("class", "offset_line")
                                 .attr("stroke-linecap", "round")
-                                    .attr("fill", "none")
+                                .attr("fill", "none")
                             }
                             selectedLine
                                 .attr("stroke-width", linewidth)
                                 .attr("stroke", linecolour)
+                                .style("display", null)
                                 //   .attr("d", "M " + t_x2 + " " + (t_y+5) + " L " + t_x + " " + t_y + " L " + t_x2 + " " + (t_y-5))
                                 .attr("d", `M ${t_x2} ${t_y + 5} L ${t_x} ${t_y} L ${t_x2} ${t_y - 5}`);
                         }
@@ -1332,8 +1337,8 @@ function updateStraightLines(lines, type) {
                         if (ismultivalue) {
                             if (selectedLine.empty()) {
                                 selectedLine = container.insert("svg:line", `.id${d.target.id} + *`)
-                                    .attr("class", "offset_line")
-                                    .attr("id", id)
+                                .attr("class", "offset_line")
+                                .attr("id", id)
                                 .attr("stroke", linecolour)
                                 .attr("stroke-linecap", "round")
                                 .style("stroke-width", linewidth)
@@ -1344,17 +1349,21 @@ function updateStraightLines(lines, type) {
                                 .attr("y1", t_y)
                                 .attr("x2", t_x)
                                 .attr("y2", t_y2);
-
+                            let hideId = `#n2nibfblsrcmv_${d.source.id}`;
+                            let hideLine = container.select(hideId);
+                            if (!hideLine.empty()) 
+                                hideLine.style("display", "none");
                             id = `n2nibfsrc_${d.target.id}`;
                             selectedLine = container.select(`#${id}`);
                             if (selectedLine.empty()) {
                                 selectedLine = container.insert("svg:path", ".id" + d.source.id + " + *")
-                                    .attr("id", id)
+                                .attr("id", id)
                                 .attr("class", "offset_line")
                                 .attr("stroke-linecap", "round")
-                                    .attr("fill", "none")
+                                .attr("fill", "none")
                             }
                             selectedLine
+                                .style("display", null)
                                 .attr("stroke", linecolour)
                                 .attr("stroke-width", linewidth)
                                 .attr("fill", "none")

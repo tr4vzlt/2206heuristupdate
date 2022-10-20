@@ -525,7 +525,7 @@ function _syncUI() {
 }
 
 function changeViewMode(mode) {
-
+    $(".offset_line").remove();
     if (mode != currentMode) {
         if (mode == 'infoboxes') { // && currentMode=='icons'
             currentMode = 'infoboxes';
