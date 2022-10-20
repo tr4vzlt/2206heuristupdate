@@ -115,12 +115,12 @@ A:link {
         <!-- Visualize plugin -->
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/settings.js"></script>
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/overlay.js"></script>
-        <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/selection.js"></script>
+        <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/selectiondb.js"></script>
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/gephi.js"></script>
-        <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/drag.js"></script>
-        <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/visualize.js"></script>
+        <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/dragdb.js"></script>
+        <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/visualizedb.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="<?php echo PDIR;?>hclient/framecontent/visualize/visualize.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo PDIR;?>hclient/framecontent/visualize/visualizedb.css">
 
         <!-- On Row Click -->
         <script>
@@ -252,7 +252,7 @@ A:link {
 
             <div class="ui-layout-center">
                 <div id="main_content" class="ent_wrapper" style="left:0px">
-                    <?php include dirname(__FILE__).'/visualize.html';?>
+                    <?php include dirname(__FILE__).'/visualizedb.html';?>
                 </div>
             </div>
         </div>

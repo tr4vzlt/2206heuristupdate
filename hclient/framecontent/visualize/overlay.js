@@ -324,6 +324,9 @@ function createOverlay(x, y, type, selector, node_obj, parent_node) {
     
     var rty_ID = '', rec_ID = '';
     
+    
+
+
     // Title
     info[0].text = window.hWin.HEURIST4.util.stripTags(info[0].text);
     var rollover = info[0].text;
@@ -368,6 +371,8 @@ function createOverlay(x, y, type, selector, node_obj, parent_node) {
 
     var outline_colour = (type == 'record') ? '#666' : '#ff0000';
     
+    var nodecolor = getSetting(setting_entitycolor);
+
     // Draw a semi transparant rectangle       
     var rect_full = overlay.append("rect")
                            .attr("class", "semi-transparant info-mode-full rect-info-full")              
@@ -376,6 +381,7 @@ function createOverlay(x, y, type, selector, node_obj, parent_node) {
                            .attr("rx", 6)
                            .attr("ry", 6)
                            .attr("rtyid", info[0].rtyid)
+                           .attr("fill", nodecolor)
                            .style('stroke', outline_colour)
                            .style("stroke-width", 0.75);
 
@@ -386,6 +392,7 @@ function createOverlay(x, y, type, selector, node_obj, parent_node) {
                            .attr("rx", 6)
                            .attr("ry", 6)
                            .attr("rtyid", info[0].rtyid)
+                           .attr("fill", nodecolor)
                            .style('stroke', outline_colour)
                            .style("stroke-width", 0.75);
         
@@ -395,6 +402,9 @@ function createOverlay(x, y, type, selector, node_obj, parent_node) {
     var fontColor = getSetting(setting_textcolor, '#000000');
 
     var offset = (type=='record')?10:6;
+    if (currentMode == 'icons'){
+        offset = (type=='record')?29:25; 
+    }
     var position = 16;
 
     // Adding text
@@ -722,7 +732,7 @@ function createOverlay(x, y, type, selector, node_obj, parent_node) {
                     tick();
                 });
       
-      if( settings.isDatabaseStructure ||  settings.onRefreshData){
+      if( !settings.isDatabaseStructure ||  settings.onRefreshData){
       
           //link button      
           var btnAddLink = overlay
