@@ -115,7 +115,7 @@ A:link {
         <!-- Visualize plugin -->
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/settings.js"></script>
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/overlay.js"></script>
-        <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/selection.js"></script>
+        <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/selectiondb.js"></script>
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/gephi.js"></script>
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/dragdb.js"></script>
         <script type="text/javascript" src="<?php echo PDIR;?>hclient/framecontent/visualize/visualizedb.js"></script>
