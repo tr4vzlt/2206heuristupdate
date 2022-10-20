@@ -313,7 +313,6 @@ text.shadow {
 }
 
 .dropdown-content {
-    display: none;
     position: relative;
     background-color: #f1f1f1;
     min-width: 200px;
