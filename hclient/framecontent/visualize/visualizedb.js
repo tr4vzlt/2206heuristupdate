@@ -1036,13 +1036,11 @@ function updateStraightLines(lines, type) {
             t_y = d.target.y;
 
         var ismultivalue = settings.isDatabaseStructure && $Db.rst(d.source.id, d.relation.id, 'rst_MaxValues') != 1 && $Db.rst(d.source.id, d.relation.id, 'rst_MaxValues') != null;
-
         if(d.target.id==d.source.id){ // Self Linking Node
 
             var target_x, target_y, dx, dy, dr, mx, my;
 
             if(currentMode == 'infoboxes_full'){
-
                 var $detail = $(`.id${d.source.id}`).find(`[dtyid="${d.relation.id}"]`),
                     $source_rect = $($(`.id${d.source.id}`).find(`rect[rtyid="${d.source.id}"]`)[0]);
 
@@ -1066,13 +1064,13 @@ function updateStraightLines(lines, type) {
                     //add extra starting line
                     if (selectedLine.empty()) {
                         selectedLine = container.insert("svg:line", ".id" + d.source.id + " + *")
-                            .attr("class", "offset_line")
-                            .attr("id", id)
+                        .attr("class", "offset_line")
+                        .attr("id", id)
                         .attr("stroke", "darkgray")
                         .attr("stroke-linecap", "round")
                         .style("stroke-width", "3px")
-                            .attr("marker-end", "url(#blob)")
-                            .attr("marker-start", "url(#self-link)");
+                        .attr("marker-end", "url(#blob)")
+                        .attr("marker-start", "url(#self-link)");
                     }
                     selectedLine
                         .attr("x1", s_x)
@@ -1102,7 +1100,7 @@ function updateStraightLines(lines, type) {
         }else{ // Node to Node Link
 
             var dx, dy, tg, dx2, dy2, mdx, mdy, s_x2, t_x2, t_y2;
-            var elevation_diff = false;
+            let elevation_diff = false;
             var threshold = 60;
 
             if(currentMode == 'infoboxes_full'){
@@ -1192,12 +1190,12 @@ function updateStraightLines(lines, type) {
                     if (selectedLine.empty()) {
                     //add extra starting line
                         selectedLine = container.insert("svg:line", `.id${d.source.id} + *`)
-                            .attr("class", "offset_line")
-                            .attr("id", id)
+                        .attr("class", "offset_line")
+                        .attr("id", id)
                         .attr("stroke", "darkgray")
                         .attr("stroke-linecap", "round")
                         .style("stroke-width", "3px")
-                            .attr("marker-end", "url(#blob)");
+                        .attr("marker-end", "url(#blob)");
                     }
                     selectedLine
                         .attr("x1", s_x)
@@ -1216,8 +1214,8 @@ function updateStraightLines(lines, type) {
                         if (selectedLine.empty()) {
                             // Junze: if not exist create the line
                             selectedLine = container.insert("svg:line", `.id${d.target.id} + *`)
-                                .attr("class", "offset_line")
-                                .attr("id", id)
+                            .attr("class", "offset_line")
+                            .attr("id", id)
                             .attr("stroke", linecolour)
                             .attr("stroke-linecap", "round")
                             .style("stroke-width", linewidth)
@@ -1233,53 +1231,63 @@ function updateStraightLines(lines, type) {
                         //add crows foot, if multi value
                         if(ismultivalue){
 
+                            let hideId = `#n2nibfsrc_${d.target.id}`;
+                            let hideLine = container.select(hideId);
+                            if (!hideLine.empty())
+                                hideLine.style("display", "none")
                             // Node2NodeInfoBoxesFullBottomLineSourceMultiValue
                             id = `n2nibfblsrcmv_${d.source.id}`;
                             selectedLine = container.select(`#${id}`);
                             if (selectedLine.empty()) {
                                 selectedLine = container.insert("svg:path", `.id${d.source.id} + *`)
                                     .attr("id", id)
-                              .attr("class", "offset_line")
-                              .attr("stroke-linecap", "round")
+                                    .attr("class", "offset_line")
+                                    .attr("stroke-linecap", "round")
                                     .attr("fill", "none")
                             }
                             selectedLine
-                              .attr("stroke-width", linewidth)
+                                .attr("stroke-width", linewidth)
                                 .attr("stroke", linecolour)
+                                .style("display", null)
                                 //   .attr("d", "M " + t_x2 + " " + (t_y+5) + " L " + t_x + " " + t_y + " L " + t_x2 + " " + (t_y-5))
                                 .attr("d", `M ${t_x2} ${t_y + 5} L ${t_x} ${t_y} L ${t_x2} ${t_y - 5}`);
                         }
                     }else{
-
                         //add crows foot, if multi value
                         if (ismultivalue) {
                             if (selectedLine.empty()) {
                                 selectedLine = container.insert("svg:line", `.id${d.target.id} + *`)
-                                    .attr("class", "offset_line")
-                                    .attr("id", id)
+                                .attr("class", "offset_line")
+                                .attr("id", id)
                                 .attr("stroke", linecolour)
                                 .attr("stroke-linecap", "round")
                                 .style("stroke-width", linewidth)
                             }
                             // add extra ending line
                             selectedLine
+                                .style("display", null)
                                 .attr("x1", t_x)
                                 .attr("y1", t_y)
                                 .attr("x2", t_x)
                                 .attr("y2", t_y2);
 
+                            let hideId = `#n2nibfblsrcmv_${d.source.id}`;
+                            let hideLine = container.select(hideId);
+                            if (!hideLine.empty()) 
+                                hideLine.style("display", "none");
                             id = `n2nibfsrc_${d.target.id}`;
                             selectedLine = container.select(`#${id}`);
                             if (selectedLine.empty()) {
                                 selectedLine = container.insert("svg:path", ".id" + d.source.id + " + *")
-                                    .attr("id", id)
-                              .attr("class", "offset_line")
-                              .attr("stroke-linecap", "round")
-                                    .attr("fill", "none")
+                                .attr("id", id)
+                                .attr("class", "offset_line")
+                                .attr("stroke-linecap", "round")
+                                .attr("fill", "none")
                             }
                             selectedLine
                                 .attr("stroke", linecolour)
-                              .attr("stroke-width", linewidth)
+                                .attr("stroke-width", linewidth)
+                                .style("display", null)
                                 //   .attr("d", "M " + (t_x+5) + " " + t_y2 + " L " + t_x + " " + t_y + " L " + (t_x-5) + " " + t_y2);
                                 // Junze: use format to improve performance and reduce GC pressure
                                 .attr("d", `M ${t_x + 5} ${t_y2} L ${t_x} ${t_y} L ${t_x - 5} ${t_y2}`);
