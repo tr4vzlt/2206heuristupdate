@@ -102,15 +102,16 @@
                     <!--<label>Nodes color</label>
                         <div class="colorblock" style="margin-top:-4px;width:auto;" title="Color of nodes">
                         <input id="entityColor" style="width:0px;border:none"/></div>--><br>
-                    <div id="setNodesMode" class="ui-controlgroup-label" style="display:inline-block">
-                        <button id="nodesMode0" name="nodesMode" value="linear"
-                            title="radius of nodes changes linearly">lin</button>
-                        <button id="nodesMode1" name="nodesMode" value="logarithmic"
-                            title="radius of nodes changes logarithmically">log</button>
-                        <button id="nodesMode2" name="nodesMode" value="unweighted" checked="checked"
-                            title="radius of nodes has fixed size">fixed</button>
-                    </div>
+
+                    <button id="nodesMode0" name="nodesMode" value="linear"
+                        title="radius of nodes changes linearly">lin</button>
+                    <button id="nodesMode1" name="nodesMode" value="logarithmic"
+                        title="radius of nodes changes logarithmically">log</button>
+                    <button id="nodesMode2" name="nodesMode" value="unweighted" checked="checked"
+                        title="radius of nodes has fixed size">fixed</button>
                     <input id="nodesRadius" class="number-input small" type="number" min="12" max="45" step="1" />
+
+
                 </div>
             </div>
         </div>
@@ -127,10 +128,10 @@
                         Data</button>
                     <button type="button" id="windowPopOut" onclick="openWin();">Open Fullscreen</button>
                     <button type="button" id="closegraphbutton" onclick="closeWin();">Close Fullscreen</button>
-
                 </div>
                 <div>
-                    <label id="viewnode" class="ui-controlgroup-label" style="border:none;background:none">View Mode: </label>
+                    <label id="viewnode" class="ui-controlgroup-label" style="border:none;background:none">View Mode:
+                    </label>
                     <button id="btnViewModeIcon" name="videMode" value="icons">Icons</button>
                     <button id="btnViewModeInfo" name="videMode" value="infoboxes">Info</button>
                     <button id="btnViewModeFull" name="videMode" value="infoboxes_full">Info + Links</button>
