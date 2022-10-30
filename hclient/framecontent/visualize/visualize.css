@@ -238,6 +238,10 @@ text.shadow {
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
+#iframeInfo {
+    width: 100%;
+}
+
 /**Close Node information iframe button
   *ADDED BY ISH */
 #closeButton {
